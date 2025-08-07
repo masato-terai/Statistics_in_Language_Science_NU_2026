@@ -1,0 +1,683 @@
+# Week 11: Tidyverseパッケージによるデータの加工と可視化
+
+```{r, include=FALSE}
+library(gt)
+library(tidyverse)
+```
+
+## メモ
+- 補講（2025/7/5）
+
+## 事前の確認
+
+- この講義のRプロジェクトを開いていますか？
+- 英数字で名前を付けた本日の講義のファイルを作成しましたか？
+
+  - .Rでも.Rmdでもどちらでも大丈夫です。
+
+## 今日の目標
+
+1. ```tidyverse```パッケージを使い、データの加工が出来る
+2. ```ggplot2```パッケージを使い、データの描画をすることができる
+
+## データの加工
+
+### tidy data
+
+- Rが処理しやすいデータ形式のこと
+
+- Hadley Wickhamが提唱した考えで以下の三つの定義がある
+
+  1. 1つの列が1つの変数を表す
+  
+  2. 1つの行が1つの観測を表す
+  
+  3. 1つのテーブルが1つのデータセットだけを含む
+
+::: infobox
+昨年、LINEヤフー本社で行われたJapan.Rに来日されてました！<br>
+- [Japan.R 2024が紀尾井町オフィスで開催されました!!](https://techblog.lycorp.co.jp/ja/20241224c)
+:::
+
+- tidyでないデータ
+```{r}
+untidy_data <- data.frame(
+  Name = c("Alice", "Bob", "Carol"),
+  Japanese = c(80, 90, 85),
+  Math = c(75, 88, 92)
+)
+
+gt::gt(untidy_data)
+```
+
+
+- tidyデータ
+```{r, echo=FALSE}
+tidy_data <- pivot_longer(
+  untidy_data,
+  cols = c(Japanese, Math),
+  names_to = "Subject",
+  values_to = "Score"
+)
+gt(tidy_data)
+```
+
+### ```tidyverse```パッケージ
+
+- パッケージのウェブサイト（[https://www.tidyverse.org/](https://www.tidyverse.org/)）
+
+```{r, comment=NA}
+tidyverse_logo()
+```
+
+
+### データの変形（縦長 🔄 横長）
+- 横長（tidyでない）を縦長に
+
+```{r}
+untidy_data
+```
+
+
+```{r}
+#install.packages("tidyverse")
+library(tidyverse)
+
+tidy <- pivot_longer(
+  untidy_data,               #データ
+  cols = c(Japanese, Math),　#変形する列
+  names_to = "Subject",      #キーの列の名前
+  values_to = "Score"        #値の列の名前
+)
+
+tidy
+```
+
+- 横長に戻す
+
+  - 縦長のデータでは行えない分析もあります
+  
+```{r}
+untidy <- pivot_wider(
+  tidy,                      #データ
+  names_from = "Subject",    #キーの列
+  values_from = "Score"      #値の列
+)
+
+untidy
+```
+
+### ```dplyr```によるデータの操作
+- このパッケージは```tidyverse```パッケージをインストールしていれば使えます。
+
+- このパッケージを使用することで、毎回変数に保存せずデータを操作できたり、二つのデータを結合したできる。
+
+- ```%>%```パイプ演算子を使用する。```|>```など様々なパイプがあるが、とりあえずは```%>%```だけを覚えていればよい。
+
+- パイプ演算子を使ったデータ操作の例（エクセルのデータ処理をRのコードで行うイメージです）
+
+```{r}
+colnames(mpg)
+
+mpg %>%
+  # 列を絞る
+  dplyr::select(manufacturer, model, displ, year, cyl) %>%
+  # 行を絞る
+  dplyr::filter(manufacturer == "audi") %>%
+  # year列のデータを100で割ったデータを含むcenturyという新しいデータを作成
+  dplyr::mutate(century = year / 1000) %>%
+  # データの最初の5行を表示
+  head(,5)
+```
+
+#### ```filter```関数
+- 条件を満たす行のみにデータを絞る
+
+- 指定した値と同じ
+
+  - 数値型の場合は""入れなくてよい
+
+```{r, eval=FALSE}
+mpg %>%
+  filter(manufacturer == "audi")
+```
+
+- 指定した値以外
+
+```{r, eval=FALSE}
+mpg %>%
+  filter(manufacturer != "audi")
+```
+
+- 指定した値より大きい（ > ）/小さい（ < ）
+
+  - 以下の例では、cyl列のデータで6よりも大きい値を取り出す命令
+  
+```{r}
+mpg %>%
+  filter(cyl > 6)
+```
+
+- ```=```を付けると以上（ >= ）/以下（ <= ）を表す
+
+```{r, eval=FALSE}
+mpg %>%
+  filter(cyl >= 6)
+```
+
+- NAのデータ以外
+
+  - ```filter(is.na(cyl))```だとNAのデータを絞り込む
+
+```{r, eval=FALSE}
+mpg %>%
+  filter(!is.na(cyl))
+```
+
+- 複数条件の指定もできる
+
+  - 以下では、audi以外の車**かつ**cylが6以上のデータに絞り込んでいる
+
+```{r, eval=FALSE}
+mpg %>%
+  filter(manufacturer != "audi" & cyl >= 6)
+```
+
+  - 以下では、audi以外の車**もしくは**cylが6以上のデータに絞り込んでいる
+
+```{r, eval=FALSE}
+mpg %>%
+  filter(manufacturer == "audi" | cyl >= 6)
+```
+  - 以下の例では、どちらの条件にも当てはまらないデータを絞り込む
+
+```{r, eval=FALSE}
+mpg %>%
+  filter(!(manufacturer == "audi" | cyl >= 6))
+```
+
+#### ```arrange```関数
+
+- 行を並び替える関数
+
+- 昇順
+
+```{r, eval=FALSE}
+mpg %>%
+  arrange(cty)
+```
+
+- 複数列での昇順
+
+```{r, eval=FALSE}
+mpg %>%
+  arrange(cty, hwy)
+```
+
+- 降順
+  
+  - ```desc```関数を使用する。```arrange(-列名)```でも並び変えられるが、これは数値型にしか使用できない
+
+```{r, eval=FALSE}
+mpg %>%
+  arrange(desc(cty))
+```
+
+
+#### ```select```関数
+- 列の絞り込みを行う
+
+  - 複数の列を絞り込める
+
+```{r, eval=FALSE}
+mpg %>%
+  select(model, trans)
+```
+
+  - 指定した列以外を絞り込む
+  
+```{markdown}
+mpg %>%
+  select(-year)
+
+mpg %>%
+  select(!year)
+```
+
+  - 列名を変えながら絞り込む
+
+```{r, eval=FALSE}
+mpg %>%
+  select(Changed_model = model, Changed_trans = trans)
+```
+
+- データの絞り込みを行わず、列名だけを変更したい場合、```rename```関数を使用する
+
+```{r, eval=FALSE}
+mpg %>%
+  rename(Changed_model = model, Changed_trans = trans)
+```
+
+::: infobox
+データの絞り込みなどの加工を行った場合、それを保存したい場合、（新しい）変数に保存する必要がある。一般的に以下の二つの保存の方法があります。
+
+```{r, eval=FALSE}
+mpg_renamed <- mpg %>%
+  rename(Changed_model = model, Changed_trans = trans)
+
+mpg %>%
+  rename(Changed_model = model, Changed_trans = trans) -> mpg_renamed 
+```
+
+:::
+
+#### ```mutate```関数
+- 列を新しく追加する。同じ列名を指定すれば、既存のデータを上書きすることもできる。
+
+  - 既存のcylのデータを100で割った新しいデータをcyl_percentという新しい列を作成。
+
+```{r, eval=FALSE}
+mpg %>%
+  mutate(cyl_percent = cyl / 100)
+```
+
+  - ```if_else```関数を用いて条件指定を行い、cylが6以上なら「6以上」, それ以外なら「6未満」を含む新たな列を作成。さらに、```.after =```オプションを用い、列の位置を指定。標準地では、新しく作成された列は、一番最後に追加される。
+
+```{r, eval=FALSE}
+mpg %>%
+  mutate(cyl_6 = if_else(cyl >= 6, "6以上", "6未満"), .after = cyl)
+```
+
+#### ```summarize``` + ```group_by```関数
+
+- ```summarise```関数は平均値や分散を計算したりなどデータを集計する関数
+
+  - ```mutate```関数のように、計算したデータを新しい列に格納する
+
+```{r}
+mpg %>%
+  summarise(M = mean(displ))
+```
+
+```{r}
+mpg %>%
+  summarise(max = max(displ))
+```
+
+- ```group_by```関数というグループ化させる関数と組み合わせることがほとんど
+
+  - manufacturerごとの平均値を算出
+
+```{r}
+mpg %>%
+  group_by(manufacturer) %>%
+  summarise(M = mean(displ), .groups = "drop") %>%
+  head(5)
+```
+
+::: infobox
+```group_by```関数を使用したら、必ず```summarise```関数の中で```.groups = "drop"```を指定してグループ化を解除すること。そうしないと予期せぬエラーにつながったりもする。
+:::
+
+### ```dplyr```によるデータ結合
+- 二つのデータセットをそれぞれの共通のデータを基に結合する
+
+  - 英単語の反応速度の実験などで、後から頻度などの情報を付け加えたいなどかなり重宝します
+
+- 疑似データの作成
+```{r}
+students <- data.frame(
+  id = c(1, 2, 3, 4),
+  name = c("Alice", "Bob", "Charlie", "David")
+)
+
+scores <- data.frame(
+  id = c(1, 2, 3, 4),
+  score = c(80, 90, 85, 70)
+)
+```
+
+#### ```inner_join```関数
+
+- 二つのデータセットは同じ```id```というデータを持っている。このキーをもとにデータを結合します。そして```joined_data```という新しい変数に保存します。
+
+```{r}
+students
+
+scores
+```
+
+```{r}
+joined_data <- students %>%
+  dplyr::inner_join(scores, by = "id")
+
+joined_data
+```
+
+- 列名がそろっていない場合は、以下のように指定すればOK
+
+```{r}
+students <- data.frame(
+  id = c(1, 2, 3, 4),
+  name = c("Alice", "Bob", "Charlie", "David")
+)
+
+scores <- data.frame(
+  学籍番号 = c(1, 2, 3, 4),
+  score = c(80, 90, 85, 70)
+)
+```
+
+```{r}
+students
+scores
+```
+
+```{r}
+joined_data <- students %>%
+  dplyr::inner_join(scores, by = c("id" = "学籍番号"))
+
+joined_data
+```
+
+- ```inner_join```では共通していない変数は削除される
+
+```{r}
+# データフレームの作成
+students <- data.frame(
+  id = c(1, 2, 3, 4),
+  name = c("Alice", "Bob", "Charlie", "David")
+)
+
+scores <- data.frame(
+  id = c(2, 3, 4, 5),
+  score = c(80, 90, 85, 70)
+)
+```
+
+```{r}
+students
+scores
+```
+
+- 二つのデータセットに共通している```id```の2, 3, 4だけがデータとして残っている
+
+```{r}
+students %>%
+  dplyr::inner_join(scores, by = "id")
+
+```
+
+#### そのほかの```join```
+
+- ```left_join```、```right_join```関数はそれぞれ左側にあるデータ、右側にあるデータが残る
+
+  - 残ったデータには```NA```（欠損値）になる
+
+```{r}
+students %>%
+  dplyr::left_join(scores, by = "id")
+```
+
+```{r}
+students %>%
+  dplyr::right_join(scores, by = "id")
+```
+
+- ```full_join```だと全部が残る
+
+```{r}
+students %>%
+  dplyr::full_join(scores, by = "id")
+```
+
+::: infobox
+データの加工や結合を行い（新しい）変数に保存した後は必ずその中身を確認する必要があります。
+:::
+
+## ```ggplot2```によるデータの可視化
+
+- このパッケージも```tidyverse```パッケージに含まれる。従って、```library(tidyverse)```で```ggplot2```パッケージも使用できる。
+
+- **Grammar of Graphics**の思想に基づいている
+
+  - 可視化という作業を複数の工程に分けて考える
+  
+    - データセットの選別、グラフの選択、データをグラフに割り当てる
+    
+    - ステップ・バイ・ステップでパズルのようにグラフを作り上げていく
+  
+::: infobox
+慣れるととても使いやすいですが、その分覚える関数が多いので慣れるまでが少し大変です。使用する際にその都度調べたりすればよく、コードを暗記する必要はありません。
+:::
+
+- 例（ヒストグラム）
+  
+ - パイプ演算子（```%>%```）でデータを渡したら後は```+```でグラフを少しずつ作り上げていきます
+ 
+```{r}
+mpg %>%
+  ggplot() + 
+  #aesの中でx軸やy軸を指定。ヒストグラムはx軸の指定だけでよい
+  geom_histogram(mapping = aes(x = displ)) 
+```
+
+#### 散布図 + 直線
+
+  - 第一段階：散布図
+  
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = cty)) +
+  geom_point()
+
+# どちらでもOK
+#mpg %>%
+#  ggplot(mapping = aes(x = displ, y = cty)) +
+#  geom_point()
+```
+
+- 第二段階：直線を重ねる
+
+  - ```method = "lm"```で線形モデルで直線を推定
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = cty)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+- 第三段階：グループごとに色分け
+
+  - ```group =```と```color = ```で指定を行う。数値のデータはFactor型にすることが必要な場合もある
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = cty,
+                                 group = factor(cyl), color = factor(cyl))) +
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+- 第四段階：ファセット
+
+  - 水準ごとに図を分ける
+  
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = cty)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  facet_wrap( ~ cyl)
+```
+
+::: infobox
+```ggplot2```パッケージに限りませんが、いろいろな関数を試して、失敗してという遊びが必要になります。色々なでーたで様々な関数で作図をして遊んでください。
+:::
+
+#### 統計的処理
+
+  - 車のサイズごとに燃費の平均を計算する
+
+```{r}
+mpg %>%
+  group_by(class) %>%
+  summarise(M = mean(cty)) %>%
+  arrange(M)
+```
+
+  - 平均値を計算せず棒グラフを書くと平均値を描画できていない
+
+```{r}
+mpg %>%
+  ggplot(mapping = aes(x = class, y = cty)) +
+  geom_bar(stat = "identity")
+```
+
+  - ```stat_summary```関数で平均値を計算する
+
+```{r}
+mpg %>%
+  ggplot(mapping = aes(x = class, y = cty)) +
+  stat_summary(geom = "bar", fun = "mean") 
+```
+
+  - 事前に平均値を計算しておくのも一つのやり方
+  
+```{r}
+mean_mpg <- mpg %>%
+  group_by(class) %>%
+  summarise(mean_cty = mean(cty))
+
+mean_mpg %>%
+  ggplot(aes(x = class, y = mean_cty)) +
+  geom_bar(stat = "identity")
+```
+
+#### 箱ひげ図
+
+```{r}
+mpg %>%
+  ggplot(mapping = aes(x = class, y = cty)) +
+  geom_boxplot()
+```
+
+#### フォントサイズや向き
+
+- 図の文字サイズなどは```theme```
+
+- ```size = 数値```で指定。単位は```pt```
+
+- x軸の変数名が重なってよく見えない
+
+```{r}
+ggplot(mpg, aes(x = class, y = cty, group = class)) +
+  geom_boxplot() +
+  facet_wrap(~ drv) +  # 駆動方式でfacet（例: f, r, 4）
+  labs(title = "City Mileage by Class",
+       x = "Car Class",
+       y = "City MPG") +
+  theme(
+    plot.title = element_text(size = 20),        # タイトルのフォントサイズ
+    axis.title.x = element_text(size = 10),      # x軸ラベル
+    axis.title.y = element_text(size = 14),      # y軸ラベル
+    axis.text.x = element_text(size = 12),       # x軸目盛
+    axis.text.y = element_text(size = 6),       # y軸目盛
+    strip.text = element_text(size = 22)         # facetのラベル（ストリップ）
+  )
+```
+
+- 文字の角度を変更し、重複するのを防ぐ
+
+```{r}
+ggplot(mpg, aes(x = class, y = cty, group = class)) +
+  geom_boxplot() +
+  facet_wrap(~ drv) +  # 駆動方式でfacet（例: f, r, 4）
+  labs(title = "City Mileage by Class",
+       x = "Car Class",
+       y = "City MPG") +
+  theme(
+    plot.title = element_text(size = 20),        
+    axis.title.x = element_text(size = 10),      
+    axis.title.y = element_text(size = 14),      
+    axis.text.x = element_text(size = 10, angle = 45, hjust = 1),  # ★ ここで傾ける
+    axis.text.y = element_text(size = 6),       
+    strip.text = element_text(size = 22)         
+  )
+```
+
+- 表示させない場合は```element_blank()```
+
+  - x軸のメモリを非表示
+
+```{r}
+ggplot(mpg, aes(x = class, y = cty)) +
+  geom_boxplot() +
+  facet_wrap(~ drv) +
+  labs(title = "City Mileage by Class",
+       x = "Car Class",
+       y = "City MPG") +
+  theme(
+    plot.title = element_text(size = 20),
+    axis.title.x = element_text(size = 14),
+    axis.title.y = element_text(size = 14),
+    axis.text.x = element_blank(),            # ★ x軸のメモリを非表示に
+    axis.text.y = element_text(size = 10),
+    strip.text = element_text(size = 16)
+  )
+```
+
+#### ```ggplotly```でインタラクティブな図を作成
+
+- ```ggplot2```の図を作成し変数に保存し、```ggplotly```関数で描画する
+
+- 図の上にカーソルを置いてみてください
+
+```{r}
+#install.packages("plotly")
+gg_mpg <- mpg %>%
+  ggplot(mapping = aes(x = class, y = cty)) +
+  geom_boxplot() 
+
+plotly::ggplotly(gg_mpg)
+```
+
+## GUIでggplotでの作図
+
+- ```esquisse```パッケージを使用
+
+- ```esquisser(viewer = "browser")```を実行すると、ウィンドウが開き、GUIで作図ができる。また、作成した図をRで作成するためのコードも出力することができる。
+
+```{markdown}
+#install.packages("esquisse")
+library(esquisse)
+esquisser(viewer = "browser")
+```
+
+
+## 次週までの課題
+- **なし**
+
+## 参考文献
+
+- 📚松村・湯谷・紀ノ定・前田（2021）『改訂2版 RユーザのためのRStudio[実践]入門―tidyverseによるモダンな分析フローの世界』技術評論社
+
+- 💻[疫学のための R ハンドブック　39  動的な図の作成](https://epirhandbook.com/jp/new_pages/interactive_plots.jp.html)
+
+- 💻[Rで解析：GUI操作でggplot2！！「esquisse」パッケージ](https://www.karada-good.net/analyticsr/r-808/)
+
+```{=html}
+<style>
+.infobox {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  border: 2px solid orange;
+  border-radius: 10px;
+  background: #f5f5f5 5px center/3em no-repeat;
+}
+
+.beg {
+  background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHtu3kBX8P39WYBBAjar9c8c1ladK2SYL6_gEMXFweQfauWVhSvCQP5KELsPX5KNL1uOddLLQ-aeMxv904OW_NFFfANhBYObfBV09KO2EXehrb9kMdCLZY1afsChib-7zIkBJbG6OrbJpM/s400/aisatsu_kodomo_boy.png");}
+
+.caution {
+  background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhzMqkpQ7vLUKvumbm6AFwTLQiCe7tlDb2Q0MAiISLsesZHnhj0kbRjB4U3se3UrDIHfIy0hlahyphenhyphenQu-V2tOR2LcV_lX7U8P5a8jtqPYv3Ah4L-JoYi8PhoaoehumGIdp2vrsX0rRyhXqwA/s800/mark_chuui.png");}
+  
+</style>
+```
