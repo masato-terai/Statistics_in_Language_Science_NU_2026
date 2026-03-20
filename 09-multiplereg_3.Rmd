@@ -7,6 +7,7 @@ library(gt)
 library(tidyverse)
 
 rstan_options(auto_write = T)
+options(rstan.show_progress = FALSE)
 options(mc.cores = parallel::detectCores())
 ```
 
@@ -30,16 +31,16 @@ options(mc.cores = parallel::detectCores())
   - 一般化線形モデルでは、「説明変数同士の積」を説明変数として加えることで、交互作用を表現する
 
 ```{r, include=FALSE}
-dat <- read.csv("../stat_class_2025/sample_data/3-10-3-interaction-3.csv")
+dat <- read.csv("sample_data/3-10-3-interaction-3.csv")
 ```
 
 ### 量的変数 × 量的変数
-```{r}
+```{r, cache=TRUE}
 model1 <- brm(sales ~ product * clerk, gaussian(link = "identity"),
-              data = dat, seed = 123, refresh = 0, iter = 5000, chains = 2)
+              data = dat, seed = 123, refresh = 0, iter = 5000, chains = 2, silent =2)
 ```
 
-```{r, include=FALSE}
+```{r, include=FALSE, cache=TRUE}
 eff <- conditional_effects(model1, effects = "product:clerk")
 ```
 
@@ -77,7 +78,7 @@ cbind(new_data, res) %>%
 ### 量的変数 × 質的変数
 - データの読み込み
 ```{r}
-dat <- read.csv("../stat_class_2025/sample_data/3-10-2-interaction-2.csv")
+dat <- read.csv("sample_data/3-10-2-interaction-2.csv")
 ```
 
 - コーディング（トリートメント）
@@ -90,12 +91,12 @@ contrasts(dat$publicity) <- contr.treatment(2)
 contrasts(dat$publicity)
 ```
 
-```{r}
+```{r, cache=TRUE}
 model2 <- brm(sales ~ publicity * temperature, gaussian(link = "identity"),
-              data = dat, seed = 123, refresh = 0, iter = 5000, chains = 2)
+              data = dat, seed = 123, refresh = 0, iter = 5000, chains = 2, silent =2)
 ```
 
-```{r, include=FALSE}
+```{r, include=FALSE, cache=TRUE}
 eff2 <- conditional_effects(model2, effects = "temperature:publicity")
 ```
 
@@ -145,7 +146,7 @@ cbind(new_data_2, res2) %>%
 ### 質的変数 × 質的変数
 
 ```{r}
-dat <- read.csv("../stat_class_2025/sample_data/3-10-1-interaction-1.csv")
+dat <- read.csv("sample_data/3-10-1-interaction-1.csv")
 ```
 
 - コーディング（トリートメント）
@@ -161,9 +162,9 @@ contrasts(dat$bargen) <- contr.treatment(2)
 contrasts(dat$bargen)
 ```
 
-```{r}
+```{r, cache=TRUE}
 model3 <- brm(sales ~ publicity * bargen, gaussian(link = "identity"),
-              data = dat, seed = 123, refresh = 0, iter = 5000, chains = 2)
+              data = dat, seed = 123, refresh = 0, iter = 5000, chains = 2, silent =2)
 ```
 
 
@@ -252,7 +253,7 @@ library(emmeans)
   - bargen by publicity（縦の比較）
 
   - publicityがnotの場合もto_implementの場合も条件間の差は有意
-```{r}
+```{r, cache=TRUE}
 emmeans::contrast(
   emmeans(model4, pairwise ~ bargen | publicity), 
   adjust = "bonferroni"
@@ -266,7 +267,7 @@ emmeans::contrast(
 
   - bargenがto_implementの場合のみ条件間の差は有意
 
-```{r}
+```{r, cache=TRUE}
 emmeans::contrast(
   emmeans(model4, pairwise ~ publicity | bargen), 
   adjust = "bonferroni"
@@ -287,7 +288,7 @@ emmeans::contrast(
 ### 質的 × 質的（サムコントラスト）
 
 ```{r}
-dat <- read.csv("../stat_class_2025/sample_data/Example4.csv")
+dat <- read.csv("sample_data/Example4.csv")
 ```
 
 ```{r}

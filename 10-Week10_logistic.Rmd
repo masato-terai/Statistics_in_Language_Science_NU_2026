@@ -2,12 +2,12 @@
 
 ```{r, include=FALSE}
 library(rstan)
-library(brms)
 library(gt)
 library(tidyverse)
 library(kableExtra)
 
 rstan_options(auto_write = T)
+options(rstan.show_progress = FALSE)
 options(mc.cores = parallel::detectCores())
 ```
 

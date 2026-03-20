@@ -10,6 +10,7 @@ library(lme4)
 library(patchwork)
 
 rstan_options(auto_write = T)
+options(rstan.show_progress = FALSE)
 options(mc.cores = parallel::detectCores())
 ```
 
@@ -109,7 +110,7 @@ options(mc.cores = parallel::detectCores())
 
   - 例. 指導法Aと指導法Bの効果を比較検証したい（事後テストの得点を目的変数として分析）。この場合、テスト得点は指導法の効果による影響だけでなく、生徒の個人差によって異なると仮定
 
-```{r, include=FALSE}
+```{r, include=FALSE, cache=TRUE}
 # データ作成
 set.seed(123)
 n_students <- 10
@@ -133,9 +134,9 @@ data <- students %>%
   ungroup()
 
 # 各モデルをフィット
-model_intercept <- lmer(score ~ study_time + (1 | student_id), data = data)
-model_slope     <- lmer(score ~ study_time + (0 + study_time | student_id), data = data)
-model_both      <- lmer(score ~ study_time + (study_time | student_id), data = data)
+model_intercept <- lme4::lmer(score ~ study_time + (1 | student_id), data = data)
+model_slope     <- lme4::lmer(score ~ study_time + (0 + study_time | student_id), data = data)
+model_both      <- lme4::lmer(score ~ study_time + (study_time | student_id), data = data)
 
 # 予測値を追加
 data$pred_intercept <- predict(model_intercept)
@@ -187,7 +188,6 @@ p1 + plot_layout(guides = "collect") & theme(legend.position = "bottom")
 p3 +
   plot_layout(guides = "collect") &
   theme(legend.position = "bottom")
-
 ```
 
 
@@ -251,7 +251,7 @@ benchmarkme::get_ram()
 - Terai et al. (2024)のデータを使用します。
 
 ```{r}
-dat <- read.csv("../stat_class_2025/sample_data/AJ.csv")
+dat <- read.csv("sample_data/AJ.csv")
 ```
 
 ```{r}
@@ -277,7 +277,7 @@ dat2 <- dat %>%
   
   - 独立変数：コロケーションの種類
 
-```{r}
+```{r, cache=TRUE}
 tic()
 res.1 <- glmer(
   res ~ Itemtype +
@@ -316,7 +316,7 @@ toc()
 
 
 - 中心化した変数だとうまくいった
-```{r}
+```{r, cache=TRUE}
 tic()
 res.3 <- glmer(
   res ~ Itemtype +
@@ -333,7 +333,7 @@ summary(res.3)
 ```
 
 - 95% 信頼区間の算出（CI）
-```{r}
+```{r, cache=TRUE}
 se <- sqrt(diag(vcov(res.3)))
 
 # table of estimates with 95% CI
@@ -350,7 +350,7 @@ tab
 
   - こちらは推定法の関係で時間がかかる
 
-```{r}
+```{r, cache=TRUE}
 tic()
 confint(res.3)
 toc()
@@ -436,14 +436,14 @@ plot(check_residuals(res.3))
 ::: infobox
 ランダム効果を組み込んだ回帰分析を行う主な理由の一つに、**縮約（shrinkage）**という効果があります。縮約とは、各グループの極端な推定値が、全体の平均値（プーリングされた平均）に引き寄せられる現象を指します。この効果により、サンプル数が少ないグループや外れ値の影響が軽減され、より頑健で一般化可能な推定が可能になります。しかし、極端な推定値が実際に意味のあるものであった場合、縮約によってその効果が過小評価されてしまうという問題があります。たとえば、複数の種類の薬の効果を検証したい場合に、薬の種類をランダム効果に含めてモデルを構築すると、ある薬が他と明らかに異なる効果を示していたとしても、縮約によってその差が「なかったこと」になってしまう可能性があります。このようなケースでは、薬の種類ごとの効果を明確に比較したいという研究目的があるため、薬の種類をランダム効果としてではなく独立変数（固定効果）としてモデルに含める必要があります。**つまり、何をランダム効果として設定するのかを研究課題・仮説の段階で決めておく必要があります。**
 
-```{r, include=FALSE, message=FALSE, warning=FALSE}
+```{r, include=FALSE, message=FALSE, warning=FALSE, cache=TRUE}
 dat <- read.csv("sample_data/4-3-1-fish-num-4.csv")
-glm <- brm(fish_num ~ temperature * human, family = poisson(), data = dat, seed = 1,
+glm <- brm(fish_num ~ temperature * human, family = poisson(), data = dat, seed = 1, silent = 2, refresh = 0,
            prior = c(set_prior("", class = "Intercept")))
 ```
 
 - 以下の図は、気温と参加者の交互作用のモデルです。10番の参加者のデータのみ、右肩下がりとなっています。
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE}
 conditions <- data.frame(
   human = c("A","B","C","D","E","F","G","H","I","J"))
 
@@ -453,12 +453,14 @@ eff_1 <- marginal_effects(glm,
 plot(eff_1, points = TRUE)
 ```
 
-```{r, include=FALSE, message=FALSE, warning=FALSE}
+```{r, include=FALSE, message=FALSE, warning=FALSE, cache=TRUE}
 glmm <- brm(
   formula = fish_num ~ temperature + (temperature||human),
   family = poisson(),
   data = dat,
   seed = 1,
+  refresh = 0,
+  silent = 2,
   iter = 6000,
   warmup = 5000,
   control = list(adapt_delta = 0.97, max_treedepth = 15)
@@ -467,7 +469,7 @@ glmm <- brm(
 ```
 
 - 以下の図は気温と参加者の交互作用ではなく、独立変数に気温、ランダム効果に参加者を含めたモデルです。10番の参加者が他の参加者と同じ右肩上がりの傾向に変わっていることが分かります。
-```{r, echo=FALSE, warning=FALSE, message=FALSE}
+```{r, echo=FALSE, warning=FALSE, message=FALSE, cache=TRUE}
 conditions <- data.frame(
   human = c("A","B","C","D","E","F","G","H","I","J"))
 

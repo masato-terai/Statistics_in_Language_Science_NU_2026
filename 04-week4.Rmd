@@ -393,7 +393,7 @@ t = \frac{\bar{x}_1 - \bar{x}_2}{S_D / \sqrt{n}} \hspace{3pc} (df = n - 1)
 
 - データの読み込み
 ```{r}
-dat_t_ind <- read.csv("../stat_class_2025/sample_data/ttest_inde.csv")
+dat_t_ind <- read.csv("sample_data/ttest_inde.csv")
 ```
 
 ```{r}
@@ -431,7 +431,7 @@ t.test(English ~ Class, data = dat_t_ind)
 
 - データの読み込み
 ```{r}
-dat_t_rep <- read.csv("../stat_class_2025/sample_data/ttest_rep.csv")
+dat_t_rep <- read.csv("sample_data/ttest_rep.csv")
 ```
 
 ```{r}
@@ -450,7 +450,9 @@ boxplot(dat_t_rep$English, dat_t_rep$Math, names = c("English", "Math"))
 describe(dat_t_rep$English)
 describe(dat_t_rep$Math)
 ```
+
 - ```paired = T```を設定する
+
 ```{r}
 t.test(dat_t_rep$English, dat_t_rep$Math,
       paired = T

@@ -536,7 +536,7 @@ mean(mtcars$mpg) + qt(df = (nrow(mtcars)-1), .975) * sd(mtcars$mpg)/sqrt(nrow(mt
 ### データの読み込み
 - 先週の講義で配布。
 ```{r}
-dat <- read.csv("../stat_class_2025/sample_data/pokemon_data.csv")
+dat <- read.csv("sample_data/pokemon_data.csv")
 ```
 
 #### データの中身を確認

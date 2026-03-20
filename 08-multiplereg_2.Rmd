@@ -311,7 +311,7 @@ df$Method <- factor(df$Method,
 
 ```{r}
 library(readr)
-dat <- read_csv("../stat_class_2025/sample_data/week8_data.csv")
+dat <- read_csv("sample_data/week8_data.csv")
 ```
 
 ### データの概要
@@ -520,10 +520,11 @@ contrasts(dat$タイプ1) <- contr.sum(2)
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
 #install.packages("brms")
 library(brms)
+options(rstan.show_progress = FALSE)
 ```
 
 
-```{r}
+```{r, cache=TRUE}
 results_sum_bayes <- brm(
   重さ ~ タイプ1,  # 応答変数「重さ」と説明変数「タイプ1」の回帰モデル
   data = dat,  # データフレーム dat を使用
@@ -534,7 +535,8 @@ results_sum_bayes <- brm(
   warmup = 500,  # ウォームアップ（バーンイン）期間として最初の500回を破棄
   thin = 2,  # 2回ごとに1つのサンプルを取得（間引き）
   seed = 123,  # 乱数シードを設定し、再現性を確保
-  refresh = 0
+  refresh = 0,
+  silent = 2
 )
 
 ```

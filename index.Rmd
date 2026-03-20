@@ -6,16 +6,13 @@ site: bookdown::bookdown_site
 output: bookdown::html_document
 documentclass: book
 bibliography: [book.bib, packages.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
-link-citations: yes
-#github-repo: rstudio/bookdown-demo
+link-citations: true
 ---
 
 # About
 
 　この資料は、名古屋大学大学院人文学研究科の学生を対象に開講されている言語統計処理（春学期）で使用する資料です。配布する際は、事前に作成者の寺井雅人まで連絡してください（[Website](https://sites.google.com/view/masatoterai/)）。<br>
-　この講義を担当するのは今年（2025年度）が初めてのため、内容は予告なく更新される可能性があります。各講義が実施されるまでは、すべての教材は準備段階のものと見なしてください。そのため、一部に整理されていない箇所があるかもしれません。このページの最終更新日（``` Last update(JST): ```）を確認するようにしてください。
+　この講義は昨年2025度から担当しています（[2025年度の資料はこちら](https://masato-terai.github.io/stat_class_2025/)）。この講義内容は予告なく更新される可能性があります。
 
 ## 講義概要
 
@@ -33,14 +30,14 @@ link-citations: yes
 <div class="alert alert-info">
   <strong>注</strong> 
   
-- 毎回の講義で必ずRStudioがインストールされているパソコンを持参してください。
+- Rがインストールされているパソコンを毎回の講義で必ず持参してください。
 
 - 講義内容、講義スケジュールは講義の進度等によって変更する可能性があります。
 
 </div>
 
 ## 講義スケジュール
-- Week 1：オリエンテーション、R(Studio)のインストールと操作、R Markdown
+- Week 1：オリエンテーション、R(Studio)、Positronのインストールと操作、R Markdown
 - Week 2：要約統計量
 - Week 3：推測統計学
 - Week 4：統計的検定の論理と *t検定*

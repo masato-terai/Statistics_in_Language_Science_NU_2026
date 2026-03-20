@@ -149,7 +149,7 @@ $$
 ```{r}
 #install.packages("readr")
 library(readr)
-dat <- read_csv("../stat_class_2025/sample_data/regression_data.csv")
+dat <- read_csv("sample_data/regression_data.csv")
 ```
 
 - 必ず中身を確認。

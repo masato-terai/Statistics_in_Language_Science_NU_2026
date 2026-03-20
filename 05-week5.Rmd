@@ -170,7 +170,7 @@ t = \frac{r}{\sqrt{1-r^2}}\sqrt{n-2}
 ### データの読み込み
 
 ```{r}
-dat <- read.csv("../stat_class_2025/sample_data/cor.csv")
+dat <- read.csv("sample_data/cor.csv")
 ```
 
 ```{r}

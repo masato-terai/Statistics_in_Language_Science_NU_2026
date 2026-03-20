@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 13 Week12: 階層モデル | 言語統計処理（春学期）</title>
   <meta name="description" content="Chapter 13 Week12: 階層モデル | 言語統計処理（春学期）" />
-  <meta name="generator" content="bookdown 0.42 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 13 Week12: 階層モデル | 言語統計処理（春学期）" />
   <meta property="og:type" content="book" />
@@ -53,19 +53,18 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 <link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.10.4/plotly.js"></script>
+<script src="libs/plotly-binding-4.12.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.11.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.11.1/plotly-latest.min.js"></script>
+<link href="libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.25.2/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.25.2/plotly-latest.min.js"></script>
 
 
 <style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -153,209 +152,209 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#講義概要"><i class="fa fa-check"></i><b>1.1</b> 講義概要</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#講義スケジュール"><i class="fa fa-check"></i><b>1.2</b> 講義スケジュール</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#成績評価について"><i class="fa fa-check"></i><b>1.3</b> 成績評価について</a></li>
-<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#留意事項"><i class="fa fa-check"></i><b>1.4</b> 留意事項</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#%E8%AC%9B%E7%BE%A9%E6%A6%82%E8%A6%81"><i class="fa fa-check"></i><b>1.1</b> 講義概要</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#%E8%AC%9B%E7%BE%A9%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB"><i class="fa fa-check"></i><b>1.2</b> 講義スケジュール</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#%E6%88%90%E7%B8%BE%E8%A9%95%E4%BE%A1%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><i class="fa fa-check"></i><b>1.3</b> 成績評価について</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#%E7%95%99%E6%84%8F%E4%BA%8B%E9%A0%85"><i class="fa fa-check"></i><b>1.4</b> 留意事項</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><i class="fa fa-check"></i><b>2</b> Week 1: オリエンテーション、R(Studio)のインストールと操作、R Markdown</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#統計処理とは"><i class="fa fa-check"></i><b>2.1</b> 「統計処理」とは</a></li>
-<li class="chapter" data-level="2.2" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#rとは"><i class="fa fa-check"></i><b>2.2</b> Rとは</a></li>
-<li class="chapter" data-level="2.3" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#rのインストール"><i class="fa fa-check"></i><b>2.3</b> Rのインストール</a></li>
-<li class="chapter" data-level="2.4" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#rstudioとは"><i class="fa fa-check"></i><b>2.4</b> RStudioとは</a></li>
-<li class="chapter" data-level="2.5" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#rstudioのインストール"><i class="fa fa-check"></i><b>2.5</b> RStudioのインストール</a></li>
-<li class="chapter" data-level="2.6" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#rstudioの機能"><i class="fa fa-check"></i><b>2.6</b> RStudioの機能</a></li>
-<li class="chapter" data-level="2.7" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#プロジェクト機能"><i class="fa fa-check"></i><b>2.7</b> プロジェクト機能</a></li>
-<li class="chapter" data-level="2.8" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#rstudioのカスタマイズ"><i class="fa fa-check"></i><b>2.8</b> RStudioのカスタマイズ</a></li>
-<li class="chapter" data-level="2.9" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#r-markdown入門"><i class="fa fa-check"></i><b>2.9</b> R Markdown入門</a></li>
-<li class="chapter" data-level="2.10" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#ドキュメントチャンクmarkdown記法"><i class="fa fa-check"></i><b>2.10</b> ドキュメントチャンク：Markdown記法</a></li>
-<li class="chapter" data-level="2.11" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#lets-実践"><i class="fa fa-check"></i><b>2.11</b> Let’s 実践</a></li>
-<li class="chapter" data-level="2.12" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#答え合わせ"><i class="fa fa-check"></i><b>2.12</b> 答え合わせ</a></li>
-<li class="chapter" data-level="2.13" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#コードチャンクの挿入"><i class="fa fa-check"></i><b>2.13</b> コードチャンクの挿入</a></li>
-<li class="chapter" data-level="2.14" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#lets-実践-1"><i class="fa fa-check"></i><b>2.14</b> Let’s 実践</a></li>
-<li class="chapter" data-level="2.15" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#答え合わせ-1"><i class="fa fa-check"></i><b>2.15</b> 答え合わせ</a></li>
-<li class="chapter" data-level="2.16" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#次週までの課題"><i class="fa fa-check"></i><b>2.16</b> 次週までの課題</a></li>
-<li class="chapter" data-level="2.17" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#参考文献"><i class="fa fa-check"></i><b>2.17</b> 参考文献</a></li>
+<li class="chapter" data-level="2.1" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#%E7%B5%B1%E8%A8%88%E5%87%A6%E7%90%86%E3%81%A8%E3%81%AF"><i class="fa fa-check"></i><b>2.1</b> 「統計処理」とは</a></li>
+<li class="chapter" data-level="2.2" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#r%E3%81%A8%E3%81%AF"><i class="fa fa-check"></i><b>2.2</b> Rとは</a></li>
+<li class="chapter" data-level="2.3" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#r%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB"><i class="fa fa-check"></i><b>2.3</b> Rのインストール</a></li>
+<li class="chapter" data-level="2.4" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#rstudio%E3%81%A8%E3%81%AF"><i class="fa fa-check"></i><b>2.4</b> RStudioとは</a></li>
+<li class="chapter" data-level="2.5" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#rstudio%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB"><i class="fa fa-check"></i><b>2.5</b> RStudioのインストール</a></li>
+<li class="chapter" data-level="2.6" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#rstudio%E3%81%AE%E6%A9%9F%E8%83%BD"><i class="fa fa-check"></i><b>2.6</b> RStudioの機能</a></li>
+<li class="chapter" data-level="2.7" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E6%A9%9F%E8%83%BD"><i class="fa fa-check"></i><b>2.7</b> プロジェクト機能</a></li>
+<li class="chapter" data-level="2.8" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#rstudio%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA"><i class="fa fa-check"></i><b>2.8</b> RStudioのカスタマイズ</a></li>
+<li class="chapter" data-level="2.9" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#r-markdown%E5%85%A5%E9%96%80"><i class="fa fa-check"></i><b>2.9</b> R Markdown入門</a></li>
+<li class="chapter" data-level="2.10" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AFmarkdown%E8%A8%98%E6%B3%95"><i class="fa fa-check"></i><b>2.10</b> ドキュメントチャンク：Markdown記法</a></li>
+<li class="chapter" data-level="2.11" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#lets-%E5%AE%9F%E8%B7%B5"><i class="fa fa-check"></i><b>2.11</b> Let’s 実践</a></li>
+<li class="chapter" data-level="2.12" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#%E7%AD%94%E3%81%88%E5%90%88%E3%82%8F%E3%81%9B"><i class="fa fa-check"></i><b>2.12</b> 答え合わせ</a></li>
+<li class="chapter" data-level="2.13" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#%E3%82%B3%E3%83%BC%E3%83%89%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF%E3%81%AE%E6%8C%BF%E5%85%A5"><i class="fa fa-check"></i><b>2.13</b> コードチャンクの挿入</a></li>
+<li class="chapter" data-level="2.14" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#lets-%E5%AE%9F%E8%B7%B5-1"><i class="fa fa-check"></i><b>2.14</b> Let’s 実践</a></li>
+<li class="chapter" data-level="2.15" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#%E7%AD%94%E3%81%88%E5%90%88%E3%82%8F%E3%81%9B-1"><i class="fa fa-check"></i><b>2.15</b> 答え合わせ</a></li>
+<li class="chapter" data-level="2.16" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C"><i class="fa fa-check"></i><b>2.16</b> 次週までの課題</a></li>
+<li class="chapter" data-level="2.17" data-path="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html"><a href="week-1-オリエンテーションrstudioのインストールと操作r-markdown.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><i class="fa fa-check"></i><b>2.17</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html"><i class="fa fa-check"></i><b>3</b> Week 2：要約統計量</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#事前の確認"><i class="fa fa-check"></i><b>3.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="3.2" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#今日の目標"><i class="fa fa-check"></i><b>3.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="3.3" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#今日の格言"><i class="fa fa-check"></i><b>3.3</b> 今日の格言</a></li>
-<li class="chapter" data-level="3.4" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#記述統計学と推測統計学"><i class="fa fa-check"></i><b>3.4</b> 記述統計学と推測統計学</a></li>
-<li class="chapter" data-level="3.5" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#データの尺度"><i class="fa fa-check"></i><b>3.5</b> データの尺度</a></li>
-<li class="chapter" data-level="3.6" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#とみなす"><i class="fa fa-check"></i><b>3.6</b> 「～とみなす」</a></li>
-<li class="chapter" data-level="3.7" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#要約統計量"><i class="fa fa-check"></i><b>3.7</b> 要約統計量</a></li>
-<li class="chapter" data-level="3.8" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#データの可視化"><i class="fa fa-check"></i><b>3.8</b> データの可視化</a></li>
-<li class="chapter" data-level="3.9" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#ハンズオンセッション"><i class="fa fa-check"></i><b>3.9</b> ハンズオンセッション</a></li>
-<li class="chapter" data-level="3.10" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#まとめ"><i class="fa fa-check"></i><b>3.10</b> まとめ</a></li>
-<li class="chapter" data-level="3.11" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#次週までの課題-1"><i class="fa fa-check"></i><b>3.11</b> 次週までの課題</a></li>
-<li class="chapter" data-level="3.12" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#参考文献-1"><i class="fa fa-check"></i><b>3.12</b> 参考文献</a></li>
+<li class="chapter" data-level="3.1" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D"><i class="fa fa-check"></i><b>3.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="3.2" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99"><i class="fa fa-check"></i><b>3.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="3.3" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E6%A0%BC%E8%A8%80"><i class="fa fa-check"></i><b>3.3</b> 今日の格言</a></li>
+<li class="chapter" data-level="3.4" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E8%A8%98%E8%BF%B0%E7%B5%B1%E8%A8%88%E5%AD%A6%E3%81%A8%E6%8E%A8%E6%B8%AC%E7%B5%B1%E8%A8%88%E5%AD%A6"><i class="fa fa-check"></i><b>3.4</b> 記述統計学と推測統計学</a></li>
+<li class="chapter" data-level="3.5" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%B0%BA%E5%BA%A6"><i class="fa fa-check"></i><b>3.5</b> データの尺度</a></li>
+<li class="chapter" data-level="3.6" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E3%81%A8%E3%81%BF%E3%81%AA%E3%81%99"><i class="fa fa-check"></i><b>3.6</b> 「～とみなす」</a></li>
+<li class="chapter" data-level="3.7" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E8%A6%81%E7%B4%84%E7%B5%B1%E8%A8%88%E9%87%8F"><i class="fa fa-check"></i><b>3.7</b> 要約統計量</a></li>
+<li class="chapter" data-level="3.8" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96"><i class="fa fa-check"></i><b>3.8</b> データの可視化</a></li>
+<li class="chapter" data-level="3.9" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3"><i class="fa fa-check"></i><b>3.9</b> ハンズオンセッション</a></li>
+<li class="chapter" data-level="3.10" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E3%81%BE%E3%81%A8%E3%82%81"><i class="fa fa-check"></i><b>3.10</b> まとめ</a></li>
+<li class="chapter" data-level="3.11" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-1"><i class="fa fa-check"></i><b>3.11</b> 次週までの課題</a></li>
+<li class="chapter" data-level="3.12" data-path="week-2要約統計量.html"><a href="week-2要約統計量.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-1"><i class="fa fa-check"></i><b>3.12</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html"><i class="fa fa-check"></i><b>4</b> Week 3：推測統計学</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#事前の確認-1"><i class="fa fa-check"></i><b>4.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="4.2" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#今日の目標-1"><i class="fa fa-check"></i><b>4.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="4.3" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#母集団と標本"><i class="fa fa-check"></i><b>4.3</b> 母集団と標本</a></li>
-<li class="chapter" data-level="4.4" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#確率と確率変数"><i class="fa fa-check"></i><b>4.4</b> 確率と確率変数</a></li>
-<li class="chapter" data-level="4.5" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#推測統計学の考え方"><i class="fa fa-check"></i><b>4.5</b> 推測統計学の考え方</a></li>
-<li class="chapter" data-level="4.6" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#区間推定の考え方"><i class="fa fa-check"></i><b>4.6</b> 区間推定の考え方</a></li>
-<li class="chapter" data-level="4.7" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#rの関数で95信頼区間を求める"><i class="fa fa-check"></i><b>4.7</b> Rの関数で95%信頼区間を求める</a></li>
-<li class="chapter" data-level="4.8" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#ハンズオンセッション-1"><i class="fa fa-check"></i><b>4.8</b> ハンズオンセッション</a></li>
-<li class="chapter" data-level="4.9" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#次週までの課題-2"><i class="fa fa-check"></i><b>4.9</b> 次週までの課題</a></li>
-<li class="chapter" data-level="4.10" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#参考文献-2"><i class="fa fa-check"></i><b>4.10</b> 参考文献</a></li>
+<li class="chapter" data-level="4.1" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-1"><i class="fa fa-check"></i><b>4.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="4.2" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-1"><i class="fa fa-check"></i><b>4.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="4.3" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#%E6%AF%8D%E9%9B%86%E5%9B%A3%E3%81%A8%E6%A8%99%E6%9C%AC"><i class="fa fa-check"></i><b>4.3</b> 母集団と標本</a></li>
+<li class="chapter" data-level="4.4" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#%E7%A2%BA%E7%8E%87%E3%81%A8%E7%A2%BA%E7%8E%87%E5%A4%89%E6%95%B0"><i class="fa fa-check"></i><b>4.4</b> 確率と確率変数</a></li>
+<li class="chapter" data-level="4.5" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#%E6%8E%A8%E6%B8%AC%E7%B5%B1%E8%A8%88%E5%AD%A6%E3%81%AE%E8%80%83%E3%81%88%E6%96%B9"><i class="fa fa-check"></i><b>4.5</b> 推測統計学の考え方</a></li>
+<li class="chapter" data-level="4.6" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#%E5%8C%BA%E9%96%93%E6%8E%A8%E5%AE%9A%E3%81%AE%E8%80%83%E3%81%88%E6%96%B9"><i class="fa fa-check"></i><b>4.6</b> 区間推定の考え方</a></li>
+<li class="chapter" data-level="4.7" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#r%E3%81%AE%E9%96%A2%E6%95%B0%E3%81%A795%E4%BF%A1%E9%A0%BC%E5%8C%BA%E9%96%93%E3%82%92%E6%B1%82%E3%82%81%E3%82%8B"><i class="fa fa-check"></i><b>4.7</b> Rの関数で95%信頼区間を求める</a></li>
+<li class="chapter" data-level="4.8" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-1"><i class="fa fa-check"></i><b>4.8</b> ハンズオンセッション</a></li>
+<li class="chapter" data-level="4.9" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-2"><i class="fa fa-check"></i><b>4.9</b> 次週までの課題</a></li>
+<li class="chapter" data-level="4.10" data-path="week-3推測統計学.html"><a href="week-3推測統計学.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-2"><i class="fa fa-check"></i><b>4.10</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html"><i class="fa fa-check"></i><b>5</b> Week 4: 統計的検定</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#事前の確認-2"><i class="fa fa-check"></i><b>5.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="5.2" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#今日の目標-2"><i class="fa fa-check"></i><b>5.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="5.3" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#統計的検定statistical-test"><i class="fa fa-check"></i><b>5.3</b> 統計的検定（statistical test）</a></li>
-<li class="chapter" data-level="5.4" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#統計的検定の手順"><i class="fa fa-check"></i><b>5.4</b> 統計的検定の手順</a></li>
-<li class="chapter" data-level="5.5" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#統計的検定で必要な知識"><i class="fa fa-check"></i><b>5.5</b> 統計的検定で必要な知識</a></li>
-<li class="chapter" data-level="5.6" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#ハンズオンセッション-2"><i class="fa fa-check"></i><b>5.6</b> ハンズオンセッション</a></li>
-<li class="chapter" data-level="5.7" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#次週までの課題-3"><i class="fa fa-check"></i><b>5.7</b> 次週までの課題</a></li>
-<li class="chapter" data-level="5.8" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#参考文献-3"><i class="fa fa-check"></i><b>5.8</b> 参考文献</a></li>
+<li class="chapter" data-level="5.1" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-2"><i class="fa fa-check"></i><b>5.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="5.2" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-2"><i class="fa fa-check"></i><b>5.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="5.3" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#%E7%B5%B1%E8%A8%88%E7%9A%84%E6%A4%9C%E5%AE%9Astatistical-test"><i class="fa fa-check"></i><b>5.3</b> 統計的検定（statistical test）</a></li>
+<li class="chapter" data-level="5.4" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#%E7%B5%B1%E8%A8%88%E7%9A%84%E6%A4%9C%E5%AE%9A%E3%81%AE%E6%89%8B%E9%A0%86"><i class="fa fa-check"></i><b>5.4</b> 統計的検定の手順</a></li>
+<li class="chapter" data-level="5.5" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#%E7%B5%B1%E8%A8%88%E7%9A%84%E6%A4%9C%E5%AE%9A%E3%81%A7%E5%BF%85%E8%A6%81%E3%81%AA%E7%9F%A5%E8%AD%98"><i class="fa fa-check"></i><b>5.5</b> 統計的検定で必要な知識</a></li>
+<li class="chapter" data-level="5.6" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-2"><i class="fa fa-check"></i><b>5.6</b> ハンズオンセッション</a></li>
+<li class="chapter" data-level="5.7" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-3"><i class="fa fa-check"></i><b>5.7</b> 次週までの課題</a></li>
+<li class="chapter" data-level="5.8" data-path="week-4-統計的検定.html"><a href="week-4-統計的検定.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-3"><i class="fa fa-check"></i><b>5.8</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="week5-相関分析.html"><a href="week5-相関分析.html"><i class="fa fa-check"></i><b>6</b> Week5: 相関分析</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="week5-相関分析.html"><a href="week5-相関分析.html#事前の確認-3"><i class="fa fa-check"></i><b>6.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="6.2" data-path="week5-相関分析.html"><a href="week5-相関分析.html#今日の目標-3"><i class="fa fa-check"></i><b>6.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="6.3" data-path="week5-相関分析.html"><a href="week5-相関分析.html#相関分析correlation-analysisとは"><i class="fa fa-check"></i><b>6.3</b> 相関分析（Correlation analysis）とは</a></li>
-<li class="chapter" data-level="6.4" data-path="week5-相関分析.html"><a href="week5-相関分析.html#ハンズオンセッション-3"><i class="fa fa-check"></i><b>6.4</b> ハンズオンセッション</a></li>
-<li class="chapter" data-level="6.5" data-path="week5-相関分析.html"><a href="week5-相関分析.html#次週までの課題-4"><i class="fa fa-check"></i><b>6.5</b> 次週までの課題</a></li>
-<li class="chapter" data-level="6.6" data-path="week5-相関分析.html"><a href="week5-相関分析.html#参考文献-4"><i class="fa fa-check"></i><b>6.6</b> 参考文献</a></li>
+<li class="chapter" data-level="6.1" data-path="week5-相関分析.html"><a href="week5-相関分析.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-3"><i class="fa fa-check"></i><b>6.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="6.2" data-path="week5-相関分析.html"><a href="week5-相関分析.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-3"><i class="fa fa-check"></i><b>6.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="6.3" data-path="week5-相関分析.html"><a href="week5-相関分析.html#%E7%9B%B8%E9%96%A2%E5%88%86%E6%9E%90correlation-analysis%E3%81%A8%E3%81%AF"><i class="fa fa-check"></i><b>6.3</b> 相関分析（Correlation analysis）とは</a></li>
+<li class="chapter" data-level="6.4" data-path="week5-相関分析.html"><a href="week5-相関分析.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-3"><i class="fa fa-check"></i><b>6.4</b> ハンズオンセッション</a></li>
+<li class="chapter" data-level="6.5" data-path="week5-相関分析.html"><a href="week5-相関分析.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-4"><i class="fa fa-check"></i><b>6.5</b> 次週までの課題</a></li>
+<li class="chapter" data-level="6.6" data-path="week5-相関分析.html"><a href="week5-相関分析.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-4"><i class="fa fa-check"></i><b>6.6</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html"><i class="fa fa-check"></i><b>7</b> Week6: 単回帰分析（連続型の説明変数）</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#事前の確認-4"><i class="fa fa-check"></i><b>7.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="7.2" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#今日の目標-4"><i class="fa fa-check"></i><b>7.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="7.3" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#回帰分析regression-analysisとは"><i class="fa fa-check"></i><b>7.3</b> 回帰分析（regression analysis）とは</a></li>
-<li class="chapter" data-level="7.4" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#ハンズオンセッション-4"><i class="fa fa-check"></i><b>7.4</b> ハンズオンセッション</a></li>
-<li class="chapter" data-level="7.5" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#次週までの課題-5"><i class="fa fa-check"></i><b>7.5</b> 次週までの課題</a></li>
-<li class="chapter" data-level="7.6" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#参考文献-5"><i class="fa fa-check"></i><b>7.6</b> 参考文献</a></li>
+<li class="chapter" data-level="7.1" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-4"><i class="fa fa-check"></i><b>7.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="7.2" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-4"><i class="fa fa-check"></i><b>7.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="7.3" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90regression-analysis%E3%81%A8%E3%81%AF"><i class="fa fa-check"></i><b>7.3</b> 回帰分析（regression analysis）とは</a></li>
+<li class="chapter" data-level="7.4" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-4"><i class="fa fa-check"></i><b>7.4</b> ハンズオンセッション</a></li>
+<li class="chapter" data-level="7.5" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-5"><i class="fa fa-check"></i><b>7.5</b> 次週までの課題</a></li>
+<li class="chapter" data-level="7.6" data-path="week6-単回帰分析連続型の説明変数.html"><a href="week6-単回帰分析連続型の説明変数.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-5"><i class="fa fa-check"></i><b>7.6</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html"><i class="fa fa-check"></i><b>8</b> Week7: 重回帰分析</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#事前の確認-5"><i class="fa fa-check"></i><b>8.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="8.2" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#今日の目標-5"><i class="fa fa-check"></i><b>8.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="8.3" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#重回帰分析とは"><i class="fa fa-check"></i><b>8.3</b> 重回帰分析とは</a></li>
-<li class="chapter" data-level="8.4" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#重回帰分析を行う上での注意点"><i class="fa fa-check"></i><b>8.4</b> 重回帰分析を行う上での注意点</a></li>
-<li class="chapter" data-level="8.5" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#投入方"><i class="fa fa-check"></i><b>8.5</b> 投入方</a></li>
-<li class="chapter" data-level="8.6" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#ハンズオンセッション-5"><i class="fa fa-check"></i><b>8.6</b> ハンズオンセッション</a></li>
-<li class="chapter" data-level="8.7" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#次週までの課題-6"><i class="fa fa-check"></i><b>8.7</b> 次週までの課題</a></li>
-<li class="chapter" data-level="8.8" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#参考文献-6"><i class="fa fa-check"></i><b>8.8</b> 参考文献</a></li>
+<li class="chapter" data-level="8.1" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-5"><i class="fa fa-check"></i><b>8.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="8.2" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-5"><i class="fa fa-check"></i><b>8.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="8.3" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E3%81%A8%E3%81%AF"><i class="fa fa-check"></i><b>8.3</b> 重回帰分析とは</a></li>
+<li class="chapter" data-level="8.4" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E3%82%92%E8%A1%8C%E3%81%86%E4%B8%8A%E3%81%A7%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9"><i class="fa fa-check"></i><b>8.4</b> 重回帰分析を行う上での注意点</a></li>
+<li class="chapter" data-level="8.5" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#%E6%8A%95%E5%85%A5%E6%96%B9"><i class="fa fa-check"></i><b>8.5</b> 投入方</a></li>
+<li class="chapter" data-level="8.6" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-5"><i class="fa fa-check"></i><b>8.6</b> ハンズオンセッション</a></li>
+<li class="chapter" data-level="8.7" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-6"><i class="fa fa-check"></i><b>8.7</b> 次週までの課題</a></li>
+<li class="chapter" data-level="8.8" data-path="week7-重回帰分析.html"><a href="week7-重回帰分析.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-6"><i class="fa fa-check"></i><b>8.8</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html"><i class="fa fa-check"></i><b>9</b> Week8: 重回帰分析：質的変数のコーディング</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#事前の確認-6"><i class="fa fa-check"></i><b>9.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="9.2" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#今日の目標-6"><i class="fa fa-check"></i><b>9.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="9.3" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#分散分析"><i class="fa fa-check"></i><b>9.3</b> 分散分析</a></li>
-<li class="chapter" data-level="9.4" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#分散分析と回帰分析の関係"><i class="fa fa-check"></i><b>9.4</b> 分散分析と回帰分析の関係</a></li>
-<li class="chapter" data-level="9.5" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#分散分析は今回扱いません"><i class="fa fa-check"></i><b>9.5</b> 分散分析は今回扱いません</a></li>
-<li class="chapter" data-level="9.6" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#重回帰分析での質的変数の扱い方"><i class="fa fa-check"></i><b>9.6</b> 重回帰分析での質的変数の扱い方</a></li>
-<li class="chapter" data-level="9.7" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#ハンズオンセッション-6"><i class="fa fa-check"></i><b>9.7</b> ハンズオン・セッション</a></li>
-<li class="chapter" data-level="9.8" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#検定の繰り返し問題アゲイン"><i class="fa fa-check"></i><b>9.8</b> 検定の繰り返し問題アゲイン</a></li>
-<li class="chapter" data-level="9.9" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#解決策"><i class="fa fa-check"></i><b>9.9</b> 解決策</a></li>
-<li class="chapter" data-level="9.10" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#次週までの課題-7"><i class="fa fa-check"></i><b>9.10</b> 次週までの課題</a></li>
-<li class="chapter" data-level="9.11" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#参考文献-7"><i class="fa fa-check"></i><b>9.11</b> 参考文献</a></li>
+<li class="chapter" data-level="9.1" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-6"><i class="fa fa-check"></i><b>9.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="9.2" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-6"><i class="fa fa-check"></i><b>9.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="9.3" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#%E5%88%86%E6%95%A3%E5%88%86%E6%9E%90"><i class="fa fa-check"></i><b>9.3</b> 分散分析</a></li>
+<li class="chapter" data-level="9.4" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#%E5%88%86%E6%95%A3%E5%88%86%E6%9E%90%E3%81%A8%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E3%81%AE%E9%96%A2%E4%BF%82"><i class="fa fa-check"></i><b>9.4</b> 分散分析と回帰分析の関係</a></li>
+<li class="chapter" data-level="9.5" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#%E5%88%86%E6%95%A3%E5%88%86%E6%9E%90%E3%81%AF%E4%BB%8A%E5%9B%9E%E6%89%B1%E3%81%84%E3%81%BE%E3%81%9B%E3%82%93"><i class="fa fa-check"></i><b>9.5</b> 分散分析は今回扱いません</a></li>
+<li class="chapter" data-level="9.6" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E3%81%A7%E3%81%AE%E8%B3%AA%E7%9A%84%E5%A4%89%E6%95%B0%E3%81%AE%E6%89%B1%E3%81%84%E6%96%B9"><i class="fa fa-check"></i><b>9.6</b> 重回帰分析での質的変数の扱い方</a></li>
+<li class="chapter" data-level="9.7" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-6"><i class="fa fa-check"></i><b>9.7</b> ハンズオン・セッション</a></li>
+<li class="chapter" data-level="9.8" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#%E6%A4%9C%E5%AE%9A%E3%81%AE%E7%B9%B0%E3%82%8A%E8%BF%94%E3%81%97%E5%95%8F%E9%A1%8C%E3%82%A2%E3%82%B2%E3%82%A4%E3%83%B3"><i class="fa fa-check"></i><b>9.8</b> 検定の繰り返し問題アゲイン</a></li>
+<li class="chapter" data-level="9.9" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#%E8%A7%A3%E6%B1%BA%E7%AD%96"><i class="fa fa-check"></i><b>9.9</b> 解決策</a></li>
+<li class="chapter" data-level="9.10" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-7"><i class="fa fa-check"></i><b>9.10</b> 次週までの課題</a></li>
+<li class="chapter" data-level="9.11" data-path="week8-重回帰分析質的変数のコーディング.html"><a href="week8-重回帰分析質的変数のコーディング.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-7"><i class="fa fa-check"></i><b>9.11</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html"><i class="fa fa-check"></i><b>10</b> Week9: 重回帰分析 (3)：交互作用の解釈</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#事前の確認-7"><i class="fa fa-check"></i><b>10.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="10.2" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#今日の目標-7"><i class="fa fa-check"></i><b>10.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="10.3" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#交互作用"><i class="fa fa-check"></i><b>10.3</b> 交互作用</a></li>
-<li class="chapter" data-level="10.4" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#ハンズオンセッション-7"><i class="fa fa-check"></i><b>10.4</b> ハンズオンセッション</a></li>
-<li class="chapter" data-level="10.5" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#次週までの課題-8"><i class="fa fa-check"></i><b>10.5</b> 次週までの課題</a></li>
-<li class="chapter" data-level="10.6" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#参考文献-8"><i class="fa fa-check"></i><b>10.6</b> 参考文献</a></li>
+<li class="chapter" data-level="10.1" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-7"><i class="fa fa-check"></i><b>10.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="10.2" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-7"><i class="fa fa-check"></i><b>10.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="10.3" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#%E4%BA%A4%E4%BA%92%E4%BD%9C%E7%94%A8"><i class="fa fa-check"></i><b>10.3</b> 交互作用</a></li>
+<li class="chapter" data-level="10.4" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-7"><i class="fa fa-check"></i><b>10.4</b> ハンズオンセッション</a></li>
+<li class="chapter" data-level="10.5" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-8"><i class="fa fa-check"></i><b>10.5</b> 次週までの課題</a></li>
+<li class="chapter" data-level="10.6" data-path="week9-重回帰分析-3交互作用の解釈.html"><a href="week9-重回帰分析-3交互作用の解釈.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-8"><i class="fa fa-check"></i><b>10.6</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="11" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html"><i class="fa fa-check"></i><b>11</b> Week10: 一般化線形モデル：ロジスティック回帰分析</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#事前の確認-8"><i class="fa fa-check"></i><b>11.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="11.2" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#今日の目標-8"><i class="fa fa-check"></i><b>11.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="11.3" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#一般化線形モデル"><i class="fa fa-check"></i><b>11.3</b> 一般化線形モデル</a></li>
-<li class="chapter" data-level="11.4" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#二項分布"><i class="fa fa-check"></i><b>11.4</b> 二項分布</a></li>
-<li class="chapter" data-level="11.5" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#ロジット関数"><i class="fa fa-check"></i><b>11.5</b> ロジット関数</a></li>
-<li class="chapter" data-level="11.6" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#ロジスティック関数"><i class="fa fa-check"></i><b>11.6</b> ロジスティック関数</a></li>
-<li class="chapter" data-level="11.7" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#ハンズオンセッション-8"><i class="fa fa-check"></i><b>11.7</b> ハンズオンセッション</a></li>
-<li class="chapter" data-level="11.8" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#質的変数の場合"><i class="fa fa-check"></i><b>11.8</b> 質的変数の場合</a></li>
-<li class="chapter" data-level="11.9" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#分類にも使えます"><i class="fa fa-check"></i><b>11.9</b> 分類にも使えます</a></li>
-<li class="chapter" data-level="11.10" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#次週までの課題-9"><i class="fa fa-check"></i><b>11.10</b> 次週までの課題</a></li>
-<li class="chapter" data-level="11.11" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#参考文献-9"><i class="fa fa-check"></i><b>11.11</b> 参考文献</a></li>
+<li class="chapter" data-level="11.1" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-8"><i class="fa fa-check"></i><b>11.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="11.2" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-8"><i class="fa fa-check"></i><b>11.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="11.3" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#%E4%B8%80%E8%88%AC%E5%8C%96%E7%B7%9A%E5%BD%A2%E3%83%A2%E3%83%87%E3%83%AB"><i class="fa fa-check"></i><b>11.3</b> 一般化線形モデル</a></li>
+<li class="chapter" data-level="11.4" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#%E4%BA%8C%E9%A0%85%E5%88%86%E5%B8%83"><i class="fa fa-check"></i><b>11.4</b> 二項分布</a></li>
+<li class="chapter" data-level="11.5" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#%E3%83%AD%E3%82%B8%E3%83%83%E3%83%88%E9%96%A2%E6%95%B0"><i class="fa fa-check"></i><b>11.5</b> ロジット関数</a></li>
+<li class="chapter" data-level="11.6" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#%E3%83%AD%E3%82%B8%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF%E9%96%A2%E6%95%B0"><i class="fa fa-check"></i><b>11.6</b> ロジスティック関数</a></li>
+<li class="chapter" data-level="11.7" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-8"><i class="fa fa-check"></i><b>11.7</b> ハンズオンセッション</a></li>
+<li class="chapter" data-level="11.8" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#%E8%B3%AA%E7%9A%84%E5%A4%89%E6%95%B0%E3%81%AE%E5%A0%B4%E5%90%88"><i class="fa fa-check"></i><b>11.8</b> 質的変数の場合</a></li>
+<li class="chapter" data-level="11.9" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#%E5%88%86%E9%A1%9E%E3%81%AB%E3%82%82%E4%BD%BF%E3%81%88%E3%81%BE%E3%81%99"><i class="fa fa-check"></i><b>11.9</b> 分類にも使えます</a></li>
+<li class="chapter" data-level="11.10" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-9"><i class="fa fa-check"></i><b>11.10</b> 次週までの課題</a></li>
+<li class="chapter" data-level="11.11" data-path="week10-一般化線形モデルロジスティック回帰分析.html"><a href="week10-一般化線形モデルロジスティック回帰分析.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-9"><i class="fa fa-check"></i><b>11.11</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html"><i class="fa fa-check"></i><b>12</b> Week 11: Tidyverseパッケージによるデータの加工と可視化</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#メモ"><i class="fa fa-check"></i><b>12.1</b> メモ</a></li>
-<li class="chapter" data-level="12.2" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#事前の確認-9"><i class="fa fa-check"></i><b>12.2</b> 事前の確認</a></li>
-<li class="chapter" data-level="12.3" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#今日の目標-9"><i class="fa fa-check"></i><b>12.3</b> 今日の目標</a></li>
-<li class="chapter" data-level="12.4" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#データの加工"><i class="fa fa-check"></i><b>12.4</b> データの加工</a></li>
-<li class="chapter" data-level="12.5" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#ggplot2によるデータの可視化"><i class="fa fa-check"></i><b>12.5</b> <code>ggplot2</code>によるデータの可視化</a></li>
-<li class="chapter" data-level="12.6" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#guiでggplotでの作図"><i class="fa fa-check"></i><b>12.6</b> GUIでggplotでの作図</a></li>
-<li class="chapter" data-level="12.7" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#次週までの課題-10"><i class="fa fa-check"></i><b>12.7</b> 次週までの課題</a></li>
-<li class="chapter" data-level="12.8" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#参考文献-10"><i class="fa fa-check"></i><b>12.8</b> 参考文献</a></li>
+<li class="chapter" data-level="12.1" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#%E3%83%A1%E3%83%A2"><i class="fa fa-check"></i><b>12.1</b> メモ</a></li>
+<li class="chapter" data-level="12.2" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-9"><i class="fa fa-check"></i><b>12.2</b> 事前の確認</a></li>
+<li class="chapter" data-level="12.3" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-9"><i class="fa fa-check"></i><b>12.3</b> 今日の目標</a></li>
+<li class="chapter" data-level="12.4" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%8A%A0%E5%B7%A5"><i class="fa fa-check"></i><b>12.4</b> データの加工</a></li>
+<li class="chapter" data-level="12.5" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#ggplot2%E3%81%AB%E3%82%88%E3%82%8B%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%8F%AF%E8%A6%96%E5%8C%96"><i class="fa fa-check"></i><b>12.5</b> <code>ggplot2</code>によるデータの可視化</a></li>
+<li class="chapter" data-level="12.6" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#gui%E3%81%A7ggplot%E3%81%A7%E3%81%AE%E4%BD%9C%E5%9B%B3"><i class="fa fa-check"></i><b>12.6</b> GUIでggplotでの作図</a></li>
+<li class="chapter" data-level="12.7" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-10"><i class="fa fa-check"></i><b>12.7</b> 次週までの課題</a></li>
+<li class="chapter" data-level="12.8" data-path="week-11-tidyverseパッケージによるデータの加工と可視化.html"><a href="week-11-tidyverseパッケージによるデータの加工と可視化.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-10"><i class="fa fa-check"></i><b>12.8</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html"><i class="fa fa-check"></i><b>13</b> Week12: 階層モデル</a>
 <ul>
-<li class="chapter" data-level="13.1" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#事前の確認-10"><i class="fa fa-check"></i><b>13.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="13.2" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#今日の目標-10"><i class="fa fa-check"></i><b>13.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="13.3" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#一般化線形モデルからの発展"><i class="fa fa-check"></i><b>13.3</b> 一般化線形モデルからの発展</a></li>
-<li class="chapter" data-level="13.4" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#ランダム効果とは"><i class="fa fa-check"></i><b>13.4</b> ランダム効果とは</a></li>
-<li class="chapter" data-level="13.5" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#ランダム切片モデル"><i class="fa fa-check"></i><b>13.5</b> ランダム切片モデル</a></li>
-<li class="chapter" data-level="13.6" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#ランダム係数モデル"><i class="fa fa-check"></i><b>13.6</b> ランダム係数モデル</a></li>
-<li class="chapter" data-level="13.7" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#ランダム切片-係数モデル"><i class="fa fa-check"></i><b>13.7</b> ランダム切片 &amp; 係数モデル</a></li>
-<li class="chapter" data-level="13.8" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#glmmを行うときの留意点"><i class="fa fa-check"></i><b>13.8</b> GLMMを行うときの留意点</a></li>
-<li class="chapter" data-level="13.9" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#ハンズオンセッション-9"><i class="fa fa-check"></i><b>13.9</b> ハンズオンセッション</a></li>
-<li class="chapter" data-level="13.10" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#次週までの課題-11"><i class="fa fa-check"></i><b>13.10</b> 次週までの課題</a></li>
-<li class="chapter" data-level="13.11" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#参考文献-11"><i class="fa fa-check"></i><b>13.11</b> 参考文献</a></li>
+<li class="chapter" data-level="13.1" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-10"><i class="fa fa-check"></i><b>13.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="13.2" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-10"><i class="fa fa-check"></i><b>13.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="13.3" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#%E4%B8%80%E8%88%AC%E5%8C%96%E7%B7%9A%E5%BD%A2%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8B%E3%82%89%E3%81%AE%E7%99%BA%E5%B1%95"><i class="fa fa-check"></i><b>13.3</b> 一般化線形モデルからの発展</a></li>
+<li class="chapter" data-level="13.4" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E5%8A%B9%E6%9E%9C%E3%81%A8%E3%81%AF"><i class="fa fa-check"></i><b>13.4</b> ランダム効果とは</a></li>
+<li class="chapter" data-level="13.5" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E5%88%87%E7%89%87%E3%83%A2%E3%83%87%E3%83%AB"><i class="fa fa-check"></i><b>13.5</b> ランダム切片モデル</a></li>
+<li class="chapter" data-level="13.6" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E4%BF%82%E6%95%B0%E3%83%A2%E3%83%87%E3%83%AB"><i class="fa fa-check"></i><b>13.6</b> ランダム係数モデル</a></li>
+<li class="chapter" data-level="13.7" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E5%88%87%E7%89%87-%E4%BF%82%E6%95%B0%E3%83%A2%E3%83%87%E3%83%AB"><i class="fa fa-check"></i><b>13.7</b> ランダム切片 &amp; 係数モデル</a></li>
+<li class="chapter" data-level="13.8" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#glmm%E3%82%92%E8%A1%8C%E3%81%86%E3%81%A8%E3%81%8D%E3%81%AE%E7%95%99%E6%84%8F%E7%82%B9"><i class="fa fa-check"></i><b>13.8</b> GLMMを行うときの留意点</a></li>
+<li class="chapter" data-level="13.9" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-9"><i class="fa fa-check"></i><b>13.9</b> ハンズオンセッション</a></li>
+<li class="chapter" data-level="13.10" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-11"><i class="fa fa-check"></i><b>13.10</b> 次週までの課題</a></li>
+<li class="chapter" data-level="13.11" data-path="week12-階層モデル.html"><a href="week12-階層モデル.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-11"><i class="fa fa-check"></i><b>13.11</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="14" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html"><i class="fa fa-check"></i><b>14</b> Week 13: 効果量と検定力分析</a>
 <ul>
-<li class="chapter" data-level="14.1" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#事前の確認-11"><i class="fa fa-check"></i><b>14.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="14.2" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#今日の目標-11"><i class="fa fa-check"></i><b>14.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="14.3" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#効果量"><i class="fa fa-check"></i><b>14.3</b> 効果量</a></li>
-<li class="chapter" data-level="14.4" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#検定力分析"><i class="fa fa-check"></i><b>14.4</b> 検定力分析</a></li>
-<li class="chapter" data-level="14.5" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#検定力分析の報告の例"><i class="fa fa-check"></i><b>14.5</b> 検定力分析の報告の例</a></li>
-<li class="chapter" data-level="14.6" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#次週までの課題-12"><i class="fa fa-check"></i><b>14.6</b> 次週までの課題</a></li>
-<li class="chapter" data-level="14.7" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#参考文献-12"><i class="fa fa-check"></i><b>14.7</b> 参考文献</a></li>
+<li class="chapter" data-level="14.1" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-11"><i class="fa fa-check"></i><b>14.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="14.2" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-11"><i class="fa fa-check"></i><b>14.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="14.3" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#%E5%8A%B9%E6%9E%9C%E9%87%8F"><i class="fa fa-check"></i><b>14.3</b> 効果量</a></li>
+<li class="chapter" data-level="14.4" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#%E6%A4%9C%E5%AE%9A%E5%8A%9B%E5%88%86%E6%9E%90"><i class="fa fa-check"></i><b>14.4</b> 検定力分析</a></li>
+<li class="chapter" data-level="14.5" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#%E6%A4%9C%E5%AE%9A%E5%8A%9B%E5%88%86%E6%9E%90%E3%81%AE%E5%A0%B1%E5%91%8A%E3%81%AE%E4%BE%8B"><i class="fa fa-check"></i><b>14.5</b> 検定力分析の報告の例</a></li>
+<li class="chapter" data-level="14.6" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-12"><i class="fa fa-check"></i><b>14.6</b> 次週までの課題</a></li>
+<li class="chapter" data-level="14.7" data-path="week-13-効果量と検定力分析.html"><a href="week-13-効果量と検定力分析.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-12"><i class="fa fa-check"></i><b>14.7</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="15" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html"><i class="fa fa-check"></i><b>15</b> Week 14: ノンパラメトリック検定</a>
 <ul>
-<li class="chapter" data-level="15.1" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#事前の確認-12"><i class="fa fa-check"></i><b>15.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="15.2" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#今日の目標-12"><i class="fa fa-check"></i><b>15.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="15.3" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#ノンパラメトリック検定"><i class="fa fa-check"></i><b>15.3</b> ノンパラメトリック検定</a></li>
-<li class="chapter" data-level="15.4" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#名義尺度データ"><i class="fa fa-check"></i><b>15.4</b> 名義尺度データ</a></li>
-<li class="chapter" data-level="15.5" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#リスク比とオッズ比"><i class="fa fa-check"></i><b>15.5</b> リスク比とオッズ比</a></li>
-<li class="chapter" data-level="15.6" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#対応のあるデータを比較する"><i class="fa fa-check"></i><b>15.6</b> 対応のあるデータを比較する</a></li>
-<li class="chapter" data-level="15.7" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#順序尺度データ"><i class="fa fa-check"></i><b>15.7</b> 順序尺度データ</a></li>
-<li class="chapter" data-level="15.8" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#次週までの課題-13"><i class="fa fa-check"></i><b>15.8</b> 次週までの課題</a></li>
-<li class="chapter" data-level="15.9" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#参考文献-13"><i class="fa fa-check"></i><b>15.9</b> 参考文献</a></li>
+<li class="chapter" data-level="15.1" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-12"><i class="fa fa-check"></i><b>15.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="15.2" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-12"><i class="fa fa-check"></i><b>15.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="15.3" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#%E3%83%8E%E3%83%B3%E3%83%91%E3%83%A9%E3%83%A1%E3%83%88%E3%83%AA%E3%83%83%E3%82%AF%E6%A4%9C%E5%AE%9A"><i class="fa fa-check"></i><b>15.3</b> ノンパラメトリック検定</a></li>
+<li class="chapter" data-level="15.4" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#%E5%90%8D%E7%BE%A9%E5%B0%BA%E5%BA%A6%E3%83%87%E3%83%BC%E3%82%BF"><i class="fa fa-check"></i><b>15.4</b> 名義尺度データ</a></li>
+<li class="chapter" data-level="15.5" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#%E3%83%AA%E3%82%B9%E3%82%AF%E6%AF%94%E3%81%A8%E3%82%AA%E3%83%83%E3%82%BA%E6%AF%94"><i class="fa fa-check"></i><b>15.5</b> リスク比とオッズ比</a></li>
+<li class="chapter" data-level="15.6" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#%E5%AF%BE%E5%BF%9C%E3%81%AE%E3%81%82%E3%82%8B%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%AF%94%E8%BC%83%E3%81%99%E3%82%8B"><i class="fa fa-check"></i><b>15.6</b> 対応のあるデータを比較する</a></li>
+<li class="chapter" data-level="15.7" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#%E9%A0%86%E5%BA%8F%E5%B0%BA%E5%BA%A6%E3%83%87%E3%83%BC%E3%82%BF"><i class="fa fa-check"></i><b>15.7</b> 順序尺度データ</a></li>
+<li class="chapter" data-level="15.8" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-13"><i class="fa fa-check"></i><b>15.8</b> 次週までの課題</a></li>
+<li class="chapter" data-level="15.9" data-path="week-14-ノンパラメトリック検定.html"><a href="week-14-ノンパラメトリック検定.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-13"><i class="fa fa-check"></i><b>15.9</b> 参考文献</a></li>
 </ul></li>
 <li class="chapter" data-level="16" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html"><i class="fa fa-check"></i><b>16</b> Week 15：言語研究とオープンサイエンス</a>
 <ul>
-<li class="chapter" data-level="16.1" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#事前の確認-13"><i class="fa fa-check"></i><b>16.1</b> 事前の確認</a></li>
-<li class="chapter" data-level="16.2" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#今日の目標-13"><i class="fa fa-check"></i><b>16.2</b> 今日の目標</a></li>
-<li class="chapter" data-level="16.3" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#はじめに"><i class="fa fa-check"></i><b>16.3</b> はじめに</a></li>
-<li class="chapter" data-level="16.4" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#r-markdownを使って分析結果をまとめることができる"><i class="fa fa-check"></i><b>16.4</b> 1. R Markdownを使って分析結果をまとめることができる</a></li>
-<li class="chapter" data-level="16.5" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#プロジェクト"><i class="fa fa-check"></i><b>16.5</b> プロジェクト</a></li>
-<li class="chapter" data-level="16.6" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#実際に作ってみましょう"><i class="fa fa-check"></i><b>16.6</b> 実際に作ってみましょう</a></li>
-<li class="chapter" data-level="16.7" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#ドキュメントチャンクmarkdown記法-1"><i class="fa fa-check"></i><b>16.7</b> ドキュメントチャンク：Markdown記法</a></li>
-<li class="chapter" data-level="16.8" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#lets-実践-2"><i class="fa fa-check"></i><b>16.8</b> Let’s 実践</a></li>
-<li class="chapter" data-level="16.9" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#答え合わせ-2"><i class="fa fa-check"></i><b>16.9</b> 答え合わせ</a></li>
-<li class="chapter" data-level="16.10" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#実はwordのように編集できます"><i class="fa fa-check"></i><b>16.10</b> 実は、Wordのように編集できます！</a></li>
-<li class="chapter" data-level="16.11" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#コードチャンクの挿入-1"><i class="fa fa-check"></i><b>16.11</b> コードチャンクの挿入</a></li>
-<li class="chapter" data-level="16.12" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#lets-実践-3"><i class="fa fa-check"></i><b>16.12</b> Let’s 実践</a></li>
-<li class="chapter" data-level="16.13" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#食費の合計"><i class="fa fa-check"></i><b>16.13</b> 食費の合計</a></li>
-<li class="chapter" data-level="16.14" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#答え合わせ-3"><i class="fa fa-check"></i><b>16.14</b> 答え合わせ</a></li>
-<li class="chapter" data-level="16.15" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#r-markdownでまとめた結果を共有することができる"><i class="fa fa-check"></i><b>16.15</b> 2. R Markdownでまとめた結果を共有することができる</a></li>
-<li class="chapter" data-level="16.16" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#html形式だと簡単にウェブサイトにできます"><i class="fa fa-check"></i><b>16.16</b> HTML形式だと、簡単にウェブサイトにできます</a></li>
-<li class="chapter" data-level="16.17" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#様々なパソコンで同じ分析環境を再現することができる"><i class="fa fa-check"></i><b>16.17</b> 3. 様々なパソコンで同じ分析環境を再現することができる</a></li>
-<li class="chapter" data-level="16.18" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#rのバージョン管理"><i class="fa fa-check"></i><b>16.18</b> Rのバージョン管理</a></li>
-<li class="chapter" data-level="16.19" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#再現性をさらに高める工夫"><i class="fa fa-check"></i><b>16.19</b> 再現性をさらに高める工夫</a></li>
-<li class="chapter" data-level="16.20" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#関数の呼び出し方"><i class="fa fa-check"></i><b>16.20</b> 関数の呼び出し方</a></li>
-<li class="chapter" data-level="16.21" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#まとめ-1"><i class="fa fa-check"></i><b>16.21</b> まとめ</a></li>
-<li class="chapter" data-level="16.22" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#次週までの課題-14"><i class="fa fa-check"></i><b>16.22</b> 次週までの課題</a></li>
-<li class="chapter" data-level="16.23" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#期末課題レポートについて"><i class="fa fa-check"></i><b>16.23</b> 期末課題レポートについて</a></li>
-<li class="chapter" data-level="16.24" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#参考文献-資料"><i class="fa fa-check"></i><b>16.24</b> 参考文献 &amp; 資料</a></li>
+<li class="chapter" data-level="16.1" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-13"><i class="fa fa-check"></i><b>16.1</b> 事前の確認</a></li>
+<li class="chapter" data-level="16.2" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-13"><i class="fa fa-check"></i><b>16.2</b> 今日の目標</a></li>
+<li class="chapter" data-level="16.3" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB"><i class="fa fa-check"></i><b>16.3</b> はじめに</a></li>
+<li class="chapter" data-level="16.4" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#r-markdown%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E5%88%86%E6%9E%90%E7%B5%90%E6%9E%9C%E3%82%92%E3%81%BE%E3%81%A8%E3%82%81%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B"><i class="fa fa-check"></i><b>16.4</b> 1. R Markdownを使って分析結果をまとめることができる</a></li>
+<li class="chapter" data-level="16.5" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88"><i class="fa fa-check"></i><b>16.5</b> プロジェクト</a></li>
+<li class="chapter" data-level="16.6" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E5%AE%9F%E9%9A%9B%E3%81%AB%E4%BD%9C%E3%81%A3%E3%81%A6%E3%81%BF%E3%81%BE%E3%81%97%E3%82%87%E3%81%86"><i class="fa fa-check"></i><b>16.6</b> 実際に作ってみましょう</a></li>
+<li class="chapter" data-level="16.7" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E3%83%89%E3%82%AD%E3%83%A5%E3%83%A1%E3%83%B3%E3%83%88%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AFmarkdown%E8%A8%98%E6%B3%95-1"><i class="fa fa-check"></i><b>16.7</b> ドキュメントチャンク：Markdown記法</a></li>
+<li class="chapter" data-level="16.8" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#lets-%E5%AE%9F%E8%B7%B5-2"><i class="fa fa-check"></i><b>16.8</b> Let’s 実践</a></li>
+<li class="chapter" data-level="16.9" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E7%AD%94%E3%81%88%E5%90%88%E3%82%8F%E3%81%9B-2"><i class="fa fa-check"></i><b>16.9</b> 答え合わせ</a></li>
+<li class="chapter" data-level="16.10" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E5%AE%9F%E3%81%AFword%E3%81%AE%E3%82%88%E3%81%86%E3%81%AB%E7%B7%A8%E9%9B%86%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99"><i class="fa fa-check"></i><b>16.10</b> 実は、Wordのように編集できます！</a></li>
+<li class="chapter" data-level="16.11" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E3%82%B3%E3%83%BC%E3%83%89%E3%83%81%E3%83%A3%E3%83%B3%E3%82%AF%E3%81%AE%E6%8C%BF%E5%85%A5-1"><i class="fa fa-check"></i><b>16.11</b> コードチャンクの挿入</a></li>
+<li class="chapter" data-level="16.12" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#lets-%E5%AE%9F%E8%B7%B5-3"><i class="fa fa-check"></i><b>16.12</b> Let’s 実践</a></li>
+<li class="chapter" data-level="16.13" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E9%A3%9F%E8%B2%BB%E3%81%AE%E5%90%88%E8%A8%88"><i class="fa fa-check"></i><b>16.13</b> 食費の合計</a></li>
+<li class="chapter" data-level="16.14" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E7%AD%94%E3%81%88%E5%90%88%E3%82%8F%E3%81%9B-3"><i class="fa fa-check"></i><b>16.14</b> 答え合わせ</a></li>
+<li class="chapter" data-level="16.15" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#r-markdown%E3%81%A7%E3%81%BE%E3%81%A8%E3%82%81%E3%81%9F%E7%B5%90%E6%9E%9C%E3%82%92%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B"><i class="fa fa-check"></i><b>16.15</b> 2. R Markdownでまとめた結果を共有することができる</a></li>
+<li class="chapter" data-level="16.16" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#html%E5%BD%A2%E5%BC%8F%E3%81%A0%E3%81%A8%E7%B0%A1%E5%8D%98%E3%81%AB%E3%82%A6%E3%82%A7%E3%83%96%E3%82%B5%E3%82%A4%E3%83%88%E3%81%AB%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99"><i class="fa fa-check"></i><b>16.16</b> HTML形式だと、簡単にウェブサイトにできます</a></li>
+<li class="chapter" data-level="16.17" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E6%A7%98%E3%80%85%E3%81%AA%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A7%E5%90%8C%E3%81%98%E5%88%86%E6%9E%90%E7%92%B0%E5%A2%83%E3%82%92%E5%86%8D%E7%8F%BE%E3%81%99%E3%82%8B%E3%81%93%E3%81%A8%E3%81%8C%E3%81%A7%E3%81%8D%E3%82%8B"><i class="fa fa-check"></i><b>16.17</b> 3. 様々なパソコンで同じ分析環境を再現することができる</a></li>
+<li class="chapter" data-level="16.18" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#r%E3%81%AE%E3%83%90%E3%83%BC%E3%82%B8%E3%83%A7%E3%83%B3%E7%AE%A1%E7%90%86"><i class="fa fa-check"></i><b>16.18</b> Rのバージョン管理</a></li>
+<li class="chapter" data-level="16.19" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E5%86%8D%E7%8F%BE%E6%80%A7%E3%82%92%E3%81%95%E3%82%89%E3%81%AB%E9%AB%98%E3%82%81%E3%82%8B%E5%B7%A5%E5%A4%AB"><i class="fa fa-check"></i><b>16.19</b> 再現性をさらに高める工夫</a></li>
+<li class="chapter" data-level="16.20" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E9%96%A2%E6%95%B0%E3%81%AE%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97%E6%96%B9"><i class="fa fa-check"></i><b>16.20</b> 関数の呼び出し方</a></li>
+<li class="chapter" data-level="16.21" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E3%81%BE%E3%81%A8%E3%82%81-1"><i class="fa fa-check"></i><b>16.21</b> まとめ</a></li>
+<li class="chapter" data-level="16.22" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-14"><i class="fa fa-check"></i><b>16.22</b> 次週までの課題</a></li>
+<li class="chapter" data-level="16.23" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E6%9C%9F%E6%9C%AB%E8%AA%B2%E9%A1%8C%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6"><i class="fa fa-check"></i><b>16.23</b> 期末課題レポートについて</a></li>
+<li class="chapter" data-level="16.24" data-path="week-15言語研究とオープンサイエンス.html"><a href="week-15言語研究とオープンサイエンス.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-%E8%B3%87%E6%96%99"><i class="fa fa-check"></i><b>16.24</b> 参考文献 &amp; 資料</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -378,9 +377,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="week12-階層モデル" class="section level1 hasAnchor" number="13">
-<h1><span class="header-section-number">Chapter 13</span> Week12: 階層モデル<a href="week12-階層モデル.html#week12-階層モデル" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Chapter 13</span> Week12: 階層モデル<a href="week12-階層モデル.html#week12-%E9%9A%8E%E5%B1%A4%E3%83%A2%E3%83%87%E3%83%AB" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="事前の確認-10" class="section level2 hasAnchor" number="13.1">
-<h2><span class="header-section-number">13.1</span> 事前の確認<a href="week12-階層モデル.html#事前の確認-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">13.1</span> 事前の確認<a href="week12-階層モデル.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>この講義のRプロジェクトを開いていますか？</p></li>
 <li><p>英数字で名前を付けた本日の講義のファイルを作成しましたか？</p>
@@ -390,14 +389,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="今日の目標-10" class="section level2 hasAnchor" number="13.2">
-<h2><span class="header-section-number">13.2</span> 今日の目標<a href="week12-階層モデル.html#今日の目標-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">13.2</span> 今日の目標<a href="week12-階層モデル.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li>階層モデルについて理論的背景やその仮定について理解する</li>
 <li>階層モデルをRで実装し、分析の結果を報告することができる</li>
 </ol>
 </div>
 <div id="一般化線形モデルからの発展" class="section level2 hasAnchor" number="13.3">
-<h2><span class="header-section-number">13.3</span> 一般化線形モデルからの発展<a href="week12-階層モデル.html#一般化線形モデルからの発展" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">13.3</span> 一般化線形モデルからの発展<a href="week12-階層モデル.html#%E4%B8%80%E8%88%AC%E5%8C%96%E7%B7%9A%E5%BD%A2%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8B%E3%82%89%E3%81%AE%E7%99%BA%E5%B1%95" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>一般線形モデル：従属変数が正規分布に従う（e.g., <em>t</em> 検定、分散分析、回帰分析）</p>
 <ul>
@@ -425,7 +424,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </p>
 </div>
 <div id="ランダム効果とは" class="section level2 hasAnchor" number="13.4">
-<h2><span class="header-section-number">13.4</span> ランダム効果とは<a href="week12-階層モデル.html#ランダム効果とは" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">13.4</span> ランダム効果とは<a href="week12-階層モデル.html#%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E5%8A%B9%E6%9E%9C%E3%81%A8%E3%81%AF" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>データにばらつきをもたらす、人間が測定できない・測定しなかった（または原因不明の）個体差の効果</li>
 </ul>
@@ -462,40 +461,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- （図を挿入） -->
 </div>
 <div id="ランダム切片モデル" class="section level2 hasAnchor" number="13.5">
-<h2><span class="header-section-number">13.5</span> ランダム切片モデル<a href="week12-階層モデル.html#ランダム切片モデル" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">13.5</span> ランダム切片モデル<a href="week12-階層モデル.html#%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E5%88%87%E7%89%87%E3%83%A2%E3%83%87%E3%83%AB" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>切片の値が個体差（e.g., 参加者）によって異なることを仮定したモデル</p>
 <ul>
 <li>例. 指導法Aと指導法Bの効果を比較検証したい（事後テストの得点を目的変数として分析）。この場合、テスト得点は指導法の効果による影響だけでなく、生徒の個人差によって異なると仮定</li>
 </ul></li>
 </ul>
-<p><img src="_main_files/figure-html/unnamed-chunk-357-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-357-1.png" alt="" width="672" /></p>
 </div>
 <div id="ランダム係数モデル" class="section level2 hasAnchor" number="13.6">
-<h2><span class="header-section-number">13.6</span> ランダム係数モデル<a href="week12-階層モデル.html#ランダム係数モデル" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">13.6</span> ランダム係数モデル<a href="week12-階層モデル.html#%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E4%BF%82%E6%95%B0%E3%83%A2%E3%83%87%E3%83%AB" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>モデル内の独立変数の係数が個体差によって異なることを仮定したモデル</p>
 <ul>
 <li>例. 指導法Aと指導法Bの効果を比較検証したい（事後テストの得点を目的変数として分析）。この場合、指導法の効果は生徒の個人差によって異なる仮定</li>
 </ul></li>
 </ul>
-<p><img src="_main_files/figure-html/unnamed-chunk-358-1.png" width="672" /></p>
+<p><img src="_main_files/figure-html/unnamed-chunk-358-1.png" alt="" width="672" /></p>
 </div>
 <div id="ランダム切片-係数モデル" class="section level2 hasAnchor" number="13.7">
-<h2><span class="header-section-number">13.7</span> ランダム切片 &amp; 係数モデル<a href="week12-階層モデル.html#ランダム切片-係数モデル" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><img src="_main_files/figure-html/unnamed-chunk-359-1.png" width="672" /></p>
+<h2><span class="header-section-number">13.7</span> ランダム切片 &amp; 係数モデル<a href="week12-階層モデル.html#%E3%83%A9%E3%83%B3%E3%83%80%E3%83%A0%E5%88%87%E7%89%87-%E4%BF%82%E6%95%B0%E3%83%A2%E3%83%87%E3%83%AB" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="_main_files/figure-html/unnamed-chunk-359-1.png" alt="" width="672" /></p>
 </div>
 <div id="glmmを行うときの留意点" class="section level2 hasAnchor" number="13.8">
-<h2><span class="header-section-number">13.8</span> GLMMを行うときの留意点<a href="week12-階層モデル.html#glmmを行うときの留意点" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">13.8</span> GLMMを行うときの留意点<a href="week12-階層モデル.html#glmm%E3%82%92%E8%A1%8C%E3%81%86%E3%81%A8%E3%81%8D%E3%81%AE%E7%95%99%E6%84%8F%E7%82%B9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="推定方法" class="section level3 hasAnchor" number="13.8.1">
-<h3><span class="header-section-number">13.8.1</span> 推定方法<a href="week12-階層モデル.html#推定方法" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">13.8.1</span> 推定方法<a href="week12-階層モデル.html#%E6%8E%A8%E5%AE%9A%E6%96%B9%E6%B3%95" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>頻度統計の場合のマルチモデルの推定には最尤法が使われる（Maximum Likelihood）。目安として50人程度のサンプルサイズが最低限必要（変量効果の分散成分が過小推定される）。しかし、サンプルサイズがどうしても少なくなる場合もある。そこで、制限つき最尤法が開発され、ソフトウェアではこちらが採用されている場合が多い。サンプルサイズが十分に多い場合、最尤法の方が制限つき最尤法よりも推定精度がいい（標準誤差が小さい）。また制限つき最尤法では固定効果について尤度を計算しないため、情報量基準を用いたモデル比較を行うことができない。</p></li>
 <li><p>最尤法、制限つき最尤法も従属変数の正規性と分散均一性の仮定がある。サンプルサイズが十分に大きい場合、切片や回帰係数の推定値は分布が歪んでいることによるバイアスを受けにくい。しかし、標準誤差は正しく推定されなくなるため、標準誤差を使って算出される有意性検定や信頼区間の推定にバイアスが発生することに注意が必要。</p></li>
 </ul>
 </div>
 <div id="データセットの構造に注意" class="section level3 hasAnchor" number="13.8.2">
-<h3><span class="header-section-number">13.8.2</span> データセットの構造に注意<a href="week12-階層モデル.html#データセットの構造に注意" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">13.8.2</span> データセットの構造に注意<a href="week12-階層モデル.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%82%BB%E3%83%83%E3%83%88%E3%81%AE%E6%A7%8B%E9%80%A0%E3%81%AB%E6%B3%A8%E6%84%8F" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><p>(「<strong>Week 11: Tidyverseパッケージによるデータの加工と可視化</strong>」を参照してください)</p></li>
 <li><p>これまでに使用してきたデータセットが必ずしもGLMMの分析に合うものではない</p></li>
@@ -513,28 +512,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5       2      5   1</code></pre>
 </div>
 <div id="計算の負荷が大きい" class="section level3 hasAnchor" number="13.8.3">
-<h3><span class="header-section-number">13.8.3</span> 計算の負荷が大きい<a href="week12-階層モデル.html#計算の負荷が大きい" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">13.8.3</span> 計算の負荷が大きい<a href="week12-階層モデル.html#%E8%A8%88%E7%AE%97%E3%81%AE%E8%B2%A0%E8%8D%B7%E3%81%8C%E5%A4%A7%E3%81%8D%E3%81%84" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>これまでに紹介した分析とは異なり、結果が出力されるまでに時間がかかります。モデルの変数が多く、ランダム効果にも複数の変数を含む場合、数日かかることもあります。</li>
 </ul>
 </div>
 </div>
 <div id="ハンズオンセッション-9" class="section level2 hasAnchor" number="13.9">
-<h2><span class="header-section-number">13.9</span> ハンズオンセッション<a href="week12-階層モデル.html#ハンズオンセッション-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">13.9</span> ハンズオンセッション<a href="week12-階層モデル.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="データの読み込み-4" class="section level3 hasAnchor" number="13.9.1">
-<h3><span class="header-section-number">13.9.1</span> データの読み込み<a href="week12-階層モデル.html#データの読み込み-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">13.9.1</span> データの読み込み<a href="week12-階層モデル.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 </div>
 <div id="パッケージのインストール" class="section level3 hasAnchor" number="13.9.2">
-<h3><span class="header-section-number">13.9.2</span> パッケージのインストール<a href="week12-階層モデル.html#パッケージのインストール" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">13.9.2</span> パッケージのインストール<a href="week12-階層モデル.html#%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li><code>lme4</code>パッケージを使用します</li>
 </ul>
-<div class="sourceCode" id="cb559"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb559-1"><a href="week12-階層モデル.html#cb559-1" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code></pre></div>
+<div class="sourceCode" id="cb537"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb537-1"><a href="week12-階層モデル.html#cb537-1" tabindex="-1"></a><span class="fu">library</span>(lme4)</span></code></pre></div>
 <ul>
 <li>処理にかかる時間を計測するため、<code>tictoc</code>パッケージを使います。</li>
 </ul>
-<div class="sourceCode" id="cb560"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb560-1"><a href="week12-階層モデル.html#cb560-1" tabindex="-1"></a><span class="co">#install.packages(&quot;tictoc&quot;)</span></span>
-<span id="cb560-2"><a href="week12-階層モデル.html#cb560-2" tabindex="-1"></a><span class="fu">library</span>(tictoc)</span></code></pre></div>
+<div class="sourceCode" id="cb538"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb538-1"><a href="week12-階層モデル.html#cb538-1" tabindex="-1"></a><span class="co">#install.packages(&quot;tictoc&quot;)</span></span>
+<span id="cb538-2"><a href="week12-階層モデル.html#cb538-2" tabindex="-1"></a><span class="fu">library</span>(tictoc)</span></code></pre></div>
 <ul>
 <li>コンピュータのスペックはこんな感じです</li>
 </ul>
@@ -550,11 +549,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>Terai et al. (2024)のデータを使用します。</li>
 </ul>
-<div class="sourceCode" id="cb563"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb563-1"><a href="week12-階層モデル.html#cb563-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;../stat_class_2025/sample_data/AJ.csv&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="week12-階層モデル.html#cb564-1" tabindex="-1"></a>dat<span class="sc">$</span>Itemtype <span class="ot">&lt;-</span> <span class="fu">factor</span>(dat<span class="sc">$</span>Itemtype, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Baseline&quot;</span>, <span class="st">&quot;JE&quot;</span>, <span class="st">&quot;Eonly&quot;</span>))</span>
-<span id="cb564-2"><a href="week12-階層モデル.html#cb564-2" tabindex="-1"></a><span class="fu">contrasts</span>(dat<span class="sc">$</span>Itemtype) <span class="ot">&lt;-</span> <span class="fu">contr.treatment</span>(<span class="dv">3</span>)</span>
-<span id="cb564-3"><a href="week12-階層モデル.html#cb564-3" tabindex="-1"></a></span>
-<span id="cb564-4"><a href="week12-階層モデル.html#cb564-4" tabindex="-1"></a><span class="fu">contrasts</span>(dat<span class="sc">$</span>Itemtype)</span></code></pre></div>
+<div class="sourceCode" id="cb541"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb541-1"><a href="week12-階層モデル.html#cb541-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;sample_data/AJ.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb542"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb542-1"><a href="week12-階層モデル.html#cb542-1" tabindex="-1"></a>dat<span class="sc">$</span>Itemtype <span class="ot">&lt;-</span> <span class="fu">factor</span>(dat<span class="sc">$</span>Itemtype, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;Baseline&quot;</span>, <span class="st">&quot;JE&quot;</span>, <span class="st">&quot;Eonly&quot;</span>))</span>
+<span id="cb542-2"><a href="week12-階層モデル.html#cb542-2" tabindex="-1"></a><span class="fu">contrasts</span>(dat<span class="sc">$</span>Itemtype) <span class="ot">&lt;-</span> <span class="fu">contr.treatment</span>(<span class="dv">3</span>)</span>
+<span id="cb542-3"><a href="week12-階層モデル.html#cb542-3" tabindex="-1"></a></span>
+<span id="cb542-4"><a href="week12-階層モデル.html#cb542-4" tabindex="-1"></a><span class="fu">contrasts</span>(dat<span class="sc">$</span>Itemtype)</span></code></pre></div>
 <pre><code>##          2 3
 ## Baseline 0 0
 ## JE       1 0
@@ -562,12 +561,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>連続値の場合中心化します</li>
 </ul>
-<div class="sourceCode" id="cb566"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb566-1"><a href="week12-階層モデル.html#cb566-1" tabindex="-1"></a><span class="co">#install.packages(&quot;tidyverse&quot;)</span></span>
-<span id="cb566-2"><a href="week12-階層モデル.html#cb566-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb566-3"><a href="week12-階層モデル.html#cb566-3" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
-<span id="cb566-4"><a href="week12-階層モデル.html#cb566-4" tabindex="-1"></a>  <span class="fu">group_by</span>(subject) <span class="sc">%&gt;%</span></span>
-<span id="cb566-5"><a href="week12-階層モデル.html#cb566-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(<span class="st">&quot;pres.order&quot;</span>, <span class="st">&quot;Length&quot;</span>), <span class="sc">~</span><span class="fu">scale</span>(.x)[,<span class="dv">1</span>],<span class="at">.names =</span> <span class="st">&quot;z.{col}&quot;</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb566-6"><a href="week12-階層モデル.html#cb566-6" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb544"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb544-1"><a href="week12-階層モデル.html#cb544-1" tabindex="-1"></a><span class="co">#install.packages(&quot;tidyverse&quot;)</span></span>
+<span id="cb544-2"><a href="week12-階層モデル.html#cb544-2" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb544-3"><a href="week12-階層モデル.html#cb544-3" tabindex="-1"></a>dat2 <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span></span>
+<span id="cb544-4"><a href="week12-階層モデル.html#cb544-4" tabindex="-1"></a>  <span class="fu">group_by</span>(subject) <span class="sc">%&gt;%</span></span>
+<span id="cb544-5"><a href="week12-階層モデル.html#cb544-5" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">c</span>(<span class="st">&quot;pres.order&quot;</span>, <span class="st">&quot;Length&quot;</span>), <span class="sc">~</span><span class="fu">scale</span>(.x)[,<span class="dv">1</span>],<span class="at">.names =</span> <span class="st">&quot;z.{col}&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb544-6"><a href="week12-階層モデル.html#cb544-6" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div>
 <ul>
 <li><p>切片のみ（実験項目、参加者）のモデル</p>
 <ul>
@@ -575,19 +574,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>独立変数：コロケーションの種類</p></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb567-1"><a href="week12-階層モデル.html#cb567-1" tabindex="-1"></a><span class="fu">tic</span>()</span>
-<span id="cb567-2"><a href="week12-階層モデル.html#cb567-2" tabindex="-1"></a>res<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">glmer</span>(</span>
-<span id="cb567-3"><a href="week12-階層モデル.html#cb567-3" tabindex="-1"></a>  res <span class="sc">~</span> Itemtype <span class="sc">+</span></span>
-<span id="cb567-4"><a href="week12-階層モデル.html#cb567-4" tabindex="-1"></a>  (<span class="dv">1</span><span class="sc">|</span>subject) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>itemID),</span>
-<span id="cb567-5"><a href="week12-階層モデル.html#cb567-5" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>),</span>
-<span id="cb567-6"><a href="week12-階層モデル.html#cb567-6" tabindex="-1"></a>  <span class="at">data =</span> dat2,</span>
-<span id="cb567-7"><a href="week12-階層モデル.html#cb567-7" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">glmerControl</span>(<span class="at">optimizer =</span> <span class="st">&quot;bobyqa&quot;</span>)</span>
-<span id="cb567-8"><a href="week12-階層モデル.html#cb567-8" tabindex="-1"></a>               )</span>
-<span id="cb567-9"><a href="week12-階層モデル.html#cb567-9" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
-<pre><code>## 0.86 sec elapsed</code></pre>
-<div class="sourceCode" id="cb569"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb569-1"><a href="week12-階層モデル.html#cb569-1" tabindex="-1"></a><span class="fu">summary</span>(res<span class="fl">.1</span>)</span></code></pre></div>
-<pre><code>## Generalized linear mixed model fit by maximum likelihood (Laplace
-##   Approximation) [glmerMod]
+<div class="sourceCode" id="cb545"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb545-1"><a href="week12-階層モデル.html#cb545-1" tabindex="-1"></a><span class="fu">tic</span>()</span>
+<span id="cb545-2"><a href="week12-階層モデル.html#cb545-2" tabindex="-1"></a>res<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">glmer</span>(</span>
+<span id="cb545-3"><a href="week12-階層モデル.html#cb545-3" tabindex="-1"></a>  res <span class="sc">~</span> Itemtype <span class="sc">+</span></span>
+<span id="cb545-4"><a href="week12-階層モデル.html#cb545-4" tabindex="-1"></a>  (<span class="dv">1</span><span class="sc">|</span>subject) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>itemID),</span>
+<span id="cb545-5"><a href="week12-階層モデル.html#cb545-5" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>),</span>
+<span id="cb545-6"><a href="week12-階層モデル.html#cb545-6" tabindex="-1"></a>  <span class="at">data =</span> dat2,</span>
+<span id="cb545-7"><a href="week12-階層モデル.html#cb545-7" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">glmerControl</span>(<span class="at">optimizer =</span> <span class="st">&quot;bobyqa&quot;</span>)</span>
+<span id="cb545-8"><a href="week12-階層モデル.html#cb545-8" tabindex="-1"></a>               )</span>
+<span id="cb545-9"><a href="week12-階層モデル.html#cb545-9" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
+<pre><code>## 1.01 sec elapsed</code></pre>
+<div class="sourceCode" id="cb547"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb547-1"><a href="week12-階層モデル.html#cb547-1" tabindex="-1"></a><span class="fu">summary</span>(res<span class="fl">.1</span>)</span></code></pre></div>
+<pre><code>## Generalized linear mixed model fit by maximum likelihood
+##   (Laplace Approximation) [glmerMod]
 ##  Family: binomial  ( logit )
 ## Formula: res ~ Itemtype + (1 | subject) + (1 | itemID)
 ##    Data: dat2
@@ -607,12 +606,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Number of obs: 3712, groups:  itemID, 116; subject, 32
 ## 
 ## Fixed effects:
-##             Estimate Std. Error z value             Pr(&gt;|z|)    
-## (Intercept)   1.4468     0.1517   9.536 &lt; 0.0000000000000002 ***
-## Itemtype2     1.0938     0.2879   3.799             0.000145 ***
-## Itemtype3    -1.3669     0.2618  -5.222          0.000000177 ***
+##             Estimate Std. Error z value
+## (Intercept)   1.4468     0.1517   9.536
+## Itemtype2     1.0938     0.2879   3.799
+## Itemtype3    -1.3669     0.2618  -5.222
+##                         Pr(&gt;|z|)    
+## (Intercept) &lt; 0.0000000000000002 ***
+## Itemtype2               0.000145 ***
+## Itemtype3            0.000000177 ***
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##           (Intr) Itmty2
@@ -622,15 +626,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>切片と係数のモデル</p></li>
 <li><p>モデルが上手く収束しなかった</p></li>
 </ul>
-<div class="sourceCode" id="cb571"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb571-1"><a href="week12-階層モデル.html#cb571-1" tabindex="-1"></a>tic()</span>
-<span id="cb571-2"><a href="week12-階層モデル.html#cb571-2" tabindex="-1"></a>res.2 &lt;- glmer(</span>
-<span id="cb571-3"><a href="week12-階層モデル.html#cb571-3" tabindex="-1"></a>  res ~ Itemtype +</span>
-<span id="cb571-4"><a href="week12-階層モデル.html#cb571-4" tabindex="-1"></a>  (1 + pres.order|subject) + (1|itemID),</span>
-<span id="cb571-5"><a href="week12-階層モデル.html#cb571-5" tabindex="-1"></a>  family = binomial(link = &quot;logit&quot;),</span>
-<span id="cb571-6"><a href="week12-階層モデル.html#cb571-6" tabindex="-1"></a>  data = dat2,</span>
-<span id="cb571-7"><a href="week12-階層モデル.html#cb571-7" tabindex="-1"></a>  control = glmerControl(optimizer = &quot;bobyqa&quot;)</span>
-<span id="cb571-8"><a href="week12-階層モデル.html#cb571-8" tabindex="-1"></a>               )</span>
-<span id="cb571-9"><a href="week12-階層モデル.html#cb571-9" tabindex="-1"></a>toc()</span></code></pre></div>
+<div class="sourceCode" id="cb549"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb549-1"><a href="week12-階層モデル.html#cb549-1" tabindex="-1"></a>tic()</span>
+<span id="cb549-2"><a href="week12-階層モデル.html#cb549-2" tabindex="-1"></a>res.2 &lt;- glmer(</span>
+<span id="cb549-3"><a href="week12-階層モデル.html#cb549-3" tabindex="-1"></a>  res ~ Itemtype +</span>
+<span id="cb549-4"><a href="week12-階層モデル.html#cb549-4" tabindex="-1"></a>  (1 + pres.order|subject) + (1|itemID),</span>
+<span id="cb549-5"><a href="week12-階層モデル.html#cb549-5" tabindex="-1"></a>  family = binomial(link = &quot;logit&quot;),</span>
+<span id="cb549-6"><a href="week12-階層モデル.html#cb549-6" tabindex="-1"></a>  data = dat2,</span>
+<span id="cb549-7"><a href="week12-階層モデル.html#cb549-7" tabindex="-1"></a>  control = glmerControl(optimizer = &quot;bobyqa&quot;)</span>
+<span id="cb549-8"><a href="week12-階層モデル.html#cb549-8" tabindex="-1"></a>               )</span>
+<span id="cb549-9"><a href="week12-階層モデル.html#cb549-9" tabindex="-1"></a>toc()</span></code></pre></div>
 <ul>
 <li><strong>出力結果：</strong></li>
 </ul>
@@ -641,21 +645,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>中心化した変数だとうまくいった</li>
 </ul>
-<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="week12-階層モデル.html#cb572-1" tabindex="-1"></a><span class="fu">tic</span>()</span>
-<span id="cb572-2"><a href="week12-階層モデル.html#cb572-2" tabindex="-1"></a>res<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">glmer</span>(</span>
-<span id="cb572-3"><a href="week12-階層モデル.html#cb572-3" tabindex="-1"></a>  res <span class="sc">~</span> Itemtype <span class="sc">+</span></span>
-<span id="cb572-4"><a href="week12-階層モデル.html#cb572-4" tabindex="-1"></a>  (<span class="dv">1</span> <span class="sc">+</span> z.pres.order<span class="sc">|</span>subject) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>itemID),</span>
-<span id="cb572-5"><a href="week12-階層モデル.html#cb572-5" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>),</span>
-<span id="cb572-6"><a href="week12-階層モデル.html#cb572-6" tabindex="-1"></a>  <span class="at">data =</span> dat2,</span>
-<span id="cb572-7"><a href="week12-階層モデル.html#cb572-7" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">glmerControl</span>(<span class="at">optimizer =</span> <span class="st">&quot;bobyqa&quot;</span>) <span class="co">#スムーズに推定を行うためにこれを設定します</span></span>
-<span id="cb572-8"><a href="week12-階層モデル.html#cb572-8" tabindex="-1"></a>               )</span>
-<span id="cb572-9"><a href="week12-階層モデル.html#cb572-9" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
-<pre><code>## 1.69 sec elapsed</code></pre>
-<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="week12-階層モデル.html#cb574-1" tabindex="-1"></a><span class="fu">summary</span>(res<span class="fl">.3</span>)</span></code></pre></div>
-<pre><code>## Generalized linear mixed model fit by maximum likelihood (Laplace
-##   Approximation) [glmerMod]
+<div class="sourceCode" id="cb550"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb550-1"><a href="week12-階層モデル.html#cb550-1" tabindex="-1"></a><span class="fu">tic</span>()</span>
+<span id="cb550-2"><a href="week12-階層モデル.html#cb550-2" tabindex="-1"></a>res<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">glmer</span>(</span>
+<span id="cb550-3"><a href="week12-階層モデル.html#cb550-3" tabindex="-1"></a>  res <span class="sc">~</span> Itemtype <span class="sc">+</span></span>
+<span id="cb550-4"><a href="week12-階層モデル.html#cb550-4" tabindex="-1"></a>  (<span class="dv">1</span> <span class="sc">+</span> z.pres.order<span class="sc">|</span>subject) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">|</span>itemID),</span>
+<span id="cb550-5"><a href="week12-階層モデル.html#cb550-5" tabindex="-1"></a>  <span class="at">family =</span> <span class="fu">binomial</span>(<span class="at">link =</span> <span class="st">&quot;logit&quot;</span>),</span>
+<span id="cb550-6"><a href="week12-階層モデル.html#cb550-6" tabindex="-1"></a>  <span class="at">data =</span> dat2,</span>
+<span id="cb550-7"><a href="week12-階層モデル.html#cb550-7" tabindex="-1"></a>  <span class="at">control =</span> <span class="fu">glmerControl</span>(<span class="at">optimizer =</span> <span class="st">&quot;bobyqa&quot;</span>) <span class="co">#スムーズに推定を行うためにこれを設定します</span></span>
+<span id="cb550-8"><a href="week12-階層モデル.html#cb550-8" tabindex="-1"></a>               )</span>
+<span id="cb550-9"><a href="week12-階層モデル.html#cb550-9" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
+<pre><code>## 2.11 sec elapsed</code></pre>
+<div class="sourceCode" id="cb552"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb552-1"><a href="week12-階層モデル.html#cb552-1" tabindex="-1"></a><span class="fu">summary</span>(res<span class="fl">.3</span>)</span></code></pre></div>
+<pre><code>## Generalized linear mixed model fit by maximum likelihood
+##   (Laplace Approximation) [glmerMod]
 ##  Family: binomial  ( logit )
-## Formula: res ~ Itemtype + (1 + z.pres.order | subject) + (1 | itemID)
+## Formula: 
+## res ~ Itemtype + (1 + z.pres.order | subject) + (1 | itemID)
 ##    Data: dat2
 ## Control: glmerControl(optimizer = &quot;bobyqa&quot;)
 ## 
@@ -674,12 +679,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## Number of obs: 3712, groups:  itemID, 116; subject, 32
 ## 
 ## Fixed effects:
-##             Estimate Std. Error z value             Pr(&gt;|z|)    
-## (Intercept)   1.4707     0.1535   9.580 &lt; 0.0000000000000002 ***
-## Itemtype2     1.1154     0.2900   3.846              0.00012 ***
-## Itemtype3    -1.3865     0.2642  -5.247          0.000000154 ***
+##             Estimate Std. Error z value
+## (Intercept)   1.4707     0.1535   9.580
+## Itemtype2     1.1154     0.2900   3.846
+## Itemtype3    -1.3865     0.2642  -5.247
+##                         Pr(&gt;|z|)    
+## (Intercept) &lt; 0.0000000000000002 ***
+## Itemtype2                0.00012 ***
+## Itemtype3            0.000000154 ***
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Correlation of Fixed Effects:
 ##           (Intr) Itmty2
@@ -688,16 +698,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>95% 信頼区間の算出（CI）</li>
 </ul>
-<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="week12-階層モデル.html#cb576-1" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcov</span>(res<span class="fl">.3</span>)))</span>
-<span id="cb576-2"><a href="week12-階層モデル.html#cb576-2" tabindex="-1"></a></span>
-<span id="cb576-3"><a href="week12-階層モデル.html#cb576-3" tabindex="-1"></a><span class="co"># table of estimates with 95% CI</span></span>
-<span id="cb576-4"><a href="week12-階層モデル.html#cb576-4" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">cbind</span>(</span>
-<span id="cb576-5"><a href="week12-階層モデル.html#cb576-5" tabindex="-1"></a>  <span class="at">Est =</span> <span class="fu">fixef</span>(res<span class="fl">.3</span>),</span>
-<span id="cb576-6"><a href="week12-階層モデル.html#cb576-6" tabindex="-1"></a>  <span class="at">LL =</span> <span class="fu">fixef</span>(res<span class="fl">.3</span>) <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se,</span>
-<span id="cb576-7"><a href="week12-階層モデル.html#cb576-7" tabindex="-1"></a>  <span class="at">UL =</span> <span class="fu">fixef</span>(res<span class="fl">.3</span>) <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
-<span id="cb576-8"><a href="week12-階層モデル.html#cb576-8" tabindex="-1"></a>  )</span>
-<span id="cb576-9"><a href="week12-階層モデル.html#cb576-9" tabindex="-1"></a></span>
-<span id="cb576-10"><a href="week12-階層モデル.html#cb576-10" tabindex="-1"></a>tab</span></code></pre></div>
+<div class="sourceCode" id="cb554"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb554-1"><a href="week12-階層モデル.html#cb554-1" tabindex="-1"></a>se <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(<span class="fu">vcov</span>(res<span class="fl">.3</span>)))</span>
+<span id="cb554-2"><a href="week12-階層モデル.html#cb554-2" tabindex="-1"></a></span>
+<span id="cb554-3"><a href="week12-階層モデル.html#cb554-3" tabindex="-1"></a><span class="co"># table of estimates with 95% CI</span></span>
+<span id="cb554-4"><a href="week12-階層モデル.html#cb554-4" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">cbind</span>(</span>
+<span id="cb554-5"><a href="week12-階層モデル.html#cb554-5" tabindex="-1"></a>  <span class="at">Est =</span> <span class="fu">fixef</span>(res<span class="fl">.3</span>),</span>
+<span id="cb554-6"><a href="week12-階層モデル.html#cb554-6" tabindex="-1"></a>  <span class="at">LL =</span> <span class="fu">fixef</span>(res<span class="fl">.3</span>) <span class="sc">-</span> <span class="fl">1.96</span> <span class="sc">*</span> se,</span>
+<span id="cb554-7"><a href="week12-階層モデル.html#cb554-7" tabindex="-1"></a>  <span class="at">UL =</span> <span class="fu">fixef</span>(res<span class="fl">.3</span>) <span class="sc">+</span> <span class="fl">1.96</span> <span class="sc">*</span> se</span>
+<span id="cb554-8"><a href="week12-階層モデル.html#cb554-8" tabindex="-1"></a>  )</span>
+<span id="cb554-9"><a href="week12-階層モデル.html#cb554-9" tabindex="-1"></a></span>
+<span id="cb554-10"><a href="week12-階層モデル.html#cb554-10" tabindex="-1"></a>tab</span></code></pre></div>
 <pre><code>##                   Est         LL         UL
 ## (Intercept)  1.470673  1.1697749  1.7715711
 ## Itemtype2    1.115433  0.5469471  1.6839180
@@ -708,194 +718,196 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>こちらは推定法の関係で時間がかかる</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="week12-階層モデル.html#cb578-1" tabindex="-1"></a><span class="fu">tic</span>()</span>
-<span id="cb578-2"><a href="week12-階層モデル.html#cb578-2" tabindex="-1"></a><span class="fu">confint</span>(res<span class="fl">.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb556"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb556-1"><a href="week12-階層モデル.html#cb556-1" tabindex="-1"></a><span class="fu">tic</span>()</span>
+<span id="cb556-2"><a href="week12-階層モデル.html#cb556-2" tabindex="-1"></a><span class="fu">confint</span>(res<span class="fl">.3</span>)</span></code></pre></div>
 <pre><code>## Computing profile confidence intervals ...</code></pre>
-<pre><code>## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): unexpected decrease in
-## profile: using minstep</code></pre>
-<pre><code>## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep
-## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last two rows have
-## identical or NA .zeta values: using minstep</code></pre>
-<pre><code>## Warning in FUN(X[[i]], ...): non-monotonic profile for .sig03</code></pre>
-<pre><code>## Warning in confint.thpr(pp, level = level, zeta = zeta): bad spline fit for
-## .sig03: falling back to linear interpolation</code></pre>
-<pre><code>## Warning in regularize.values(x, y, ties, missing(ties), na.rm = na.rm):
-## collapsing to unique &#39;x&#39; values</code></pre>
+<pre><code>## Warning in nextpar(mat, cc, i, delta, lowcut, upcut):
+## unexpected decrease in profile: using minstep</code></pre>
+<pre><code>## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep
+## Warning in nextpar(mat, cc, i, delta, lowcut, upcut): Last
+## two rows have identical or NA .zeta values: using minstep</code></pre>
+<pre><code>## Warning in FUN(X[[i]], ...): non-monotonic profile for
+## .sig03</code></pre>
+<pre><code>## Warning in confint.thpr(pp, level = level, zeta = zeta):
+## bad spline fit for .sig03: falling back to linear
+## interpolation</code></pre>
+<pre><code>## Warning in regularize.values(x, y, ties, missing(ties),
+## na.rm = na.rm): collapsing to unique &#39;x&#39; values</code></pre>
 <pre><code>##                  2.5 %     97.5 %
 ## .sig01       0.8557632  1.2053915
 ## .sig02       0.2900371  0.5782624
@@ -904,12 +916,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## (Intercept)  1.1705532  1.7810441
 ## Itemtype2    0.5478508  1.7132777
 ## Itemtype3   -1.9150308 -0.8660749</code></pre>
-<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="week12-階層モデル.html#cb586-1" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
-<pre><code>## 235.81 sec elapsed</code></pre>
+<div class="sourceCode" id="cb564"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb564-1"><a href="week12-階層モデル.html#cb564-1" tabindex="-1"></a><span class="fu">toc</span>()</span></code></pre></div>
+<pre><code>## 305.27 sec elapsed</code></pre>
 <ul>
 <li>オッズ比</li>
 </ul>
-<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb588-1"><a href="week12-階層モデル.html#cb588-1" tabindex="-1"></a><span class="fu">exp</span>(tab)</span></code></pre></div>
+<div class="sourceCode" id="cb566"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb566-1"><a href="week12-階層モデル.html#cb566-1" tabindex="-1"></a><span class="fu">exp</span>(tab)</span></code></pre></div>
 <pre><code>##                   Est       LL        UL
 ## (Intercept) 4.3521632 3.221267 5.8800845
 ## Itemtype2   3.0508876 1.727970 5.3866193
@@ -920,16 +932,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>尤度比検定の結果、係数を考慮したモデルの方がよりAICが有意に低かった</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb590"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb590-1"><a href="week12-階層モデル.html#cb590-1" tabindex="-1"></a><span class="fu">anova</span>(res<span class="fl">.1</span>, res<span class="fl">.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="week12-階層モデル.html#cb568-1" tabindex="-1"></a><span class="fu">anova</span>(res<span class="fl">.1</span>, res<span class="fl">.3</span>)</span></code></pre></div>
 <pre><code>## Data: dat2
 ## Models:
 ## res.1: res ~ Itemtype + (1 | subject) + (1 | itemID)
 ## res.3: res ~ Itemtype + (1 + z.pres.order | subject) + (1 | itemID)
-##       npar    AIC    BIC  logLik -2*log(L)  Chisq Df Pr(&gt;Chisq)   
-## res.1    5 3601.5 3632.6 -1795.7    3591.5                        
-## res.3    7 3595.6 3639.1 -1790.8    3581.6 9.9044  2   0.007068 **
+##       npar    AIC    BIC  logLik -2*log(L)  Chisq Df
+## res.1    5 3601.5 3632.6 -1795.7    3591.5          
+## res.3    7 3595.6 3639.1 -1790.8    3581.6 9.9044  2
+##       Pr(&gt;Chisq)   
+## res.1              
+## res.3   0.007068 **
 ## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+## Signif. codes:  
+## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
 <!-- - ```performance```パッケージでモデルの当てはまり度合いを確認 -->
 <!-- ```{r, warning=FALSE, message=FALSE} -->
 <!-- #install.packages("performance") -->
@@ -942,11 +958,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li>図示</li>
 </ul>
-<div class="sourceCode" id="cb592"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb592-1"><a href="week12-階層モデル.html#cb592-1" tabindex="-1"></a><span class="co">#install.packages(&quot;ggeffects&quot;)</span></span>
-<span id="cb592-2"><a href="week12-階層モデル.html#cb592-2" tabindex="-1"></a><span class="fu">library</span>(ggeffects)</span>
-<span id="cb592-3"><a href="week12-階層モデル.html#cb592-3" tabindex="-1"></a>eff <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(res<span class="fl">.3</span>, <span class="at">terms =</span> <span class="st">&quot;Itemtype&quot;</span>)</span>
-<span id="cb592-4"><a href="week12-階層モデル.html#cb592-4" tabindex="-1"></a><span class="fu">plot</span>(eff)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-377-1.png" width="672" /></p>
+<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="week12-階層モデル.html#cb570-1" tabindex="-1"></a><span class="co">#install.packages(&quot;ggeffects&quot;)</span></span>
+<span id="cb570-2"><a href="week12-階層モデル.html#cb570-2" tabindex="-1"></a><span class="fu">library</span>(ggeffects)</span>
+<span id="cb570-3"><a href="week12-階層モデル.html#cb570-3" tabindex="-1"></a>eff <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(res<span class="fl">.3</span>, <span class="at">terms =</span> <span class="st">&quot;Itemtype&quot;</span>)</span>
+<span id="cb570-4"><a href="week12-階層モデル.html#cb570-4" tabindex="-1"></a><span class="fu">plot</span>(eff)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-377-1.png" alt="" width="672" /></p>
 <ul>
 <li><p>モデル診断</p>
 <ul>
@@ -957,25 +973,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb593"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb593-1"><a href="week12-階層モデル.html#cb593-1" tabindex="-1"></a>#install.packages(&quot;performance&quot;)</span>
-<span id="cb593-2"><a href="week12-階層モデル.html#cb593-2" tabindex="-1"></a>library(performance)</span>
-<span id="cb593-3"><a href="week12-階層モデル.html#cb593-3" tabindex="-1"></a>check_collinearity(モデルの結果を格納した変数名)</span></code></pre></div>
+<div class="sourceCode" id="cb571"><pre class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb571-1"><a href="week12-階層モデル.html#cb571-1" tabindex="-1"></a>#install.packages(&quot;performance&quot;)</span>
+<span id="cb571-2"><a href="week12-階層モデル.html#cb571-2" tabindex="-1"></a>library(performance)</span>
+<span id="cb571-3"><a href="week12-階層モデル.html#cb571-3" tabindex="-1"></a>check_collinearity(モデルの結果を格納した変数名)</span></code></pre></div>
 <ul>
 <li><p>外れ値</p></li>
 <li><p><em>p</em> ≥ .05: 残差はモデル期待通り（≒一様分布）</p></li>
 <li><p><em>p</em> &lt; .05: 残差がモデル期待とズレている（≒モデルのミスフィット）</p></li>
 </ul>
-<div class="sourceCode" id="cb594"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb594-1"><a href="week12-階層モデル.html#cb594-1" tabindex="-1"></a><span class="fu">library</span>(performance)</span></code></pre></div>
-<pre><code>## Warning: package &#39;performance&#39; was built under R version 4.3.3</code></pre>
-<pre><code>## 
-## Attaching package: &#39;performance&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:arm&#39;:
-## 
-##     display</code></pre>
-<div class="sourceCode" id="cb598"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb598-1"><a href="week12-階層モデル.html#cb598-1" tabindex="-1"></a><span class="fu">check_residuals</span>(res<span class="fl">.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb572"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb572-1"><a href="week12-階層モデル.html#cb572-1" tabindex="-1"></a><span class="fu">library</span>(performance)</span>
+<span id="cb572-2"><a href="week12-階層モデル.html#cb572-2" tabindex="-1"></a><span class="fu">check_residuals</span>(res<span class="fl">.3</span>)</span></code></pre></div>
 <pre><code>## OK: Simulated residuals appear as uniformly distributed (p = 0.149).</code></pre>
-<div class="sourceCode" id="cb600"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb600-1"><a href="week12-階層モデル.html#cb600-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">check_residuals</span>(res<span class="fl">.3</span>))</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-380-1.png" width="672" /></p>
+<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="week12-階層モデル.html#cb574-1" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">check_residuals</span>(res<span class="fl">.3</span>))</span></code></pre></div>
+<pre><code>## For confidence bands, please install `qqplotr`.</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-380-1.png" alt="" width="672" /></p>
 <!--   - 自己相関（Auto-correlation） -->
 <!-- - 帰無仮説：残差に自己相関はない（＝独立している） -->
 <!-- - 対立仮説：残差に自己相関がある -->
@@ -986,24 +997,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>ランダム効果を組み込んだ回帰分析を行う主な理由の一つに、<strong>縮約（shrinkage）</strong>という効果があります。縮約とは、各グループの極端な推定値が、全体の平均値（プーリングされた平均）に引き寄せられる現象を指します。この効果により、サンプル数が少ないグループや外れ値の影響が軽減され、より頑健で一般化可能な推定が可能になります。しかし、極端な推定値が実際に意味のあるものであった場合、縮約によってその効果が過小評価されてしまうという問題があります。たとえば、複数の種類の薬の効果を検証したい場合に、薬の種類をランダム効果に含めてモデルを構築すると、ある薬が他と明らかに異なる効果を示していたとしても、縮約によってその差が「なかったこと」になってしまう可能性があります。このようなケースでは、薬の種類ごとの効果を明確に比較したいという研究目的があるため、薬の種類をランダム効果としてではなく独立変数（固定効果）としてモデルに含める必要があります。<strong>つまり、何をランダム効果として設定するのかを研究課題・仮説の段階で決めておく必要があります。</strong></p>
 <ul>
 <li><p>以下の図は、気温と参加者の交互作用のモデルです。10番の参加者のデータのみ、右肩下がりとなっています。
-<img src="_main_files/figure-html/unnamed-chunk-382-1.png" width="672" /></p></li>
+<img src="_main_files/figure-html/unnamed-chunk-382-1.png" alt="" width="672" /></p></li>
 <li><p>以下の図は気温と参加者の交互作用ではなく、独立変数に気温、ランダム効果に参加者を含めたモデルです。10番の参加者が他の参加者と同じ右肩上がりの傾向に変わっていることが分かります。
-<img src="_main_files/figure-html/unnamed-chunk-384-1.png" width="672" /></p></li>
+<img src="_main_files/figure-html/unnamed-chunk-384-1.png" alt="" width="672" /></p></li>
 </ul>
 </div>
 </div>
 </div>
 <div id="次週までの課題-11" class="section level2 hasAnchor" number="13.10">
-<h2><span class="header-section-number">13.10</span> 次週までの課題<a href="week12-階層モデル.html#次週までの課題-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">13.10</span> 次週までの課題<a href="week12-階層モデル.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="課題内容-10" class="section level3 hasAnchor" number="13.10.1">
-<h3><span class="header-section-number">13.10.1</span> 課題内容<a href="week12-階層モデル.html#課題内容-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">13.10.1</span> 課題内容<a href="week12-階層モデル.html#%E8%AA%B2%E9%A1%8C%E5%86%85%E5%AE%B9-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>小テストに向けて今回の内容を復習する。必ず手でコードを入力してRを実行する。</p></li>
 <li><p>今回の講義のハンズオンセッションの内容を再度自分のRプログラム上で実行する。<strong>分析の最後に、結果の報告を行うこと。</strong></p></li>
 </ol>
 </div>
 <div id="提出方法-9" class="section level3 hasAnchor" number="13.10.2">
-<h3><span class="header-section-number">13.10.2</span> 提出方法<a href="week12-階層モデル.html#提出方法-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<h3><span class="header-section-number">13.10.2</span> 提出方法<a href="week12-階層モデル.html#%E6%8F%90%E5%87%BA%E6%96%B9%E6%B3%95-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
 <li>TACT上で提出。</li>
 <li>締め切りは今週の木曜日まで</li>
@@ -1011,7 +1022,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div id="参考文献-11" class="section level2 hasAnchor" number="13.11">
-<h2><span class="header-section-number">13.11</span> 参考文献<a href="week12-階層モデル.html#参考文献-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2><span class="header-section-number">13.11</span> 参考文献<a href="week12-階層モデル.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>📚久保（2012）『データ解析のための統計モデリング入門』岩波書店</p></li>
 <li><p>📚清水（2014）『個人と集団のマルチレベル分析』ナカニシヤ出版</p></li>
@@ -1074,42 +1085,42 @@ font-style: italic;
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"linkedin": false,
-"weibo": false,
-"instapaper": false,
-"vk": false,
-"whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
-},
-"fontsettings": {
-"theme": "white",
-"family": "sans",
-"size": 2
-},
-"edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/12-Week12_GLMM.Rmd",
-"text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
-},
-"view": {
-"link": null,
-"text": null
-},
-"download": ["_main.pdf", "_main.epub"],
-"search": {
-"engine": "fuse",
-"options": null
-},
-"toc": {
-"collapse": "subsection"
-}
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/12-Week12_GLMM.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["_main.pdf", "_main.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
 });
 });
 </script>
