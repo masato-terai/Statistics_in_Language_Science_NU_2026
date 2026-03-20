@@ -2,8 +2,18 @@
 .Rhistory
 .RData
 .Ruserdata
-<<<<<<< HEAD
+
+# renv
+renv/library/
+renv/staging/
+
+# bookdown
+_main_cache/
+_bookdown_files/
+_main_files/
+
+# IDE
+.vscode/
+
 stat_class_2025.Rproj
-=======
 note*
->>>>>>> faa0daa5e3540800d7892944d44364b8ef038368
