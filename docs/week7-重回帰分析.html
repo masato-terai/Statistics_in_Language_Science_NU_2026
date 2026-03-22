@@ -53,7 +53,7 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.12.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
@@ -573,9 +573,9 @@ F = \frac{R^2 / k}{(1 - R^2) / (n - k - 1)}
 <span id="cb240-2"><a href="week7-重回帰分析.html#cb240-2" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
 <span id="cb240-3"><a href="week7-重回帰分析.html#cb240-3" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;sample_data/regression_data.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 120 Columns: 8
-## ── Column specification ───────────────────────────────────
+## ── Column specification ─────────────────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
-## dbl (8): ID, Placement, FirstT, MidT, LastT, EndT, Clas...
+## dbl (8): ID, Placement, FirstT, MidT, LastT, EndT, Class, Course
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
@@ -597,24 +597,24 @@ F = \frac{R^2 / k}{(1 - R^2) / (n - k - 1)}
 <h3><span class="header-section-number">8.6.2</span> 基本統計量の算出<a href="week7-重回帰分析.html#%E5%9F%BA%E6%9C%AC%E7%B5%B1%E8%A8%88%E9%87%8F%E3%81%AE%E7%AE%97%E5%87%BA" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="week7-重回帰分析.html#cb244-1" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
 <span id="cb244-2"><a href="week7-重回帰分析.html#cb244-2" tabindex="-1"></a><span class="fu">describe</span>(dat)</span></code></pre></div>
-<pre><code>##           vars   n  mean    sd median trimmed   mad min
-## ID           1 120 60.50 34.79   60.5   60.50 44.48   1
-## Placement    2 120 54.20 28.50   50.5   54.61 37.81   4
-## FirstT       3 120 54.19 24.00   54.0   54.22 31.13  10
-## MidT         4 120 50.79 25.30   52.0   51.08 31.13   4
-## LastT        5 120 50.50 24.53   47.5   49.68 27.43   6
-## EndT         6 120 52.50 25.18   53.0   52.74 31.13   6
-## Class        7 120  0.66  0.48    1.0    0.70  0.00   0
-## Course       8 120  0.97  0.81    1.0    0.96  1.48   0
-##           max range  skew kurtosis   se
-## ID        120   119  0.00    -1.23 3.18
-## Placement  99    95 -0.02    -1.32 2.60
-## FirstT     99    89  0.02    -1.15 2.19
-## MidT      100    96 -0.09    -1.12 2.31
-## LastT     100    94  0.28    -0.99 2.24
-## EndT       98    92 -0.05    -1.13 2.30
-## Class       1     1 -0.66    -1.58 0.04
-## Course      2     2  0.06    -1.48 0.07</code></pre>
+<pre><code>##           vars   n  mean    sd median trimmed   mad min max range  skew
+## ID           1 120 60.50 34.79   60.5   60.50 44.48   1 120   119  0.00
+## Placement    2 120 54.20 28.50   50.5   54.61 37.81   4  99    95 -0.02
+## FirstT       3 120 54.19 24.00   54.0   54.22 31.13  10  99    89  0.02
+## MidT         4 120 50.79 25.30   52.0   51.08 31.13   4 100    96 -0.09
+## LastT        5 120 50.50 24.53   47.5   49.68 27.43   6 100    94  0.28
+## EndT         6 120 52.50 25.18   53.0   52.74 31.13   6  98    92 -0.05
+## Class        7 120  0.66  0.48    1.0    0.70  0.00   0   1     1 -0.66
+## Course       8 120  0.97  0.81    1.0    0.96  1.48   0   2     2  0.06
+##           kurtosis   se
+## ID           -1.23 3.18
+## Placement    -1.32 2.60
+## FirstT       -1.15 2.19
+## MidT         -1.12 2.31
+## LastT        -0.99 2.24
+## EndT         -1.13 2.30
+## Class        -1.58 0.04
+## Course       -1.48 0.07</code></pre>
 </div>
 <div id="データの図示" class="section level3 hasAnchor" number="8.6.3">
 <h3><span class="header-section-number">8.6.3</span> データの図示<a href="week7-重回帰分析.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%9B%B3%E7%A4%BA" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -699,21 +699,14 @@ F = \frac{R^2 / k}{(1 - R^2) / (n - k - 1)}
 ## -29.999  -6.532   0.373   7.884  39.006 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value
-## (Intercept) -2.11492    4.42429  -0.478
-## Placement   -0.03101    0.04154  -0.747
-## FirstT       0.18318    0.04749   3.857
-## MidT         0.69883    0.05334  13.101
-## LastT        0.21533    0.04960   4.341
-##                         Pr(&gt;|t|)    
-## (Intercept)              0.63354    
-## Placement                0.45684    
-## FirstT                   0.00019 ***
-## MidT        &lt; 0.0000000000000002 ***
-## LastT                  0.0000306 ***
+##             Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept) -2.11492    4.42429  -0.478              0.63354    
+## Placement   -0.03101    0.04154  -0.747              0.45684    
+## FirstT       0.18318    0.04749   3.857              0.00019 ***
+## MidT         0.69883    0.05334  13.101 &lt; 0.0000000000000002 ***
+## LastT        0.21533    0.04960   4.341            0.0000306 ***
 ## ---
-## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 11.91 on 115 degrees of freedom
 ## Multiple R-squared:  0.7839, Adjusted R-squared:  0.7764 
@@ -733,10 +726,8 @@ F = \frac{R^2 / k}{(1 - R^2) / (n - k - 1)}
 <li>最大値、最小値の2つが外れ値の可能性あり</li>
 </ul>
 <div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="week7-重回帰分析.html#cb257-1" tabindex="-1"></a><span class="fu">describe</span>(z.res)</span></code></pre></div>
-<pre><code>##    vars   n mean sd median trimmed  mad   min  max range
-## X1    1 120    0  1   0.03    0.01 0.95 -2.56 3.33   5.9
-##     skew kurtosis   se
-## X1 -0.03     0.45 0.09</code></pre>
+<pre><code>##    vars   n mean sd median trimmed  mad   min  max range  skew kurtosis   se
+## X1    1 120    0  1   0.03    0.01 0.95 -2.56 3.33   5.9 -0.03     0.45 0.09</code></pre>
 <ul>
 <li><code>olsrr</code>関数を使うと、様々な図を一度に表示可能</li>
 </ul>
@@ -767,18 +758,18 @@ F = \frac{R^2 / k}{(1 - R^2) / (n - k - 1)}
 ## 
 ## Eigenvalue and Condition Index
 ## ------------------------------
-##   Eigenvalue Condition Index     intercept   Placement
-## 1 4.40535969        1.000000 0.00298802134 0.007522632
-## 2 0.30501018        3.800437 0.00164204177 0.365472991
-## 3 0.15650328        5.305532 0.00006369806 0.046463119
-## 4 0.08687444        7.121061 0.01599506848 0.103299519
-## 5 0.04625240        9.759409 0.97931117036 0.477241738
-##            FirstT        MidT       LastT
-## 1 0.0068745860846 0.005788082 0.006945791
-## 2 0.0000002735316 0.123931389 0.044863293
-## 3 0.5262904224956 0.003523541 0.394117664
-## 4 0.3709362786036 0.620787643 0.517410058
-## 5 0.0958984392846 0.245969345 0.036663194</code></pre>
+##   Eigenvalue Condition Index     intercept   Placement          FirstT
+## 1 4.40535969        1.000000 0.00298802134 0.007522632 0.0068745860846
+## 2 0.30501018        3.800437 0.00164204177 0.365472991 0.0000002735316
+## 3 0.15650328        5.305532 0.00006369806 0.046463119 0.5262904224956
+## 4 0.08687444        7.121061 0.01599506848 0.103299519 0.3709362786036
+## 5 0.04625240        9.759409 0.97931117036 0.477241738 0.0958984392846
+##          MidT       LastT
+## 1 0.005788082 0.006945791
+## 2 0.123931389 0.044863293
+## 3 0.003523541 0.394117664
+## 4 0.620787643 0.517410058
+## 5 0.245969345 0.036663194</code></pre>
 </div>
 <div id="重回帰分析の実施ステップワイズ法" class="section level3 hasAnchor" number="8.6.8">
 <h3><span class="header-section-number">8.6.8</span> 重回帰分析の実施（ステップワイズ法）<a href="week7-重回帰分析.html#%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E3%81%AE%E5%AE%9F%E6%96%BD%E3%82%B9%E3%83%86%E3%83%83%E3%83%97%E3%83%AF%E3%82%A4%E3%82%BA%E6%B3%95" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -822,19 +813,13 @@ F = \frac{R^2 / k}{(1 - R^2) / (n - k - 1)}
 ## -30.995  -6.820   0.491   7.669  38.131 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value
-## (Intercept) -4.14790    3.48037  -1.192
-## FirstT       0.17853    0.04699   3.799
-## MidT         0.71384    0.04932  14.474
-## LastT        0.21220    0.04933   4.302
-##                         Pr(&gt;|t|)    
-## (Intercept)             0.235773    
-## FirstT                  0.000233 ***
-## MidT        &lt; 0.0000000000000002 ***
-## LastT                  0.0000355 ***
+##             Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept) -4.14790    3.48037  -1.192             0.235773    
+## FirstT       0.17853    0.04699   3.799             0.000233 ***
+## MidT         0.71384    0.04932  14.474 &lt; 0.0000000000000002 ***
+## LastT        0.21220    0.04933   4.302            0.0000355 ***
 ## ---
-## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 11.88 on 116 degrees of freedom
 ## Multiple R-squared:  0.7828, Adjusted R-squared:  0.7772 

@@ -53,7 +53,7 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.12.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
@@ -626,15 +626,11 @@ a = \hat{y} - b\bar{x}
 ## -73.432 -13.565  -3.125   8.740 212.873 
 ## 
 ## Coefficients:
-##              Estimate Std. Error t value
-## (Intercept)  38.08851    2.15454   17.68
-## dat$こうげき  0.40381    0.02625   15.38
-##                         Pr(&gt;|t|)    
-## (Intercept)  &lt;0.0000000000000002 ***
-## dat$こうげき &lt;0.0000000000000002 ***
+##              Estimate Std. Error t value            Pr(&gt;|t|)    
+## (Intercept)  38.08851    2.15454   17.68 &lt;0.0000000000000002 ***
+## dat$こうげき  0.40381    0.02625   15.38 &lt;0.0000000000000002 ***
 ## ---
-## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 23.32 on 895 degrees of freedom
 ## Multiple R-squared:  0.2092, Adjusted R-squared:  0.2083 
@@ -753,15 +749,11 @@ R^{2} = 1 - \frac{SS_e}{SS_y}
 ## -73.432 -13.565  -3.125   8.740 212.873 
 ## 
 ## Coefficients:
-##              Estimate Std. Error t value
-## (Intercept)  38.08851    2.15454   17.68
-## dat$こうげき  0.40381    0.02625   15.38
-##                         Pr(&gt;|t|)    
-## (Intercept)  &lt;0.0000000000000002 ***
-## dat$こうげき &lt;0.0000000000000002 ***
+##              Estimate Std. Error t value            Pr(&gt;|t|)    
+## (Intercept)  38.08851    2.15454   17.68 &lt;0.0000000000000002 ***
+## dat$こうげき  0.40381    0.02625   15.38 &lt;0.0000000000000002 ***
 ## ---
-## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 23.32 on 895 degrees of freedom
 ## Multiple R-squared:  0.2092, Adjusted R-squared:  0.2083 
@@ -829,18 +821,15 @@ R^{2} = 1 - \frac{SS_e}{SS_y}
 <li>記録されていないデータ（セルにNA）がないかを確認する</li>
 </ul>
 <div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="week6-単回帰分析連続型の説明変数.html#cb196-1" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">complete.cases</span>(dat)</span></code></pre></div>
-<pre><code>##   [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [10]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [19]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [28]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [37]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [46]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [55]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [64]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [73]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [82]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-##  [91]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
-## [100]  TRUE</code></pre>
+<pre><code>##   [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [13]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [25]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [37]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [49]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [61]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [73]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [85]  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE
+##  [97]  TRUE  TRUE  TRUE  TRUE</code></pre>
 <div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="week6-単回帰分析連続型の説明変数.html#cb198-1" tabindex="-1"></a><span class="fu">subset</span>(dat, <span class="fu">complete.cases</span>(dat) <span class="sc">==</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>##   student mid end quiz
 ## 1    S001  77  NA   36</code></pre>
@@ -855,22 +844,14 @@ R^{2} = 1 - \frac{SS_e}{SS_y}
 <pre><code>## [1] student mid     end     quiz   
 ## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
 <div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="week6-単回帰分析連続型の説明変数.html#cb203-1" tabindex="-1"></a><span class="fu">summary</span>(dat)</span></code></pre></div>
-<pre><code>##    student               mid             end       
-##  Length:100         Min.   :16.00   Min.   : 5.00  
-##  Class :character   1st Qu.:46.75   1st Qu.:46.50  
-##  Mode  :character   Median :57.00   Median :57.00  
-##                     Mean   :56.91   Mean   :54.21  
-##                     3rd Qu.:68.25   3rd Qu.:64.50  
-##                     Max.   :92.00   Max.   :92.00  
-##                                     NA&#39;s   :1      
-##       quiz      
-##  Min.   : 3.00  
-##  1st Qu.:20.00  
-##  Median :26.00  
-##  Mean   :26.61  
-##  3rd Qu.:33.25  
-##  Max.   :49.00  
-## </code></pre>
+<pre><code>##    student               mid             end             quiz      
+##  Length:100         Min.   :16.00   Min.   : 5.00   Min.   : 3.00  
+##  Class :character   1st Qu.:46.75   1st Qu.:46.50   1st Qu.:20.00  
+##  Mode  :character   Median :57.00   Median :57.00   Median :26.00  
+##                     Mean   :56.91   Mean   :54.21   Mean   :26.61  
+##                     3rd Qu.:68.25   3rd Qu.:64.50   3rd Qu.:33.25  
+##                     Max.   :92.00   Max.   :92.00   Max.   :49.00  
+##                                     NA&#39;s   :1</code></pre>
 <ul>
 <li>散布図で外れ値がないかを確認。<code>par(pty="s")</code>を実行することで、正方形の図として描画される。</li>
 </ul>
@@ -940,15 +921,11 @@ R^{2} = 1 - \frac{SS_e}{SS_y}
 ## -24.2474  -5.4599  -0.7961   5.0888  26.6908 
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value
-## (Intercept)  14.5133     3.7623   3.858
-## mid           0.7257     0.0650  11.164
-##                         Pr(&gt;|t|)    
-## (Intercept)             0.000208 ***
-## mid         &lt; 0.0000000000000002 ***
+##             Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept)  14.5133     3.7623   3.858             0.000208 ***
+## mid           0.7257     0.0650  11.164 &lt; 0.0000000000000002 ***
 ## ---
-## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 9.314 on 95 degrees of freedom
 ## Multiple R-squared:  0.5674, Adjusted R-squared:  0.5629 
@@ -963,15 +940,11 @@ R^{2} = 1 - \frac{SS_e}{SS_y}
 ## stats::glm(formula = end ~ mid, data = dat.3)
 ## 
 ## Coefficients:
-##             Estimate Std. Error t value
-## (Intercept)  14.5133     3.7623   3.858
-## mid           0.7257     0.0650  11.164
-##                         Pr(&gt;|t|)    
-## (Intercept)             0.000208 ***
-## mid         &lt; 0.0000000000000002 ***
+##             Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept)  14.5133     3.7623   3.858             0.000208 ***
+## mid           0.7257     0.0650  11.164 &lt; 0.0000000000000002 ***
 ## ---
-## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## (Dispersion parameter for gaussian family taken to be 86.74516)
 ## 
@@ -1136,12 +1109,10 @@ R^{2} = 1 - \frac{SS_e}{SS_y}
 <pre><code>## 
 ## Autocorrelations of series &#39;model.mlm$residuals&#39;, by lag
 ## 
-##      0      1      2      3      4      5      6      7 
-##  1.000  0.142  0.054 -0.046 -0.292 -0.214 -0.338 -0.053 
-##      8      9     10     11     12     13     14     15 
-##  0.014  0.009  0.208  0.181  0.047  0.125 -0.118 -0.020 
-##     16     17     18     19 
-## -0.185 -0.086 -0.018 -0.095</code></pre>
+##      0      1      2      3      4      5      6      7      8      9     10 
+##  1.000  0.142  0.054 -0.046 -0.292 -0.214 -0.338 -0.053  0.014  0.009  0.208 
+##     11     12     13     14     15     16     17     18     19 
+##  0.181  0.047  0.125 -0.118 -0.020 -0.185 -0.086 -0.018 -0.095</code></pre>
 <div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="week6-単回帰分析連続型の説明変数.html#cb239-1" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">acf</span>(model.mlm<span class="sc">$</span>residuals, <span class="at">plot =</span> T)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-148-1.png" alt="" width="672" /></p>
 <ul>

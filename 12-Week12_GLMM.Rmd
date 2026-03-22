@@ -352,7 +352,7 @@ tab
 
 ```{r, cache=TRUE}
 tic()
-confint(res.3)
+confint(res.3, method = "Wald")
 toc()
 ```
 

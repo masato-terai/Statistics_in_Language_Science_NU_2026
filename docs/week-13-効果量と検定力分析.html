@@ -53,7 +53,7 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.12.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
@@ -490,18 +490,18 @@ d = \frac{u_1 - u_2}{σ}
 <li><p>検定力： 0.8</p></li>
 <li><p>効果量: 0.4</p></li>
 </ul>
-<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="week-13-効果量と検定力分析.html#cb576-1" tabindex="-1"></a><span class="co">#install.packages(&quot;pwr&quot;)</span></span>
-<span id="cb576-2"><a href="week-13-効果量と検定力分析.html#cb576-2" tabindex="-1"></a>res <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.t.test</span>(</span>
-<span id="cb576-3"><a href="week-13-効果量と検定力分析.html#cb576-3" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,         <span class="co">#危険率</span></span>
-<span id="cb576-4"><a href="week-13-効果量と検定力分析.html#cb576-4" tabindex="-1"></a>  <span class="at">power =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span>,　        <span class="co">#検定力</span></span>
-<span id="cb576-5"><a href="week-13-効果量と検定力分析.html#cb576-5" tabindex="-1"></a>  <span class="at">d =</span> <span class="fl">0.4</span>,                  <span class="co">#効果量</span></span>
-<span id="cb576-6"><a href="week-13-効果量と検定力分析.html#cb576-6" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;two.sample&quot;</span>,      <span class="co">#独立した2標本のt検定</span></span>
-<span id="cb576-7"><a href="week-13-効果量と検定力分析.html#cb576-7" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span> <span class="co">#両側検定</span></span>
-<span id="cb576-8"><a href="week-13-効果量と検定力分析.html#cb576-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb567"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb567-1"><a href="week-13-効果量と検定力分析.html#cb567-1" tabindex="-1"></a><span class="co">#install.packages(&quot;pwr&quot;)</span></span>
+<span id="cb567-2"><a href="week-13-効果量と検定力分析.html#cb567-2" tabindex="-1"></a>res <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.t.test</span>(</span>
+<span id="cb567-3"><a href="week-13-効果量と検定力分析.html#cb567-3" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,         <span class="co">#危険率</span></span>
+<span id="cb567-4"><a href="week-13-効果量と検定力分析.html#cb567-4" tabindex="-1"></a>  <span class="at">power =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span>,　        <span class="co">#検定力</span></span>
+<span id="cb567-5"><a href="week-13-効果量と検定力分析.html#cb567-5" tabindex="-1"></a>  <span class="at">d =</span> <span class="fl">0.4</span>,                  <span class="co">#効果量</span></span>
+<span id="cb567-6"><a href="week-13-効果量と検定力分析.html#cb567-6" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;two.sample&quot;</span>,      <span class="co">#独立した2標本のt検定</span></span>
+<span id="cb567-7"><a href="week-13-効果量と検定力分析.html#cb567-7" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span> <span class="co">#両側検定</span></span>
+<span id="cb567-8"><a href="week-13-効果量と検定力分析.html#cb567-8" tabindex="-1"></a>)</span></code></pre></div>
 <ul>
 <li>推定サンプルサイズは n = 99.08であるため、切り上げた値である200名（100名 × 2 ）が必要サンプルとなる</li>
 </ul>
-<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="week-13-効果量と検定力分析.html#cb577-1" tabindex="-1"></a>res</span></code></pre></div>
+<div class="sourceCode" id="cb568"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb568-1"><a href="week-13-効果量と検定力分析.html#cb568-1" tabindex="-1"></a>res</span></code></pre></div>
 <pre><code>## 
 ##      Two-sample t test power calculation 
 ## 
@@ -512,7 +512,7 @@ d = \frac{u_1 - u_2}{σ}
 ##     alternative = two.sided
 ## 
 ## NOTE: n is number in *each* group</code></pre>
-<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="week-13-効果量と検定力分析.html#cb579-1" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code></pre></div>
+<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="week-13-効果量と検定力分析.html#cb570-1" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-389-1.png" alt="" width="672" /></p>
 <div class="infobox">
 <p>帰無仮説検定では事前のサンプルサイズ設計が必要と述べましたが、ベイズ統計でも事前のサンプルサイズの目安は必要です（事前登録などや研究費獲得など）。しかしベイズでは新たなデータを追加して分析することは可能ですが、帰無仮説検定ではできません（第一種の過誤の割合が増える）。従って、帰無仮説検定では検定力分析が必須となります。また、分析の前にはデータの削除などを行うことが多いため、ある程度余裕のあるサンプルサイズを確保する必要があります。</p>
@@ -520,15 +520,15 @@ d = \frac{u_1 - u_2}{σ}
 </div>
 <div id="対応のある2群の-t-検定" class="section level3 hasAnchor" number="14.4.2">
 <h3><span class="header-section-number">14.4.2</span> 対応のある2群の <em>t</em> 検定<a href="week-13-効果量と検定力分析.html#%E5%AF%BE%E5%BF%9C%E3%81%AE%E3%81%82%E3%82%8B2%E7%BE%A4%E3%81%AE-t-%E6%A4%9C%E5%AE%9A" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="week-13-効果量と検定力分析.html#cb580-1" tabindex="-1"></a>res.paired <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.t.test</span>(</span>
-<span id="cb580-2"><a href="week-13-効果量と検定力分析.html#cb580-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,</span>
-<span id="cb580-3"><a href="week-13-効果量と検定力分析.html#cb580-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span>,</span>
-<span id="cb580-4"><a href="week-13-効果量と検定力分析.html#cb580-4" tabindex="-1"></a>  <span class="at">d =</span> <span class="fl">0.4</span>,</span>
-<span id="cb580-5"><a href="week-13-効果量と検定力分析.html#cb580-5" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;paired&quot;</span>,</span>
-<span id="cb580-6"><a href="week-13-効果量と検定力分析.html#cb580-6" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span></span>
-<span id="cb580-7"><a href="week-13-効果量と検定力分析.html#cb580-7" tabindex="-1"></a>)</span>
-<span id="cb580-8"><a href="week-13-効果量と検定力分析.html#cb580-8" tabindex="-1"></a></span>
-<span id="cb580-9"><a href="week-13-効果量と検定力分析.html#cb580-9" tabindex="-1"></a>res.paired</span></code></pre></div>
+<div class="sourceCode" id="cb571"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb571-1"><a href="week-13-効果量と検定力分析.html#cb571-1" tabindex="-1"></a>res.paired <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.t.test</span>(</span>
+<span id="cb571-2"><a href="week-13-効果量と検定力分析.html#cb571-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,</span>
+<span id="cb571-3"><a href="week-13-効果量と検定力分析.html#cb571-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span>,</span>
+<span id="cb571-4"><a href="week-13-効果量と検定力分析.html#cb571-4" tabindex="-1"></a>  <span class="at">d =</span> <span class="fl">0.4</span>,</span>
+<span id="cb571-5"><a href="week-13-効果量と検定力分析.html#cb571-5" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;paired&quot;</span>,</span>
+<span id="cb571-6"><a href="week-13-効果量と検定力分析.html#cb571-6" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span></span>
+<span id="cb571-7"><a href="week-13-効果量と検定力分析.html#cb571-7" tabindex="-1"></a>)</span>
+<span id="cb571-8"><a href="week-13-効果量と検定力分析.html#cb571-8" tabindex="-1"></a></span>
+<span id="cb571-9"><a href="week-13-効果量と検定力分析.html#cb571-9" tabindex="-1"></a>res.paired</span></code></pre></div>
 <pre><code>## 
 ##      Paired t test power calculation 
 ## 
@@ -539,18 +539,18 @@ d = \frac{u_1 - u_2}{σ}
 ##     alternative = two.sided
 ## 
 ## NOTE: n is number of *pairs*</code></pre>
-<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb582-1"><a href="week-13-効果量と検定力分析.html#cb582-1" tabindex="-1"></a><span class="fu">plot</span>(res.paired)</span></code></pre></div>
+<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="week-13-効果量と検定力分析.html#cb573-1" tabindex="-1"></a><span class="fu">plot</span>(res.paired)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-391-1.png" alt="" width="672" /></p>
 </div>
 <div id="相関係数" class="section level3 hasAnchor" number="14.4.3">
 <h3><span class="header-section-number">14.4.3</span> 相関係数<a href="week-13-効果量と検定力分析.html#%E7%9B%B8%E9%96%A2%E4%BF%82%E6%95%B0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="week-13-効果量と検定力分析.html#cb583-1" tabindex="-1"></a>res.cor <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.r.test</span>(</span>
-<span id="cb583-2"><a href="week-13-効果量と検定力分析.html#cb583-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,</span>
-<span id="cb583-3"><a href="week-13-効果量と検定力分析.html#cb583-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span>,</span>
-<span id="cb583-4"><a href="week-13-効果量と検定力分析.html#cb583-4" tabindex="-1"></a>  <span class="at">r =</span> <span class="fl">0.2</span></span>
-<span id="cb583-5"><a href="week-13-効果量と検定力分析.html#cb583-5" tabindex="-1"></a>)</span>
-<span id="cb583-6"><a href="week-13-効果量と検定力分析.html#cb583-6" tabindex="-1"></a></span>
-<span id="cb583-7"><a href="week-13-効果量と検定力分析.html#cb583-7" tabindex="-1"></a>res.cor</span></code></pre></div>
+<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="week-13-効果量と検定力分析.html#cb574-1" tabindex="-1"></a>res.cor <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.r.test</span>(</span>
+<span id="cb574-2"><a href="week-13-効果量と検定力分析.html#cb574-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,</span>
+<span id="cb574-3"><a href="week-13-効果量と検定力分析.html#cb574-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span>,</span>
+<span id="cb574-4"><a href="week-13-効果量と検定力分析.html#cb574-4" tabindex="-1"></a>  <span class="at">r =</span> <span class="fl">0.2</span></span>
+<span id="cb574-5"><a href="week-13-効果量と検定力分析.html#cb574-5" tabindex="-1"></a>)</span>
+<span id="cb574-6"><a href="week-13-効果量と検定力分析.html#cb574-6" tabindex="-1"></a></span>
+<span id="cb574-7"><a href="week-13-効果量と検定力分析.html#cb574-7" tabindex="-1"></a>res.cor</span></code></pre></div>
 <pre><code>## 
 ##      approximate correlation power calculation (arctangh transformation) 
 ## 
@@ -559,7 +559,7 @@ d = \frac{u_1 - u_2}{σ}
 ##       sig.level = 0.05
 ##           power = 0.8
 ##     alternative = two.sided</code></pre>
-<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="week-13-効果量と検定力分析.html#cb585-1" tabindex="-1"></a><span class="fu">plot</span>(res.cor)</span></code></pre></div>
+<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="week-13-効果量と検定力分析.html#cb576-1" tabindex="-1"></a><span class="fu">plot</span>(res.cor)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-393-1.png" alt="" width="672" /></p>
 </div>
 <div id="一般線形モデル" class="section level3 hasAnchor" number="14.4.4">
@@ -567,16 +567,16 @@ d = \frac{u_1 - u_2}{σ}
 <ul>
 <li><em>F</em> 検定の検出力を推定するための関数（帰無仮説 = どの独立変数も従属変数の分散を説明していない）</li>
 </ul>
-<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="week-13-効果量と検定力分析.html#cb586-1" tabindex="-1"></a>res_g <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.f2.test</span>(</span>
-<span id="cb586-2"><a href="week-13-効果量と検定力分析.html#cb586-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>, </span>
-<span id="cb586-3"><a href="week-13-効果量と検定力分析.html#cb586-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="fl">0.8</span>,</span>
-<span id="cb586-4"><a href="week-13-効果量と検定力分析.html#cb586-4" tabindex="-1"></a>  <span class="at">u =</span> <span class="dv">2</span>,                     <span class="co">#独立変数の数（切片を除く）</span></span>
-<span id="cb586-5"><a href="week-13-効果量と検定力分析.html#cb586-5" tabindex="-1"></a>  <span class="at">f2 =</span> <span class="fl">0.3</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.3</span>)         <span class="co">#効果量。30%の分散を説明すると仮定した場合の対応するf2の値</span></span>
-<span id="cb586-6"><a href="week-13-効果量と検定力分析.html#cb586-6" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="week-13-効果量と検定力分析.html#cb577-1" tabindex="-1"></a>res_g <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.f2.test</span>(</span>
+<span id="cb577-2"><a href="week-13-効果量と検定力分析.html#cb577-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>, </span>
+<span id="cb577-3"><a href="week-13-効果量と検定力分析.html#cb577-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="fl">0.8</span>,</span>
+<span id="cb577-4"><a href="week-13-効果量と検定力分析.html#cb577-4" tabindex="-1"></a>  <span class="at">u =</span> <span class="dv">2</span>,                     <span class="co">#独立変数の数（切片を除く）</span></span>
+<span id="cb577-5"><a href="week-13-効果量と検定力分析.html#cb577-5" tabindex="-1"></a>  <span class="at">f2 =</span> <span class="fl">0.3</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.3</span>)         <span class="co">#効果量。30%の分散を説明すると仮定した場合の対応するf2の値</span></span>
+<span id="cb577-6"><a href="week-13-効果量と検定力分析.html#cb577-6" tabindex="-1"></a>  )</span></code></pre></div>
 <ul>
 <li>この関数の出力では、サンプルサイズ n ではなく、残差の自由度 v が返される。</li>
 </ul>
-<div class="sourceCode" id="cb587"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb587-1"><a href="week-13-効果量と検定力分析.html#cb587-1" tabindex="-1"></a>res_g</span></code></pre></div>
+<div class="sourceCode" id="cb578"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb578-1"><a href="week-13-効果量と検定力分析.html#cb578-1" tabindex="-1"></a>res_g</span></code></pre></div>
 <pre><code>## 
 ##      Multiple regression power calculation 
 ## 
@@ -598,13 +598,13 @@ n = v + u + 1
 <li>26名だと検定力が80%を超えている</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb589"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb589-1"><a href="week-13-効果量と検定力分析.html#cb589-1" tabindex="-1"></a>pwr<span class="sc">::</span><span class="fu">pwr.f2.test</span>(</span>
-<span id="cb589-2"><a href="week-13-効果量と検定力分析.html#cb589-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>, </span>
-<span id="cb589-3"><a href="week-13-効果量と検定力分析.html#cb589-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="cn">NULL</span>,              <span class="co">#検定力を推定</span></span>
-<span id="cb589-4"><a href="week-13-効果量と検定力分析.html#cb589-4" tabindex="-1"></a>  <span class="at">u =</span> <span class="dv">2</span>,                     <span class="co">#独立変数の数（切片を除く）</span></span>
-<span id="cb589-5"><a href="week-13-効果量と検定力分析.html#cb589-5" tabindex="-1"></a>  <span class="at">f2 =</span> <span class="fl">0.3</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.3</span>),        <span class="co">#効果量。45%の分散を説明すると仮定する</span></span>
-<span id="cb589-6"><a href="week-13-効果量と検定力分析.html#cb589-6" tabindex="-1"></a>  <span class="at">v =</span> <span class="dv">26</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>             <span class="co">#残差の自由度</span></span>
-<span id="cb589-7"><a href="week-13-効果量と検定力分析.html#cb589-7" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="week-13-効果量と検定力分析.html#cb580-1" tabindex="-1"></a>pwr<span class="sc">::</span><span class="fu">pwr.f2.test</span>(</span>
+<span id="cb580-2"><a href="week-13-効果量と検定力分析.html#cb580-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>, </span>
+<span id="cb580-3"><a href="week-13-効果量と検定力分析.html#cb580-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="cn">NULL</span>,              <span class="co">#検定力を推定</span></span>
+<span id="cb580-4"><a href="week-13-効果量と検定力分析.html#cb580-4" tabindex="-1"></a>  <span class="at">u =</span> <span class="dv">2</span>,                     <span class="co">#独立変数の数（切片を除く）</span></span>
+<span id="cb580-5"><a href="week-13-効果量と検定力分析.html#cb580-5" tabindex="-1"></a>  <span class="at">f2 =</span> <span class="fl">0.3</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.3</span>),        <span class="co">#効果量。45%の分散を説明すると仮定する</span></span>
+<span id="cb580-6"><a href="week-13-効果量と検定力分析.html#cb580-6" tabindex="-1"></a>  <span class="at">v =</span> <span class="dv">26</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>             <span class="co">#残差の自由度</span></span>
+<span id="cb580-7"><a href="week-13-効果量と検定力分析.html#cb580-7" tabindex="-1"></a>  )</span></code></pre></div>
 <pre><code>## 
 ##      Multiple regression power calculation 
 ## 
@@ -623,21 +623,21 @@ n = v + u + 1
 <li>級内相関係数：同じクラスタ（集団、グループ、クラスなど）内の観測値がどの程度似ているかを示す指標。集団間の分散 ÷ （集団間の分散 + 集団内の分散）。</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb591"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb591-1"><a href="week-13-効果量と検定力分析.html#cb591-1" tabindex="-1"></a><span class="co">#install.packages(&quot;sjstats&quot;)</span></span>
-<span id="cb591-2"><a href="week-13-効果量と検定力分析.html#cb591-2" tabindex="-1"></a><span class="fu">library</span>(sjstats)</span></code></pre></div>
-<div class="sourceCode" id="cb592"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb592-1"><a href="week-13-効果量と検定力分析.html#cb592-1" tabindex="-1"></a>nofitem <span class="ot">&lt;-</span> <span class="dv">10</span>         <span class="co">#項目数</span></span>
-<span id="cb592-2"><a href="week-13-効果量と検定力分析.html#cb592-2" tabindex="-1"></a></span>
-<span id="cb592-3"><a href="week-13-効果量と検定力分析.html#cb592-3" tabindex="-1"></a>power.sjstats <span class="ot">&lt;-</span> <span class="fu">samplesize_mixed</span>(</span>
-<span id="cb592-4"><a href="week-13-効果量と検定力分析.html#cb592-4" tabindex="-1"></a>  <span class="at">eff.size =</span> <span class="fl">0.02</span>,    <span class="co">#効果量 (f2)</span></span>
-<span id="cb592-5"><a href="week-13-効果量と検定力分析.html#cb592-5" tabindex="-1"></a>  <span class="at">df.n =</span> <span class="dv">2</span>,           <span class="co">#独立変数の数（切片は除く）</span></span>
-<span id="cb592-6"><a href="week-13-効果量と検定力分析.html#cb592-6" tabindex="-1"></a>  <span class="at">icc =</span> <span class="fl">0.1</span>,          <span class="co">#クラスタ内相関 (ICC)</span></span>
-<span id="cb592-7"><a href="week-13-効果量と検定力分析.html#cb592-7" tabindex="-1"></a>  <span class="at">power =</span> <span class="fl">0.8</span>,        <span class="co">#検定力</span></span>
-<span id="cb592-8"><a href="week-13-効果量と検定力分析.html#cb592-8" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,   <span class="co">#有意水準</span></span>
-<span id="cb592-9"><a href="week-13-効果量と検定力分析.html#cb592-9" tabindex="-1"></a>  <span class="at">k =</span> <span class="cn">NULL</span>,           <span class="co">#参加者の数を推定するためこちらは指定しない</span></span>
-<span id="cb592-10"><a href="week-13-効果量と検定力分析.html#cb592-10" tabindex="-1"></a>  <span class="at">n =</span> nofitem         <span class="co">#クラスターごとにいくつのデータがあるか（項目数など）</span></span>
-<span id="cb592-11"><a href="week-13-効果量と検定力分析.html#cb592-11" tabindex="-1"></a>)</span>
-<span id="cb592-12"><a href="week-13-効果量と検定力分析.html#cb592-12" tabindex="-1"></a></span>
-<span id="cb592-13"><a href="week-13-効果量と検定力分析.html#cb592-13" tabindex="-1"></a>power.sjstats</span></code></pre></div>
+<div class="sourceCode" id="cb582"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb582-1"><a href="week-13-効果量と検定力分析.html#cb582-1" tabindex="-1"></a><span class="co">#install.packages(&quot;sjstats&quot;)</span></span>
+<span id="cb582-2"><a href="week-13-効果量と検定力分析.html#cb582-2" tabindex="-1"></a><span class="fu">library</span>(sjstats)</span></code></pre></div>
+<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="week-13-効果量と検定力分析.html#cb583-1" tabindex="-1"></a>nofitem <span class="ot">&lt;-</span> <span class="dv">10</span>         <span class="co">#項目数</span></span>
+<span id="cb583-2"><a href="week-13-効果量と検定力分析.html#cb583-2" tabindex="-1"></a></span>
+<span id="cb583-3"><a href="week-13-効果量と検定力分析.html#cb583-3" tabindex="-1"></a>power.sjstats <span class="ot">&lt;-</span> <span class="fu">samplesize_mixed</span>(</span>
+<span id="cb583-4"><a href="week-13-効果量と検定力分析.html#cb583-4" tabindex="-1"></a>  <span class="at">eff.size =</span> <span class="fl">0.02</span>,    <span class="co">#効果量 (f2)</span></span>
+<span id="cb583-5"><a href="week-13-効果量と検定力分析.html#cb583-5" tabindex="-1"></a>  <span class="at">df.n =</span> <span class="dv">2</span>,           <span class="co">#独立変数の数（切片は除く）</span></span>
+<span id="cb583-6"><a href="week-13-効果量と検定力分析.html#cb583-6" tabindex="-1"></a>  <span class="at">icc =</span> <span class="fl">0.1</span>,          <span class="co">#クラスタ内相関 (ICC)</span></span>
+<span id="cb583-7"><a href="week-13-効果量と検定力分析.html#cb583-7" tabindex="-1"></a>  <span class="at">power =</span> <span class="fl">0.8</span>,        <span class="co">#検定力</span></span>
+<span id="cb583-8"><a href="week-13-効果量と検定力分析.html#cb583-8" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,   <span class="co">#有意水準</span></span>
+<span id="cb583-9"><a href="week-13-効果量と検定力分析.html#cb583-9" tabindex="-1"></a>  <span class="at">k =</span> <span class="cn">NULL</span>,           <span class="co">#参加者の数を推定するためこちらは指定しない</span></span>
+<span id="cb583-10"><a href="week-13-効果量と検定力分析.html#cb583-10" tabindex="-1"></a>  <span class="at">n =</span> nofitem         <span class="co">#クラスターごとにいくつのデータがあるか（項目数など）</span></span>
+<span id="cb583-11"><a href="week-13-効果量と検定力分析.html#cb583-11" tabindex="-1"></a>)</span>
+<span id="cb583-12"><a href="week-13-効果量と検定力分析.html#cb583-12" tabindex="-1"></a></span>
+<span id="cb583-13"><a href="week-13-効果量と検定力分析.html#cb583-13" tabindex="-1"></a>power.sjstats</span></code></pre></div>
 <pre><code>## $`Subjects per Cluster`
 ## numeric(0)
 ## 
@@ -646,7 +646,7 @@ n = v + u + 1
 <ul>
 <li>総サンプルサイズが計算されるため、項目数で割る</li>
 </ul>
-<div class="sourceCode" id="cb594"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb594-1"><a href="week-13-効果量と検定力分析.html#cb594-1" tabindex="-1"></a>power.sjstats<span class="sc">$</span><span class="st">`</span><span class="at">Total Sample Size</span><span class="st">`</span> <span class="sc">/</span> nofitem</span></code></pre></div>
+<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="week-13-効果量と検定力分析.html#cb585-1" tabindex="-1"></a>power.sjstats<span class="sc">$</span><span class="st">`</span><span class="at">Total Sample Size</span><span class="st">`</span> <span class="sc">/</span> nofitem</span></code></pre></div>
 <pre><code>## [1] 92.1</code></pre>
 <ul>
 <li><p>級内相関係数の値で推定されるサンプル数は変わる</p></li>

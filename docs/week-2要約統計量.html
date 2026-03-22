@@ -53,7 +53,7 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.12.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
@@ -1024,10 +1024,8 @@ No
 <div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="week-2要約統計量.html#cb70-1" tabindex="-1"></a><span class="co"># install.packages(&quot;psych&quot;) 1つのパソコンにつき一回でよい</span></span>
 <span id="cb70-2"><a href="week-2要約統計量.html#cb70-2" tabindex="-1"></a><span class="fu">library</span>(psych) <span class="co"># 使用する際、セッションにつき一回</span></span>
 <span id="cb70-3"><a href="week-2要約統計量.html#cb70-3" tabindex="-1"></a><span class="fu">describe</span>(mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
-<pre><code>##    vars  n  mean   sd median trimmed  mad  min  max range
-## X1    1 32 20.09 6.03   19.2    19.7 5.41 10.4 33.9  23.5
-##    skew kurtosis   se
-## X1 0.61    -0.37 1.07</code></pre>
+<pre><code>##    vars  n  mean   sd median trimmed  mad  min  max range skew kurtosis   se
+## X1    1 32 20.09 6.03   19.2    19.7 5.41 10.4 33.9  23.5 0.61    -0.37 1.07</code></pre>
 </div>
 <div id="最頻値" class="section level4 hasAnchor" number="3.9.4.3">
 <h4><span class="header-section-number">3.9.4.3</span> 最頻値<a href="week-2要約統計量.html#%E6%9C%80%E9%A0%BB%E5%80%A4" class="anchor-section" aria-label="Anchor link to header"></a></h4>

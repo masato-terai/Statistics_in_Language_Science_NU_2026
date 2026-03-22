@@ -53,7 +53,7 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.12.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
@@ -677,8 +677,8 @@ s^2 = \frac{1}{n-1}S^2
 <div id="rの関数で95信頼区間を求める" class="section level2 hasAnchor" number="4.7">
 <h2><span class="header-section-number">4.7</span> Rの関数で95%信頼区間を求める<a href="week-3推測統計学.html#r%E3%81%AE%E9%96%A2%E6%95%B0%E3%81%A795%E4%BF%A1%E9%A0%BC%E5%8C%BA%E9%96%93%E3%82%92%E6%B1%82%E3%82%81%E3%82%8B" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="week-3推測統計学.html#cb88-1" tabindex="-1"></a>gmodels<span class="sc">::</span><span class="fu">ci</span>(mtcars<span class="sc">$</span>mpg)</span></code></pre></div>
-<pre><code>## Warning in ci.numeric(mtcars$mpg): No class or unkown
-## class.  Using default calcuation.</code></pre>
+<pre><code>## Warning in ci.numeric(mtcars$mpg): No class or unkown class.  Using default
+## calcuation.</code></pre>
 <pre><code>##   Estimate   CI lower   CI upper Std. Error 
 ##  20.090625  17.917679  22.263571   1.065424</code></pre>
 <ul>
@@ -704,70 +704,49 @@ s^2 = \frac{1}{n-1}S^2
 <div id="データの中身を確認" class="section level4 hasAnchor" number="4.8.1.1">
 <h4><span class="header-section-number">4.8.1.1</span> データの中身を確認<a href="week-3推測統計学.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E4%B8%AD%E8%BA%AB%E3%82%92%E7%A2%BA%E8%AA%8D" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="week-3推測統計学.html#cb96-1" tabindex="-1"></a><span class="fu">summary</span>(dat)</span></code></pre></div>
-<pre><code>##        id          名前             タイプ1         
-##  Min.   :  1   Length:897         Length:897        
-##  1st Qu.:225   Class :character   Class :character  
-##  Median :449   Mode  :character   Mode  :character  
-##  Mean   :449                                        
-##  3rd Qu.:673                                        
-##  Max.   :897                                        
-##       高さ             重さ             世代      
-##  Min.   : 0.100   Min.   :  0.10   Min.   :1.000  
-##  1st Qu.: 0.500   1st Qu.:  8.50   1st Qu.:2.000  
-##  Median : 1.000   Median : 27.00   Median :4.000  
-##  Mean   : 1.186   Mean   : 64.03   Mean   :4.143  
-##  3rd Qu.: 1.500   3rd Qu.: 65.00   3rd Qu.:6.000  
-##  Max.   :20.000   Max.   :999.90   Max.   :8.000  
-##    ステータス          HP         こうげき     
-##  Min.   :175.0   Min.   :  1   Min.   :  5.00  
-##  1st Qu.:320.0   1st Qu.: 50   1st Qu.: 55.00  
-##  Median :440.0   Median : 65   Median : 75.00  
-##  Mean   :422.9   Mean   : 69   Mean   : 76.54  
-##  3rd Qu.:500.0   3rd Qu.: 80   3rd Qu.: 95.00  
-##  Max.   :720.0   Max.   :255   Max.   :181.00  
-##     ぼうぎょ         とくこう         とくぼう     
-##  Min.   :  5.00   Min.   : 10.00   Min.   : 20.00  
-##  1st Qu.: 50.00   1st Qu.: 46.00   1st Qu.: 50.00  
-##  Median : 67.00   Median : 65.00   Median : 65.00  
-##  Mean   : 71.88   Mean   : 69.67   Mean   : 69.87  
-##  3rd Qu.: 90.00   3rd Qu.: 90.00   3rd Qu.: 85.00  
-##  Max.   :230.00   Max.   :173.00   Max.   :230.00  
-##     すばやさ       捕まえやすさ         進化      
-##  Min.   :  5.00   Min.   :  3.00   Min.   :0.000  
-##  1st Qu.: 45.00   1st Qu.: 45.00   1st Qu.:1.000  
-##  Median : 65.00   Median : 60.00   Median :1.000  
-##  Mean   : 65.93   Mean   : 97.85   Mean   :1.418  
-##  3rd Qu.: 85.00   3rd Qu.:150.00   3rd Qu.:2.000  
-##  Max.   :200.00   Max.   :255.00   Max.   :3.000  
-##    画像URL         
-##  Length:897        
-##  Class :character  
-##  Mode  :character  
-##                    
-##                    
-## </code></pre>
+<pre><code>##        id          名前             タイプ1               高さ       
+##  Min.   :  1   Length:897         Length:897         Min.   : 0.100  
+##  1st Qu.:225   Class :character   Class :character   1st Qu.: 0.500  
+##  Median :449   Mode  :character   Mode  :character   Median : 1.000  
+##  Mean   :449                                         Mean   : 1.186  
+##  3rd Qu.:673                                         3rd Qu.: 1.500  
+##  Max.   :897                                         Max.   :20.000  
+##       重さ             世代         ステータス          HP     
+##  Min.   :  0.10   Min.   :1.000   Min.   :175.0   Min.   :  1  
+##  1st Qu.:  8.50   1st Qu.:2.000   1st Qu.:320.0   1st Qu.: 50  
+##  Median : 27.00   Median :4.000   Median :440.0   Median : 65  
+##  Mean   : 64.03   Mean   :4.143   Mean   :422.9   Mean   : 69  
+##  3rd Qu.: 65.00   3rd Qu.:6.000   3rd Qu.:500.0   3rd Qu.: 80  
+##  Max.   :999.90   Max.   :8.000   Max.   :720.0   Max.   :255  
+##     こうげき         ぼうぎょ         とくこう         とくぼう     
+##  Min.   :  5.00   Min.   :  5.00   Min.   : 10.00   Min.   : 20.00  
+##  1st Qu.: 55.00   1st Qu.: 50.00   1st Qu.: 46.00   1st Qu.: 50.00  
+##  Median : 75.00   Median : 67.00   Median : 65.00   Median : 65.00  
+##  Mean   : 76.54   Mean   : 71.88   Mean   : 69.67   Mean   : 69.87  
+##  3rd Qu.: 95.00   3rd Qu.: 90.00   3rd Qu.: 90.00   3rd Qu.: 85.00  
+##  Max.   :181.00   Max.   :230.00   Max.   :173.00   Max.   :230.00  
+##     すばやさ       捕まえやすさ         進化         画像URL         
+##  Min.   :  5.00   Min.   :  3.00   Min.   :0.000   Length:897        
+##  1st Qu.: 45.00   1st Qu.: 45.00   1st Qu.:1.000   Class :character  
+##  Median : 65.00   Median : 60.00   Median :1.000   Mode  :character  
+##  Mean   : 65.93   Mean   : 97.85   Mean   :1.418                     
+##  3rd Qu.: 85.00   3rd Qu.:150.00   3rd Qu.:2.000                     
+##  Max.   :200.00   Max.   :255.00   Max.   :3.000</code></pre>
 <div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="week-3推測統計学.html#cb98-1" tabindex="-1"></a><span class="fu">head</span>(dat)</span></code></pre></div>
-<pre><code>##   id       名前 タイプ1 高さ  重さ 世代 ステータス HP
-## 1  1 フシギダネ    くさ  0.7   6.9    1        318 45
-## 2  2 フシギソウ    くさ  1.0  13.0    1        405 60
-## 3  3 フシギバナ    くさ  2.0 100.0    1        525 80
-## 4  4   ヒトカゲ  ほのお  0.6   8.5    1        309 39
-## 5  5   リザード  ほのお  1.1  19.0    1        405 58
-## 6  6 リザードン  ほのお  1.7  90.5    1        534 78
-##   こうげき ぼうぎょ とくこう とくぼう すばやさ
-## 1       49       49       65       65       45
-## 2       62       63       80       80       60
-## 3       82       83      100      100       80
-## 4       52       43       60       50       65
-## 5       64       58       80       65       80
-## 6       84       78      109       85      100
-##   捕まえやすさ 進化
-## 1           45    1
-## 2           45    2
-## 3           45    3
-## 4           45    1
-## 5           45    2
-## 6           45    3
+<pre><code>##   id       名前 タイプ1 高さ  重さ 世代 ステータス HP こうげき ぼうぎょ
+## 1  1 フシギダネ    くさ  0.7   6.9    1        318 45       49       49
+## 2  2 フシギソウ    くさ  1.0  13.0    1        405 60       62       63
+## 3  3 フシギバナ    くさ  2.0 100.0    1        525 80       82       83
+## 4  4   ヒトカゲ  ほのお  0.6   8.5    1        309 39       52       43
+## 5  5   リザード  ほのお  1.1  19.0    1        405 58       64       58
+## 6  6 リザードン  ほのお  1.7  90.5    1        534 78       84       78
+##   とくこう とくぼう すばやさ 捕まえやすさ 進化
+## 1       65       65       45           45    1
+## 2       80       80       60           45    2
+## 3      100      100       80           45    3
+## 4       60       50       65           45    1
+## 5       80       65       80           45    2
+## 6      109       85      100           45    3
 ##                                                                                                 画像URL
 ## 1 https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png
 ## 2 https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png
@@ -822,8 +801,8 @@ s^2 = \frac{1}{n-1}S^2
 <div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="week-3推測統計学.html#cb102-1" tabindex="-1"></a><span class="co">#install.packages(&quot;gmodels&quot;)</span></span>
 <span id="cb102-2"><a href="week-3推測統計学.html#cb102-2" tabindex="-1"></a><span class="fu">library</span>(gmodels)</span>
 <span id="cb102-3"><a href="week-3推測統計学.html#cb102-3" tabindex="-1"></a><span class="fu">ci</span>(dat<span class="sc">$</span>こうげき)</span></code></pre></div>
-<pre><code>## Warning in ci.numeric(dat$こうげき): No class or unkown
-## class.  Using default calcuation.</code></pre>
+<pre><code>## Warning in ci.numeric(dat$こうげき): No class or unkown class.  Using
+## default calcuation.</code></pre>
 <pre><code>##   Estimate   CI lower   CI upper Std. Error 
 ## 76.5406912 74.5956429 78.4857395  0.9910493</code></pre>
 </div>

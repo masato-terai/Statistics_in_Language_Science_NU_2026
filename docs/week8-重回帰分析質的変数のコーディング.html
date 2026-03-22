@@ -53,7 +53,7 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet" />
+<link href="libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
 <script src="libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 <script src="libs/plotly-binding-4.12.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
@@ -927,13 +927,13 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <pre><code>## New names:
 ## Rows: 46 Columns: 17
 ## ── Column specification
-## ───────────────────────────────────
-## Delimiter: &quot;,&quot; chr (3): 名前, タイプ1, 画像URL dbl (14):
-## ...1, id, 高さ, 重さ, 世代, ステータス, HP, こうげき,
-## ぼうぎょ, ...
-## ℹ Use `spec()` to retrieve the full column specification
-## for this data. ℹ Specify the column types or set
-## `show_col_types = FALSE` to quiet this message.
+## ─────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot; chr (3): 名前, タイプ1, 画像URL dbl (14): ...1, id, 高さ,
+## 重さ, 世代, ステータス, HP, こうげき, ぼうぎょ, とくこう, とくぼう,
+## すばやさ, ...
+## ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+## Specify the column types or set `show_col_types = FALSE` to quiet this
+## message.
 ## • `` -&gt; `...1`</code></pre>
 <div id="データの概要" class="section level3 hasAnchor" number="9.7.1">
 <h3><span class="header-section-number">9.7.1</span> データの概要<a href="week8-重回帰分析質的変数のコーディング.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E6%A6%82%E8%A6%81" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -943,24 +943,22 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 </ul>
 <div class="sourceCode" id="cb293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb293-1"><a href="week8-重回帰分析質的変数のコーディング.html#cb293-1" tabindex="-1"></a><span class="fu">head</span>(dat, <span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 17
-##    ...1    id 名前     タイプ1  高さ  重さ  世代 ステータス
-##   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;
-## 1     1     7 ゼニガメ みず      0.5   9       1        314
-## 2     2    55 ゴルダック…… みず      1.7  76.6     1        500
-## 3     3    61 ニョロゾ みず      1    20       1        385
-## 4     4    73 ドククラゲ…… みず      1.6  55       1        515
-## 5     5    79 ヤドン   みず      1.2  36       1        315
-## # ℹ 9 more variables: HP &lt;dbl&gt;, こうげき &lt;dbl&gt;,
-## #   ぼうぎょ &lt;dbl&gt;, とくこう &lt;dbl&gt;, とくぼう &lt;dbl&gt;,
-## #   すばやさ &lt;dbl&gt;, 捕まえやすさ &lt;dbl&gt;, 進化 &lt;dbl&gt;,
-## #   画像URL &lt;chr&gt;</code></pre>
+##    ...1    id 名前       タイプ1  高さ  重さ  世代 ステータス    HP こうげき
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+## 1     1     7 ゼニガメ   みず      0.5   9       1        314    44       48
+## 2     2    55 ゴルダック みず      1.7  76.6     1        500    80       82
+## 3     3    61 ニョロゾ   みず      1    20       1        385    65       65
+## 4     4    73 ドククラゲ みず      1.6  55       1        515    80       70
+## 5     5    79 ヤドン     みず      1.2  36       1        315    90       65
+## # ℹ 7 more variables: ぼうぎょ &lt;dbl&gt;, とくこう &lt;dbl&gt;, とくぼう &lt;dbl&gt;,
+## #   すばやさ &lt;dbl&gt;, 捕まえやすさ &lt;dbl&gt;, 進化 &lt;dbl&gt;, 画像URL &lt;chr&gt;</code></pre>
 <div class="sourceCode" id="cb295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb295-1"><a href="week8-重回帰分析質的変数のコーディング.html#cb295-1" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
 <span id="cb295-2"><a href="week8-重回帰分析質的変数のコーディング.html#cb295-2" tabindex="-1"></a></span>
 <span id="cb295-3"><a href="week8-重回帰分析質的変数のコーディング.html#cb295-3" tabindex="-1"></a><span class="fu">describe</span>(dat<span class="sc">$</span>重さ)</span></code></pre></div>
-<pre><code>##    vars  n  mean    sd median trimmed   mad min max range
-## X1    1 46 47.32 72.65   25.7   31.56 28.84 0.8 398 397.2
-##    skew kurtosis    se
-## X1    3    10.25 10.71</code></pre>
+<pre><code>##    vars  n  mean    sd median trimmed   mad min max range skew kurtosis
+## X1    1 46 47.32 72.65   25.7   31.56 28.84 0.8 398 397.2    3    10.25
+##       se
+## X1 10.71</code></pre>
 <div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb297-1"><a href="week8-重回帰分析質的変数のコーディング.html#cb297-1" tabindex="-1"></a><span class="fu">boxplot</span>(dat<span class="sc">$</span>重さ)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-185-1.png" alt="" width="672" /></p>
 <div class="sourceCode" id="cb298"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb298-1"><a href="week8-重回帰分析質的変数のコーディング.html#cb298-1" tabindex="-1"></a><span class="fu">table</span>(dat<span class="sc">$</span>タイプ1)</span></code></pre></div>
@@ -996,14 +994,12 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <li><p>水準の順番を確認</p></li>
 </ul>
 <div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb308-1"><a href="week8-重回帰分析質的変数のコーディング.html#cb308-1" tabindex="-1"></a><span class="fu">factor</span>(dat<span class="sc">$</span>タイプ1)</span></code></pre></div>
-<pre><code>##  [1] みず     みず     みず     みず     みず     みず    
-##  [7] みず     みず     みず     みず     みず     みず    
-## [13] みず     みず     みず     みず     みず     みず    
-## [19] みず     みず     みず     みず     みず     みず    
-## [25] ノーマル ノーマル ノーマル ノーマル ノーマル ノーマル
-## [31] ノーマル ノーマル ノーマル ノーマル ノーマル ノーマル
-## [37] ノーマル ノーマル ノーマル ノーマル ノーマル ノーマル
-## [43] ノーマル ノーマル ノーマル ノーマル
+<pre><code>##  [1] みず     みず     みず     みず     みず     みず     みず     みず    
+##  [9] みず     みず     みず     みず     みず     みず     みず     みず    
+## [17] みず     みず     みず     みず     みず     みず     みず     みず    
+## [25] ノーマル ノーマル ノーマル ノーマル ノーマル ノーマル ノーマル ノーマル
+## [33] ノーマル ノーマル ノーマル ノーマル ノーマル ノーマル ノーマル ノーマル
+## [41] ノーマル ノーマル ノーマル ノーマル ノーマル ノーマル
 ## Levels: ノーマル みず</code></pre>
 <ul>
 <li>コーディングする際は、<strong>Factor型</strong>になっている必要がある</li>
@@ -1048,8 +1044,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 ## (Intercept)    25.12      14.96   1.679   0.1003  
 ## タイプ12       42.56      20.72   2.054   0.0459 *
 ## ---
-## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 70.18 on 44 degrees of freedom
 ## Multiple R-squared:  0.08752,    Adjusted R-squared:  0.06678 
@@ -1090,8 +1085,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 ## 世代2-1       -4.112     27.963  -0.147 0.883773    
 ## 世代3-2       -6.647     27.963  -0.238 0.813252    
 ## ---
-## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 74.17 on 43 degrees of freedom
 ## Multiple R-squared:  0.004202,   Adjusted R-squared:  -0.04211 
@@ -1127,8 +1121,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 ## 世代2-1      -10.759     25.439  -0.423 0.674455    
 ## 世代3-2        6.647     27.963   0.238 0.813252    
 ## ---
-## Signif. codes:  
-## 0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
 ## Residual standard error: 74.17 on 43 degrees of freedom
 ## Multiple R-squared:  0.004202,   Adjusted R-squared:  -0.04211 
@@ -1189,18 +1182,14 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <li>補正後</li>
 </ul>
 <div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb332-1"><a href="week8-重回帰分析質的変数のコーディング.html#cb332-1" tabindex="-1"></a>results_sum_RM[,<span class="dv">2</span>]</span></code></pre></div>
-<pre><code>##             (Intercept)                 Method1 
-## 0.000000000000004800219 1.000000000000000000000 
-##                 Method2 
-## 0.029708515524948679587</code></pre>
+<pre><code>##             (Intercept)                 Method1                 Method2 
+## 0.000000000000004800219 1.000000000000000000000 0.029708515524948679587</code></pre>
 <ul>
 <li>補正前</li>
 </ul>
 <div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb334-1"><a href="week8-重回帰分析質的変数のコーディング.html#cb334-1" tabindex="-1"></a><span class="fu">summary</span>(results_sum)[[<span class="st">&quot;coefficients&quot;</span>]][,<span class="dv">4</span>]</span></code></pre></div>
-<pre><code>##             (Intercept)                 Method1 
-## 0.000000000000001600073 0.588539274664316103269 
-##                 Method2 
-## 0.009902838508316226529</code></pre>
+<pre><code>##             (Intercept)                 Method1                 Method2 
+## 0.000000000000001600073 0.588539274664316103269 0.009902838508316226529</code></pre>
 <ul>
 <li>補正では第2種の誤りが大きくなるのを防げないというシミュレーション結果もある</li>
 </ul>
@@ -1227,8 +1216,7 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 <span id="cb337-11"><a href="week8-重回帰分析質的変数のコーディング.html#cb337-11" tabindex="-1"></a>  <span class="at">refresh =</span> <span class="dv">0</span>,</span>
 <span id="cb337-12"><a href="week8-重回帰分析質的変数のコーディング.html#cb337-12" tabindex="-1"></a>  <span class="at">silent =</span> <span class="dv">2</span></span>
 <span id="cb337-13"><a href="week8-重回帰分析質的変数のコーディング.html#cb337-13" tabindex="-1"></a>)</span></code></pre></div>
-<pre><code>## recompiling to avoid crashing R session</code></pre>
-<div class="sourceCode" id="cb339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb339-1"><a href="week8-重回帰分析質的変数のコーディング.html#cb339-1" tabindex="-1"></a><span class="fu">summary</span>(results_sum_bayes)</span></code></pre></div>
+<div class="sourceCode" id="cb338"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb338-1"><a href="week8-重回帰分析質的変数のコーディング.html#cb338-1" tabindex="-1"></a><span class="fu">summary</span>(results_sum_bayes)</span></code></pre></div>
 <pre><code>##  Family: gaussian 
 ##   Links: mu = identity 
 ## Formula: 重さ ~ タイプ1 
@@ -1237,18 +1225,13 @@ R<sup>2</sup> / R<sup>2</sup> adjusted
 ##          total post-warmup draws = 9000
 ## 
 ## Regression Coefficients:
-##           Estimate Est.Error l-95% CI u-95% CI Rhat
-## Intercept    44.17      9.96    24.97    63.71 1.00
-## タイプ11    -10.21      7.28   -24.50     4.07 1.00
-##           Bulk_ESS Tail_ESS
-## Intercept     8205     8555
-## タイプ11      8493     8029
+##           Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+## Intercept    44.17      9.96    24.97    63.71 1.00     8205     8555
+## タイプ11    -10.21      7.28   -24.50     4.07 1.00     8493     8029
 ## 
 ## Further Distributional Parameters:
-##       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS
-## sigma    70.50      7.49    57.58    86.81 1.00     8154
-##       Tail_ESS
-## sigma     7938
+##       Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS
+## sigma    70.50      7.49    57.58    86.81 1.00     8154     7938
 ## 
 ## Draws were sampled using sampling(NUTS). For each parameter, Bulk_ESS
 ## and Tail_ESS are effective sample size measures, and Rhat is the potential
