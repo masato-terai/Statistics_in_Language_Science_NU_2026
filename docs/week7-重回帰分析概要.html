@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 14 Week 13: 効果量と検定力分析 | 言語統計処理（春学期）</title>
-  <meta name="description" content="Chapter 14 Week 13: 効果量と検定力分析 | 言語統計処理（春学期）" />
+  <title>Chapter 8 Week7: 重回帰分析：概要 | 言語統計処理（春学期）</title>
+  <meta name="description" content="Chapter 8 Week7: 重回帰分析：概要 | 言語統計処理（春学期）" />
   <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 14 Week 13: 効果量と検定力分析 | 言語統計処理（春学期）" />
+  <meta property="og:title" content="Chapter 8 Week7: 重回帰分析：概要 | 言語統計処理（春学期）" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 14 Week 13: 効果量と検定力分析 | 言語統計処理（春学期）" />
+  <meta name="twitter:title" content="Chapter 8 Week7: 重回帰分析：概要 | 言語統計処理（春学期）" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="week12-階層モデル.html"/>
-<link rel="next" href="week-14-ノンパラメトリック検定.html"/>
+<link rel="prev" href="week6-単回帰分析連続型の説明変数.html"/>
+<link rel="next" href="week8-重回帰分析質的変数のコーディング.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -376,10 +376,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-13-効果量と検定力分析" class="section level1 hasAnchor" number="14">
-<h1><span class="header-section-number">Chapter 14</span> Week 13: 効果量と検定力分析<a href="week-13-効果量と検定力分析.html#week-13-%E5%8A%B9%E6%9E%9C%E9%87%8F%E3%81%A8%E6%A4%9C%E5%AE%9A%E5%8A%9B%E5%88%86%E6%9E%90" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="事前の確認-11" class="section level2 hasAnchor" number="14.1">
-<h2><span class="header-section-number">14.1</span> 事前の確認<a href="week-13-効果量と検定力分析.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="week7-重回帰分析概要" class="section level1 hasAnchor" number="8">
+<h1><span class="header-section-number">Chapter 8</span> Week7: 重回帰分析：概要<a href="week7-重回帰分析概要.html#week7-%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E6%A6%82%E8%A6%81" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="事前の確認-5" class="section level2 hasAnchor" number="8.1">
+<h2><span class="header-section-number">8.1</span> 事前の確認<a href="week7-重回帰分析概要.html#%E4%BA%8B%E5%89%8D%E3%81%AE%E7%A2%BA%E8%AA%8D-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li><p>この講義のRプロジェクトを開いていますか？</p></li>
 <li><p>英数字で名前を付けた本日の講義のファイルを作成しましたか？</p>
@@ -388,406 +388,462 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 </ul>
 </div>
-<div id="今日の目標-11" class="section level2 hasAnchor" number="14.2">
-<h2><span class="header-section-number">14.2</span> 今日の目標<a href="week-13-効果量と検定力分析.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="今日の目標-5" class="section level2 hasAnchor" number="8.2">
+<h2><span class="header-section-number">8.2</span> 今日の目標<a href="week7-重回帰分析概要.html#%E4%BB%8A%E6%97%A5%E3%81%AE%E7%9B%AE%E6%A8%99-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
-<li>効果量と検定力分析について理解できる</li>
-<li>検定力分析をRを用いて行うことができる</li>
+<li><strong>重</strong>回帰分析の統計理論を数学的・概念的に理解できる</li>
+<li><strong>重</strong>回帰分析（複数の連続値の独立変数と連続値の従属変数）をRで実装し、その結果を可視化などを通して説明できる</li>
 </ol>
 </div>
-<div id="効果量" class="section level2 hasAnchor" number="14.3">
-<h2><span class="header-section-number">14.3</span> 効果量<a href="week-13-効果量と検定力分析.html#%E5%8A%B9%E6%9E%9C%E9%87%8F" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="効果量の重要性" class="section level3 hasAnchor" number="14.3.1">
-<h3><span class="header-section-number">14.3.1</span> 効果量の重要性<a href="week-13-効果量と検定力分析.html#%E5%8A%B9%E6%9E%9C%E9%87%8F%E3%81%AE%E9%87%8D%E8%A6%81%E6%80%A7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="重回帰分析とは" class="section level2 hasAnchor" number="8.3">
+<h2><span class="header-section-number">8.3</span> 重回帰分析とは<a href="week7-重回帰分析概要.html#%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E3%81%A8%E3%81%AF" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><p>統計的検定の問題点：サンプルサイズが大きくなればなるほど、実質的に差がなくても統計的有意であるという結果になりやすい。</p>
-<ul>
-<li><p><em>p</em> 値のみに注目するのは危険</p></li>
-<li><p><em>p</em> 値は実質的な差の大小は教えてくれない</p></li>
-</ul></li>
-<li><p><em>p</em> 値のみではなく、効果量も報告する</p></li>
-</ul>
-</div>
-<div id="効果量とは" class="section level3 hasAnchor" number="14.3.2">
-<h3><span class="header-section-number">14.3.2</span> 効果量とは<a href="week-13-効果量と検定力分析.html#%E5%8A%B9%E6%9E%9C%E9%87%8F%E3%81%A8%E3%81%AF" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>広義の効果量：統計的帰無仮説検定に依存していない</p>
-<ul>
-<li>「研究者が関心を持つ事柄の大きさ」</li>
-</ul></li>
-<li><p>狭義の効果量：統計的帰無仮説検定に深く根差している（Cohenの定義）</p>
-<ul>
-<li><p>「現象が母集団に存在する程度、あるいは帰無仮説が偽である程度」</p>
-<ul>
-<li>標準化効果量が使用される。測定単位に依存しないため、様々な研究間で比較しやすい。</li>
-</ul></li>
-</ul></li>
-</ul>
-</div>
-<div id="標準化効果量の概念的理解" class="section level3 hasAnchor" number="14.3.3">
-<h3><span class="header-section-number">14.3.3</span> 標準化効果量の概念的理解<a href="week-13-効果量と検定力分析.html#%E6%A8%99%E6%BA%96%E5%8C%96%E5%8A%B9%E6%9E%9C%E9%87%8F%E3%81%AE%E6%A6%82%E5%BF%B5%E7%9A%84%E7%90%86%E8%A7%A3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>標準化とは、単位に依存しない値にする</p>
-<ul>
-<li>例えば、 Cohenの <em>d</em> は以下のように、二群の平均値差を標準偏差（ <em>σ</em> ）で割ることで標準化している</li>
-</ul></li>
+<li>単回帰分析：変数が1つ</li>
 </ul>
 <p><span class="math display">\[
-d = \frac{u_1 - u_2}{σ}
+\hat{y} = a + bx
 \]</span></p>
-</div>
-<div id="様々な検定の標準化効果量" class="section level3 hasAnchor" number="14.3.4">
-<h3><span class="header-section-number">14.3.4</span> 様々な検定の標準化効果量<a href="week-13-効果量と検定力分析.html#%E6%A7%98%E3%80%85%E3%81%AA%E6%A4%9C%E5%AE%9A%E3%81%AE%E6%A8%99%E6%BA%96%E5%8C%96%E5%8A%B9%E6%9E%9C%E9%87%8F" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>水本・竹内（2010）より引用</li>
+<li>重回帰分析：変数が2つ以上</li>
 </ul>
-<p><img src="stat_class_2025/docs/picture/eff_size.png" alt="" width="80%" style="display: block; margin: auto;" /></p>
-</div>
-<div id="効果量の解釈" class="section level3 hasAnchor" number="14.3.5">
-<h3><span class="header-section-number">14.3.5</span> 効果量の解釈<a href="week-13-効果量と検定力分析.html#%E5%8A%B9%E6%9E%9C%E9%87%8F%E3%81%AE%E8%A7%A3%E9%87%88" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+\hat{y} = a + {b_1}{x_1} + {b_2}{x_2} + {b_3}{x_3}
+\]</span></p>
+<div id="偏回帰係数" class="section level3 hasAnchor" number="8.3.1">
+<h3><span class="header-section-number">8.3.1</span> 偏回帰係数<a href="week7-重回帰分析概要.html#%E5%81%8F%E5%9B%9E%E5%B8%B0%E4%BF%82%E6%95%B0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><p>（Week 5: 相関分析、相関係数の大きさより修正しつつ再掲）</p></li>
-<li><p>Cohenの効果量のベンチマークは広く使用されている指標である。しかし、これはもともとすべての分野に適応することを意図したものではなく、行動科学分野の研究に基づき作成されたものであった。</p>
+<li><p>重回帰式における回帰係数：偏回帰係数（partial regression coefficient）</p>
 <ul>
-<li>小（small）： .10、中（Medium）：.30、大（Large）：.50</li>
-</ul></li>
-<li><p>効果量の大きさは文脈（e.g., 研究分野や研究対象）において解釈する必要がある。</p>
+<li><p><strong>他の独立変数の影響を取り除いた残差変数によって</strong>、従属変数（もしくは従属変数から他の独立変数の影響を抜いた残差変数）を予測する場合の回帰係数のこと</p>
 <ul>
-<li>例）リーディングのテスト得点とリスニングのテスト得点が <em>r</em> = .50の場合と、聞いた音を書きだすテストの得点と聴解のテスト得点が <em>r</em> = .50</li>
-</ul></li>
-<li><p>第二言語習得研究における相関係数の目安として提示された例</p></li>
-</ul>
-<blockquote>
-<p>“For correlation coefficients, we suggest that rs close to .25 be considered small, .40 medium, and .60 large. These values correspond roughly to the 25th, 50th, and 75th percentiles in our primary and meta-analytic samples.” (Plonsky &amp; Oswald, 2014)</p>
-</blockquote>
-</div>
-<div id="研究開始前における効果量の活用" class="section level3 hasAnchor" number="14.3.6">
-<h3><span class="header-section-number">14.3.6</span> 研究開始前における効果量の活用<a href="week-13-効果量と検定力分析.html#%E7%A0%94%E7%A9%B6%E9%96%8B%E5%A7%8B%E5%89%8D%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E5%8A%B9%E6%9E%9C%E9%87%8F%E3%81%AE%E6%B4%BB%E7%94%A8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>統計的帰無仮説検定を行う場合、事前に必要なサンプルサイズを見積もる必要がある（次セクションの検定力）</p>
-<ul>
-<li><p>検定力分析には効果量が必要となり、その場合、最小関心効果量を決定する。最小である理由は、効果量を大きく設定するほど、必要サンプル数が減るため、謙虚な値で推定するため。</p>
-<ul>
-<li>先行研究などこれまでの知見などをもとに最小関心効果量を設定する必要がある</li>
+<li><p><strong>平均化された 1 単位の比較</strong></p></li>
+<li><p>e.g., “When comparing two children whose mother have the same level of education, the child whose mother is <em>x</em> IQ points higher is predicted to have a test score is 6<em>x</em> higher, <strong>on average.</strong> (Gelman et al., 2020, pp. 134)</p></li>
 </ul></li>
 </ul></li>
 </ul>
-</div>
-</div>
-<div id="検定力分析" class="section level2 hasAnchor" number="14.4">
-<h2><span class="header-section-number">14.4</span> 検定力分析<a href="week-13-効果量と検定力分析.html#%E6%A4%9C%E5%AE%9A%E5%8A%9B%E5%88%86%E6%9E%90" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div style="border: 2px solid skyblue; padding: 10px;">
-<p>手元のRでコードを動かしながらやってみましょう。データの読み込みなどはいりません。</p>
-</div>
-<ul>
-<li><p>統計的帰無仮説検定では、第一種の過誤、第二種の過誤、サンプルサイズ、そして効果量によってその結果が決まる。つまり、4つのうち3つが決まれば、残りの一つは自動的に決まる。この関係性を利用し、サンプルサイズを推定する。</p></li>
-<li><p>検定力とは、1 - 第二種の過誤（ <em>β</em> ）で求められ、慣習的に0.8に設定されることが多い</p></li>
-</ul>
-<div id="独立した2群の-t-検定の例" class="section level3 hasAnchor" number="14.4.1">
-<h3><span class="header-section-number">14.4.1</span> 独立した2群の <em>t</em> 検定の例<a href="week-13-効果量と検定力分析.html#%E7%8B%AC%E7%AB%8B%E3%81%97%E3%81%9F2%E7%BE%A4%E3%81%AE-t-%E6%A4%9C%E5%AE%9A%E3%81%AE%E4%BE%8B" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ul>
-<li><p>危険率（有意水準）： 0.05</p></li>
-<li><p>検定力： 0.8</p></li>
-<li><p>効果量: 0.4</p></li>
-</ul>
-<div class="sourceCode" id="cb570"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb570-1"><a href="week-13-効果量と検定力分析.html#cb570-1" tabindex="-1"></a><span class="co">#install.packages(&quot;pwr&quot;)</span></span>
-<span id="cb570-2"><a href="week-13-効果量と検定力分析.html#cb570-2" tabindex="-1"></a>res <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.t.test</span>(</span>
-<span id="cb570-3"><a href="week-13-効果量と検定力分析.html#cb570-3" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,         <span class="co">#危険率</span></span>
-<span id="cb570-4"><a href="week-13-効果量と検定力分析.html#cb570-4" tabindex="-1"></a>  <span class="at">power =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span>,　        <span class="co">#検定力</span></span>
-<span id="cb570-5"><a href="week-13-効果量と検定力分析.html#cb570-5" tabindex="-1"></a>  <span class="at">d =</span> <span class="fl">0.4</span>,                  <span class="co">#効果量</span></span>
-<span id="cb570-6"><a href="week-13-効果量と検定力分析.html#cb570-6" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;two.sample&quot;</span>,      <span class="co">#独立した2標本のt検定</span></span>
-<span id="cb570-7"><a href="week-13-効果量と検定力分析.html#cb570-7" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span> <span class="co">#両側検定</span></span>
-<span id="cb570-8"><a href="week-13-効果量と検定力分析.html#cb570-8" tabindex="-1"></a>)</span></code></pre></div>
-<ul>
-<li>推定サンプルサイズは n = 99.08であるため、切り上げた値である200名（100名 × 2 ）が必要サンプルとなる</li>
-</ul>
-<div class="sourceCode" id="cb571"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb571-1"><a href="week-13-効果量と検定力分析.html#cb571-1" tabindex="-1"></a>res</span></code></pre></div>
-<pre><code>## 
-##      Two-sample t test power calculation 
-## 
-##               n = 99.08032
-##               d = 0.4
-##       sig.level = 0.05
-##           power = 0.8
-##     alternative = two.sided
-## 
-## NOTE: n is number in *each* group</code></pre>
-<div class="sourceCode" id="cb573"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb573-1"><a href="week-13-効果量と検定力分析.html#cb573-1" tabindex="-1"></a><span class="fu">plot</span>(res)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-389-1.png" alt="" width="672" /></p>
 <div class="infobox">
-<p>帰無仮説検定では事前のサンプルサイズ設計が必要と述べましたが、ベイズ統計でも事前のサンプルサイズの目安は必要です（事前登録などや研究費獲得など）。しかしベイズでは新たなデータを追加して分析することは可能ですが、帰無仮説検定ではできません（第一種の過誤の割合が増える）。従って、帰無仮説検定では検定力分析が必須となります。また、分析の前にはデータの削除などを行うことが多いため、ある程度余裕のあるサンプルサイズを確保する必要があります。</p>
+<p>偏回帰係数は、単回帰のような、当該の独立変数と従属変数の関係を表していない。2つの独立変数の重回帰分析を例に挙げると、<span class="math inline">\(x_2\)</span>の係数は、<span class="math inline">\(x_2\)</span>から<span class="math inline">\(x_1\)</span>の影響を除いた残差変数との関係を表す。従って、単なる<span class="math inline">\(x_2\)</span>の影響ではなく、<span class="math inline">\(x_1\)</span>から予測される<span class="math inline">\(x_2\)</span>に対して、実際の<span class="math inline">\(x_2\)</span>がどれだけ大きいかもしくは小さかったかを表す（<span class="math inline">\(x_1\)</span>の値のわりにどの程度<span class="math inline">\(x_2\)</span>の値が大きいか）。つまり、モデル内の他の変数との関係を踏まえて係数を解釈する必要がある。</p>
 </div>
-</div>
-<div id="対応のある2群の-t-検定" class="section level3 hasAnchor" number="14.4.2">
-<h3><span class="header-section-number">14.4.2</span> 対応のある2群の <em>t</em> 検定<a href="week-13-効果量と検定力分析.html#%E5%AF%BE%E5%BF%9C%E3%81%AE%E3%81%82%E3%82%8B2%E7%BE%A4%E3%81%AE-t-%E6%A4%9C%E5%AE%9A" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb574"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb574-1"><a href="week-13-効果量と検定力分析.html#cb574-1" tabindex="-1"></a>res.paired <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.t.test</span>(</span>
-<span id="cb574-2"><a href="week-13-効果量と検定力分析.html#cb574-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,</span>
-<span id="cb574-3"><a href="week-13-効果量と検定力分析.html#cb574-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span>,</span>
-<span id="cb574-4"><a href="week-13-効果量と検定力分析.html#cb574-4" tabindex="-1"></a>  <span class="at">d =</span> <span class="fl">0.4</span>,</span>
-<span id="cb574-5"><a href="week-13-効果量と検定力分析.html#cb574-5" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;paired&quot;</span>,</span>
-<span id="cb574-6"><a href="week-13-効果量と検定力分析.html#cb574-6" tabindex="-1"></a>  <span class="at">alternative =</span> <span class="st">&quot;two.sided&quot;</span></span>
-<span id="cb574-7"><a href="week-13-効果量と検定力分析.html#cb574-7" tabindex="-1"></a>)</span>
-<span id="cb574-8"><a href="week-13-効果量と検定力分析.html#cb574-8" tabindex="-1"></a></span>
-<span id="cb574-9"><a href="week-13-効果量と検定力分析.html#cb574-9" tabindex="-1"></a>res.paired</span></code></pre></div>
-<pre><code>## 
-##      Paired t test power calculation 
-## 
-##               n = 51.00945
-##               d = 0.4
-##       sig.level = 0.05
-##           power = 0.8
-##     alternative = two.sided
-## 
-## NOTE: n is number of *pairs*</code></pre>
-<div class="sourceCode" id="cb576"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb576-1"><a href="week-13-効果量と検定力分析.html#cb576-1" tabindex="-1"></a><span class="fu">plot</span>(res.paired)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-391-1.png" alt="" width="672" /></p>
-</div>
-<div id="相関係数" class="section level3 hasAnchor" number="14.4.3">
-<h3><span class="header-section-number">14.4.3</span> 相関係数<a href="week-13-効果量と検定力分析.html#%E7%9B%B8%E9%96%A2%E4%BF%82%E6%95%B0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb577"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb577-1"><a href="week-13-効果量と検定力分析.html#cb577-1" tabindex="-1"></a>res.cor <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.r.test</span>(</span>
-<span id="cb577-2"><a href="week-13-効果量と検定力分析.html#cb577-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,</span>
-<span id="cb577-3"><a href="week-13-効果量と検定力分析.html#cb577-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.2</span>,</span>
-<span id="cb577-4"><a href="week-13-効果量と検定力分析.html#cb577-4" tabindex="-1"></a>  <span class="at">r =</span> <span class="fl">0.2</span></span>
-<span id="cb577-5"><a href="week-13-効果量と検定力分析.html#cb577-5" tabindex="-1"></a>)</span>
-<span id="cb577-6"><a href="week-13-効果量と検定力分析.html#cb577-6" tabindex="-1"></a></span>
-<span id="cb577-7"><a href="week-13-効果量と検定力分析.html#cb577-7" tabindex="-1"></a>res.cor</span></code></pre></div>
-<pre><code>## 
-##      approximate correlation power calculation (arctangh transformation) 
-## 
-##               n = 193.0867
-##               r = 0.2
-##       sig.level = 0.05
-##           power = 0.8
-##     alternative = two.sided</code></pre>
-<div class="sourceCode" id="cb579"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb579-1"><a href="week-13-効果量と検定力分析.html#cb579-1" tabindex="-1"></a><span class="fu">plot</span>(res.cor)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-393-1.png" alt="" width="672" /></p>
-</div>
-<div id="一般線形モデル" class="section level3 hasAnchor" number="14.4.4">
-<h3><span class="header-section-number">14.4.4</span> 一般線形モデル<a href="week-13-効果量と検定力分析.html#%E4%B8%80%E8%88%AC%E7%B7%9A%E5%BD%A2%E3%83%A2%E3%83%87%E3%83%AB" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><em>F</em> 検定の検出力を推定するための関数（帰無仮説 = どの独立変数も従属変数の分散を説明していない）</li>
+<li><p>変数間で単位が異なる場合、従属変数、独立変数をすべて標準化することで、<strong>標準化偏回帰係数（standardized partial regression coefficient）</strong>を算出し、変数間の影響力を比較する</p></li>
+<li><p>（標準化）偏回帰係数は、従属変数と独立変数の<strong>因果関係</strong>を示すわけではないことに注意</p></li>
 </ul>
-<div class="sourceCode" id="cb580"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb580-1"><a href="week-13-効果量と検定力分析.html#cb580-1" tabindex="-1"></a>res_g <span class="ot">&lt;-</span> pwr<span class="sc">::</span><span class="fu">pwr.f2.test</span>(</span>
-<span id="cb580-2"><a href="week-13-効果量と検定力分析.html#cb580-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>, </span>
-<span id="cb580-3"><a href="week-13-効果量と検定力分析.html#cb580-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="fl">0.8</span>,</span>
-<span id="cb580-4"><a href="week-13-効果量と検定力分析.html#cb580-4" tabindex="-1"></a>  <span class="at">u =</span> <span class="dv">2</span>,                     <span class="co">#独立変数の数（切片を除く）</span></span>
-<span id="cb580-5"><a href="week-13-効果量と検定力分析.html#cb580-5" tabindex="-1"></a>  <span class="at">f2 =</span> <span class="fl">0.3</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.3</span>)         <span class="co">#効果量。30%の分散を説明すると仮定した場合の対応するf2の値</span></span>
-<span id="cb580-6"><a href="week-13-効果量と検定力分析.html#cb580-6" tabindex="-1"></a>  )</span></code></pre></div>
+</div>
+<div id="重相関係数と決定係数" class="section level3 hasAnchor" number="8.3.2">
+<h3><span class="header-section-number">8.3.2</span> 重相関係数と決定係数<a href="week7-重回帰分析概要.html#%E9%87%8D%E7%9B%B8%E9%96%A2%E4%BF%82%E6%95%B0%E3%81%A8%E6%B1%BA%E5%AE%9A%E4%BF%82%E6%95%B0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>この関数の出力では、サンプルサイズ n ではなく、残差の自由度 v が返される。</li>
+<li><p>重相関係数（multiple correlation coefficient）</p>
+<ul>
+<li><p>全ての独立変数から得られた、従属変数との相関を表す指標</p>
+<ul>
+<li><u>単回帰の場合は、相関係数の2乗が決定係数</u></li>
+</ul></li>
+</ul></li>
+<li><p>調整済み決定係数（Adjusted R-squared）</p>
+<ul>
+<li>独立変数の数が多いほど、重相関係数の値が大きくなる（インフレする）ため、修正を加えた値</li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="cb581"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb581-1"><a href="week-13-効果量と検定力分析.html#cb581-1" tabindex="-1"></a>res_g</span></code></pre></div>
-<pre><code>## 
-##      Multiple regression power calculation 
-## 
-##               u = 2
-##               v = 22.72687
-##              f2 = 0.4285714
-##       sig.level = 0.05
-##           power = 0.8</code></pre>
+</div>
+<div id="独立変数の有意性" class="section level3 hasAnchor" number="8.3.3">
+<h3><span class="header-section-number">8.3.3</span> 独立変数の有意性<a href="week7-重回帰分析概要.html#%E7%8B%AC%E7%AB%8B%E5%A4%89%E6%95%B0%E3%81%AE%E6%9C%89%E6%84%8F%E6%80%A7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>サンプルサイズ <em>n</em> は以下のように求める</li>
+<li><p>個々の独立変数が従属変数の予測に有意に寄与するかは <em>t</em> 分布を用いて検定する</p>
+<ul>
+<li>帰無仮説：ある独立変数の係数は0</li>
+</ul></li>
+</ul>
+</div>
+<div id="回帰式の有意性-f-検定" class="section level3 hasAnchor" number="8.3.4">
+<h3><span class="header-section-number">8.3.4</span> 回帰式の有意性（ <em>F</em> 検定）<a href="week7-重回帰分析概要.html#%E5%9B%9E%E5%B8%B0%E5%BC%8F%E3%81%AE%E6%9C%89%E6%84%8F%E6%80%A7-f-%E6%A4%9C%E5%AE%9A" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p><strong>すべての</strong>偏回帰係数は0であるという帰無仮説を立て、 <em>F</em> 値をもとに検定を行う</p>
+<ul>
+<li><em>F</em> 値（分散比）：モデルの分散を自由度で割った値（平均平方和）÷ モデルの誤差分散を自由度で割った値（平均誤差分散）。<span class="math inline">\(R^2\)</span> は決定係数（coefficient of determination）、<span class="math inline">\(k\)</span> は説明変数（独立変数）の数、<span class="math inline">\(n\)</span> はサンプルサイズ（観測数）を表す。</li>
+</ul></li>
 </ul>
 <p><span class="math display">\[
-n = v + u + 1
+F = \frac{R^2 / k}{(1 - R^2) / (n - k - 1)}
 \]</span></p>
 <ul>
-<li><p>よって、23（22.72） + 2 + 1で26名の参加者が最低でも必要である</p></li>
-<li><p>上記の人数をもとに検定力を求めることができる</p>
+<li><em>F</em> 検定が有意でない場合、モデルからの予測値は実際の値と大きく異なることを示す</li>
+</ul>
+</div>
+</div>
+<div id="重回帰分析を行う上での注意点" class="section level2 hasAnchor" number="8.4">
+<h2><span class="header-section-number">8.4</span> 重回帰分析を行う上での注意点<a href="week7-重回帰分析概要.html#%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E3%82%92%E8%A1%8C%E3%81%86%E4%B8%8A%E3%81%A7%E3%81%AE%E6%B3%A8%E6%84%8F%E7%82%B9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="サンプルサイズ" class="section level3 hasAnchor" number="8.4.1">
+<h3><span class="header-section-number">8.4.1</span> サンプルサイズ<a href="week7-重回帰分析概要.html#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B5%E3%82%A4%E3%82%BA" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>26名だと検定力が80%を超えている</li>
+<li><p>明確な基準はなく、目標とする効果量や実験項目の数などによって異なる</p>
+<ul>
+<li>検定力分析を行い、実験や調査を行う前に事前に決定することが望まれる</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb583"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb583-1"><a href="week-13-効果量と検定力分析.html#cb583-1" tabindex="-1"></a>pwr<span class="sc">::</span><span class="fu">pwr.f2.test</span>(</span>
-<span id="cb583-2"><a href="week-13-効果量と検定力分析.html#cb583-2" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>, </span>
-<span id="cb583-3"><a href="week-13-効果量と検定力分析.html#cb583-3" tabindex="-1"></a>  <span class="at">power =</span> <span class="cn">NULL</span>,              <span class="co">#検定力を推定</span></span>
-<span id="cb583-4"><a href="week-13-効果量と検定力分析.html#cb583-4" tabindex="-1"></a>  <span class="at">u =</span> <span class="dv">2</span>,                     <span class="co">#独立変数の数（切片を除く）</span></span>
-<span id="cb583-5"><a href="week-13-効果量と検定力分析.html#cb583-5" tabindex="-1"></a>  <span class="at">f2 =</span> <span class="fl">0.3</span><span class="sc">/</span>(<span class="dv">1</span> <span class="sc">-</span> <span class="fl">0.3</span>),        <span class="co">#効果量。45%の分散を説明すると仮定する</span></span>
-<span id="cb583-6"><a href="week-13-効果量と検定力分析.html#cb583-6" tabindex="-1"></a>  <span class="at">v =</span> <span class="dv">26</span> <span class="sc">-</span> <span class="dv">2</span> <span class="sc">-</span> <span class="dv">1</span>             <span class="co">#残差の自由度</span></span>
-<span id="cb583-7"><a href="week-13-効果量と検定力分析.html#cb583-7" tabindex="-1"></a>  )</span></code></pre></div>
+</div>
+<div id="多重共線性multicolinearity" class="section level3 hasAnchor" number="8.4.2">
+<h3><span class="header-section-number">8.4.2</span> 多重共線性（multicolinearity）<a href="week7-重回帰分析概要.html#%E5%A4%9A%E9%87%8D%E5%85%B1%E7%B7%9A%E6%80%A7multicolinearity" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>独立変数間の相関関係が高いと、偏回帰係数を正しく推定することができない</li>
+</ul>
+<div class="infobox">
+<p><strong>注</strong> “Multicollinearity should not be confused with a raw strong correlation between predictors. What matters is the association between one or more predictor variables, conditional on the other variables in the model.”<br>
+(From: <a href="https://rdrr.io/cran/performance/man/check_collinearity.html" class="uri">https://rdrr.io/cran/performance/man/check_collinearity.html</a>)</p>
+</div>
+<ul>
+<li><p>多重共線性の問題がないかを確認するための3指標。分析前に閾値を設定し、論文内でも多重共線性の判断をどのようにするか明記しておくとよい</p>
+<ul>
+<li>許容度（tolerance）：値が 0.1以下で多重共線性があると判断される</li>
+<li>VIF（variance inflation factor）： 論文でよく見る指標。許容度の逆数で、5-10以上だと多重共線性だと判断。</li>
+<li>条件指数（condition index）：15以上で強い多重共線性があると判断</li>
+</ul></li>
+</ul>
+</div>
+<div id="外れ値" class="section level3 hasAnchor" number="8.4.3">
+<h3><span class="header-section-number">8.4.3</span> 外れ値<a href="week7-重回帰分析概要.html#%E5%A4%96%E3%82%8C%E5%80%A4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>回帰直線は外れ値に大きく影響する</p></li>
+<li><p>外れ値を調べる代表的な4指標</p>
+<ul>
+<li><p>残差：各データの残差を標準値に変換し、± 2標準偏差もしくは ± 3以上の割合を調べる</p></li>
+<li><p>クックの距離：データが回帰式全体に与える影響を示す指標。1以上で問題ありと判断される</p></li>
+<li><p>てこ比：各ケースにおける複数の変数データが全体の平均からどの程度ずれているかの指標。平均てこ比の3倍以上の値を取る場合問題ありと判断される。</p>
+<ul>
+<li>平均てこ比：独立変数の数 + 1 ÷ サンプルサイズ</li>
+</ul></li>
+<li><p>マハラノビス距離：複数の独立変数における各データの平均と各ケースのデータの距離を示す指標。マハラノビスの表を参考に判断する（マハラノビスとてこ比を両方使う必要はない）。</p></li>
+</ul></li>
+</ul>
+</div>
+<div id="残差の独立性正規性等分散線形性" class="section level3 hasAnchor" number="8.4.4">
+<h3><span class="header-section-number">8.4.4</span> 残差の独立性、正規性、等分散、線形性<a href="week7-重回帰分析概要.html#%E6%AE%8B%E5%B7%AE%E3%81%AE%E7%8B%AC%E7%AB%8B%E6%80%A7%E6%AD%A3%E8%A6%8F%E6%80%A7%E7%AD%89%E5%88%86%E6%95%A3%E7%B7%9A%E5%BD%A2%E6%80%A7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>残差の独立性：どの独立変数の残差間にも相関がないという前提。</p></li>
+<li><p>残差の正規性：残差の散布図やヒストグラムなどで確認できる</p></li>
+<li><p>残差の等分散性：独立変数がどの値の場合でも残差分散が同じである必要がある</p></li>
+<li><p>残差の線形性：残差と予測値には線形関係がある必要がある。散布図などで確認</p></li>
+</ul>
+</div>
+</div>
+<div id="投入方" class="section level2 hasAnchor" number="8.5">
+<h2><span class="header-section-number">8.5</span> 投入方<a href="week7-重回帰分析概要.html#%E6%8A%95%E5%85%A5%E6%96%B9" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>重回帰分析の場合、独立変数を入れる順序でそれぞれの独立変数の有意性や偏回帰係数が変化する。</li>
+<li>どの方法を用いるのかは研究の目的によっても異なる。基本的に、分析の前に決めておく方がよい。</li>
+</ul>
+<div id="強制投入法" class="section level3 hasAnchor" number="8.5.1">
+<h3><span class="header-section-number">8.5.1</span> 強制投入法<a href="week7-重回帰分析概要.html#%E5%BC%B7%E5%88%B6%E6%8A%95%E5%85%A5%E6%B3%95" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>理論や仮説に基づいて慎重に選んだすべての独立変数を1度に含めてモデルを作成する。</p>
+<ul>
+<li>独立変数を増やすほど決定係数は大きくなることに注意</li>
+</ul></li>
+</ul>
+</div>
+<div id="階層的投入法" class="section level3 hasAnchor" number="8.5.2">
+<h3><span class="header-section-number">8.5.2</span> 階層的投入法<a href="week7-重回帰分析概要.html#%E9%9A%8E%E5%B1%A4%E7%9A%84%E6%8A%95%E5%85%A5%E6%B3%95" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>階層的回帰分析とも言われる。理論や仮説に基づいて、独立変数を1つずつ投入していく。段階的にモデルに含めるため、各独立変数がどの程度決定係数の向上に影響を与えているか把握できる（強制投入法のあとに階層的投入法を行うなど）。</li>
+</ul>
+</div>
+<div id="ステップワイズ法" class="section level3 hasAnchor" number="8.5.3">
+<h3><span class="header-section-number">8.5.3</span> ステップワイズ法<a href="week7-重回帰分析概要.html#%E3%82%B9%E3%83%86%E3%83%83%E3%83%97%E3%83%AF%E3%82%A4%E3%82%BA%E6%B3%95" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>統計的回帰分析とも呼ばれる。統計的に最も予測率が高いと考えられる変数から順に自動的に投入される。従属変数と相関の高い独立変数が投入され、その後偏回帰係数の有意性が次に最も高くなる独立変数が選ばれ順に投入される。</p>
+<ul>
+<li>階層的投入法では、分析者が投入する順番を決めるが、ステップワイズ法では予測率に応じて自動で投入される。従ってその結果が理論や仮説に基づいて選ばれたモデルになるとは限らない</li>
+</ul></li>
+</ul>
+</div>
+<div id="変数減少法" class="section level3 hasAnchor" number="8.5.4">
+<h3><span class="header-section-number">8.5.4</span> 変数減少法<a href="week7-重回帰分析概要.html#%E5%A4%89%E6%95%B0%E6%B8%9B%E5%B0%91%E6%B3%95" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>すべての独立変数を投入し、予測への寄与が小さい独立変数から順に変数を抜いていく</li>
+</ul>
+</div>
+</div>
+<div id="ハンズオンセッション-5" class="section level2 hasAnchor" number="8.6">
+<h2><span class="header-section-number">8.6</span> ハンズオンセッション<a href="week7-重回帰分析概要.html#%E3%83%8F%E3%83%B3%E3%82%BA%E3%82%AA%E3%83%B3%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>強制投入法、ステップワイズ法のやり方を確認</li>
+</ul>
+<div id="データの読み込み-3" class="section level3 hasAnchor" number="8.6.1">
+<h3><span class="header-section-number">8.6.1</span> データの読み込み<a href="week7-重回帰分析概要.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%81%BF-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="week7-重回帰分析概要.html#cb240-1" tabindex="-1"></a><span class="co">#install.packages(&quot;readr&quot;)</span></span>
+<span id="cb240-2"><a href="week7-重回帰分析概要.html#cb240-2" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb240-3"><a href="week7-重回帰分析概要.html#cb240-3" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;sample_data/regression_data.csv&quot;</span>)</span></code></pre></div>
+<pre><code>## Rows: 120 Columns: 8
+## ── Column specification ───────────────────────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## dbl (8): ID, Placement, FirstT, MidT, LastT, EndT, Class, Course
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<ul>
+<li>必ず中身を確認。</li>
+</ul>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="week7-重回帰分析概要.html#cb242-1" tabindex="-1"></a><span class="fu">head</span>(dat)</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 8
+##      ID Placement FirstT  MidT LastT  EndT Class Course
+##   &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
+## 1     1        15     35    84    85    90     1      2
+## 2     2        29     17    72    76    85     1      2
+## 3     3        17     45    64    54    70     1      1
+## 4     4        77     59    42    48    34     0      0
+## 5     5        54     31    20    10    13     0      0
+## 6     6        51     18    52    34    15     1      1</code></pre>
+</div>
+<div id="基本統計量の算出" class="section level3 hasAnchor" number="8.6.2">
+<h3><span class="header-section-number">8.6.2</span> 基本統計量の算出<a href="week7-重回帰分析概要.html#%E5%9F%BA%E6%9C%AC%E7%B5%B1%E8%A8%88%E9%87%8F%E3%81%AE%E7%AE%97%E5%87%BA" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="week7-重回帰分析概要.html#cb244-1" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb244-2"><a href="week7-重回帰分析概要.html#cb244-2" tabindex="-1"></a><span class="fu">describe</span>(dat)</span></code></pre></div>
+<pre><code>##           vars   n  mean    sd median trimmed   mad min max range  skew kurtosis   se
+## ID           1 120 60.50 34.79   60.5   60.50 44.48   1 120   119  0.00    -1.23 3.18
+## Placement    2 120 54.20 28.50   50.5   54.61 37.81   4  99    95 -0.02    -1.32 2.60
+## FirstT       3 120 54.19 24.00   54.0   54.22 31.13  10  99    89  0.02    -1.15 2.19
+## MidT         4 120 50.79 25.30   52.0   51.08 31.13   4 100    96 -0.09    -1.12 2.31
+## LastT        5 120 50.50 24.53   47.5   49.68 27.43   6 100    94  0.28    -0.99 2.24
+## EndT         6 120 52.50 25.18   53.0   52.74 31.13   6  98    92 -0.05    -1.13 2.30
+## Class        7 120  0.66  0.48    1.0    0.70  0.00   0   1     1 -0.66    -1.58 0.04
+## Course       8 120  0.97  0.81    1.0    0.96  1.48   0   2     2  0.06    -1.48 0.07</code></pre>
+</div>
+<div id="データの図示" class="section level3 hasAnchor" number="8.6.3">
+<h3><span class="header-section-number">8.6.3</span> データの図示<a href="week7-重回帰分析概要.html#%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E5%9B%B3%E7%A4%BA" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>箱ひげ図</li>
+</ul>
+<div class="sourceCode" id="cb246"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb246-1"><a href="week7-重回帰分析概要.html#cb246-1" tabindex="-1"></a><span class="fu">boxplot</span>(dat[, <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>], </span>
+<span id="cb246-2"><a href="week7-重回帰分析概要.html#cb246-2" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">&quot;Test&quot;</span>,</span>
+<span id="cb246-3"><a href="week7-重回帰分析概要.html#cb246-3" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">&quot;Score&quot;</span>,</span>
+<span id="cb246-4"><a href="week7-重回帰分析概要.html#cb246-4" tabindex="-1"></a>        <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>) <span class="co"># y軸を0から100の範囲で表示する</span></span>
+<span id="cb246-5"><a href="week7-重回帰分析概要.html#cb246-5" tabindex="-1"></a>        )</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-152-1.png" alt="" width="672" /></p>
+<ul>
+<li>蜂群図</li>
+</ul>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="week7-重回帰分析概要.html#cb247-1" tabindex="-1"></a><span class="co">#install.packages(&quot;beeswarm&quot;, dependencies = T) #一度やればOK</span></span>
+<span id="cb247-2"><a href="week7-重回帰分析概要.html#cb247-2" tabindex="-1"></a><span class="fu">library</span>(beeswarm)</span>
+<span id="cb247-3"><a href="week7-重回帰分析概要.html#cb247-3" tabindex="-1"></a><span class="fu">beeswarm</span>(dat[, <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>])</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-153-1.png" alt="" width="672" /></p>
+<ul>
+<li>箱ひげ図 + 蜂群図</li>
+</ul>
+<div class="sourceCode" id="cb248"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb248-1"><a href="week7-重回帰分析概要.html#cb248-1" tabindex="-1"></a><span class="fu">boxplot</span>(dat[, <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>], <span class="at">xlab =</span> <span class="st">&quot;Test&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Score&quot;</span>, <span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">100</span>))</span>
+<span id="cb248-2"><a href="week7-重回帰分析概要.html#cb248-2" tabindex="-1"></a><span class="fu">beeswarm</span>(dat[, <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>],</span>
+<span id="cb248-3"><a href="week7-重回帰分析概要.html#cb248-3" tabindex="-1"></a>         <span class="at">add =</span> T <span class="co">#箱ひげ図の上に描画すると明示的に記す</span></span>
+<span id="cb248-4"><a href="week7-重回帰分析概要.html#cb248-4" tabindex="-1"></a>         )</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-154-1.png" alt="" width="672" /></p>
+</div>
+<div id="相関関係の確認" class="section level3 hasAnchor" number="8.6.4">
+<h3><span class="header-section-number">8.6.4</span> 相関関係の確認<a href="week7-重回帰分析概要.html#%E7%9B%B8%E9%96%A2%E9%96%A2%E4%BF%82%E3%81%AE%E7%A2%BA%E8%AA%8D" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>高い相関関係を示す独立変数はない</li>
+</ul>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="week7-重回帰分析概要.html#cb249-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">corr.test</span>(dat[, <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>])</span></code></pre></div>
+<pre><code>## Call:psych::corr.test(x = dat[, 2:6])
+## Correlation matrix 
+##           Placement FirstT  MidT LastT  EndT
+## Placement      1.00   0.02 -0.36 -0.09 -0.30
+## FirstT         0.02   1.00  0.26  0.08  0.37
+## MidT          -0.36   0.26  1.00  0.43  0.85
+## LastT         -0.09   0.08  0.43  1.00  0.53
+## EndT          -0.30   0.37  0.85  0.53  1.00
+## Sample Size 
+## [1] 120
+## Probability values (Entries above the diagonal are adjusted for multiple tests.) 
+##           Placement FirstT MidT LastT EndT
+## Placement      0.00   0.99 0.00  0.99    0
+## FirstT         0.80   0.00 0.02  0.99    0
+## MidT           0.00   0.00 0.00  0.00    0
+## LastT          0.33   0.40 0.00  0.00    0
+## EndT           0.00   0.00 0.00  0.00    0
+## 
+##  To see confidence intervals of the correlations, print with the short=FALSE option</code></pre>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="week7-重回帰分析概要.html#cb251-1" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">pairs.panels</span>(dat[, <span class="dv">2</span><span class="sc">:</span><span class="dv">6</span>])</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-156-1.png" alt="" width="672" /></p>
+</div>
+<div id="重回帰分析の実施強制投入法" class="section level3 hasAnchor" number="8.6.5">
+<h3><span class="header-section-number">8.6.5</span> 重回帰分析の実施（強制投入法）<a href="week7-重回帰分析概要.html#%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E3%81%AE%E5%AE%9F%E6%96%BD%E5%BC%B7%E5%88%B6%E6%8A%95%E5%85%A5%E6%B3%95" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p><code>lm()</code>関数を使用する。</p></li>
+<li><p>重回帰分析の結果を<code>output_forced</code>という変数に格納する</p></li>
+</ul>
+<div class="sourceCode" id="cb252"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb252-1"><a href="week7-重回帰分析概要.html#cb252-1" tabindex="-1"></a>output_forced <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb252-2"><a href="week7-重回帰分析概要.html#cb252-2" tabindex="-1"></a>    EndT <span class="sc">~</span>                                <span class="co"># 従属変数</span></span>
+<span id="cb252-3"><a href="week7-重回帰分析概要.html#cb252-3" tabindex="-1"></a>    Placement <span class="sc">+</span> FirstT <span class="sc">+</span> MidT <span class="sc">+</span> LastT,   <span class="co"># 独立変数</span></span>
+<span id="cb252-4"><a href="week7-重回帰分析概要.html#cb252-4" tabindex="-1"></a>    <span class="at">data =</span> dat                           <span class="co"># データセット</span></span>
+<span id="cb252-5"><a href="week7-重回帰分析概要.html#cb252-5" tabindex="-1"></a>  )</span></code></pre></div>
+<ul>
+<li><code>summary()</code>で結果を確認
+<ul>
+<li><p>プレイスメントテストの係数が有意ではなく、年度末模試の予測に適さない可能性が示唆された。</p></li>
+<li><p>Adjusted R-squaredの結果を確認すると、4つの独立変数で従属変数の77.6%を説明</p></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="week7-重回帰分析概要.html#cb253-1" tabindex="-1"></a><span class="fu">summary</span>(output_forced)</span></code></pre></div>
 <pre><code>## 
-##      Multiple regression power calculation 
+## Call:
+## lm(formula = EndT ~ Placement + FirstT + MidT + LastT, data = dat)
 ## 
-##               u = 2
-##               v = 23
-##              f2 = 0.4285714
-##       sig.level = 0.05
-##           power = 0.8050867</code></pre>
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -29.999  -6.532   0.373   7.884  39.006 
+## 
+## Coefficients:
+##             Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept) -2.11492    4.42429  -0.478              0.63354    
+## Placement   -0.03101    0.04154  -0.747              0.45684    
+## FirstT       0.18318    0.04749   3.857              0.00019 ***
+## MidT         0.69883    0.05334  13.101 &lt; 0.0000000000000002 ***
+## LastT        0.21533    0.04960   4.341            0.0000306 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 11.91 on 115 degrees of freedom
+## Multiple R-squared:  0.7839, Adjusted R-squared:  0.7764 
+## F-statistic: 104.3 on 4 and 115 DF,  p-value: &lt; 0.00000000000000022</code></pre>
 </div>
-<div id="線形混合モデル階層モデル" class="section level3 hasAnchor" number="14.4.5">
-<h3><span class="header-section-number">14.4.5</span> 線形混合モデル（階層モデル）<a href="week-13-効果量と検定力分析.html#%E7%B7%9A%E5%BD%A2%E6%B7%B7%E5%90%88%E3%83%A2%E3%83%87%E3%83%AB%E9%9A%8E%E5%B1%A4%E3%83%A2%E3%83%87%E3%83%AB" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="外れ値の診断" class="section level3 hasAnchor" number="8.6.6">
+<h3><span class="header-section-number">8.6.6</span> 外れ値の診断<a href="week7-重回帰分析概要.html#%E5%A4%96%E3%82%8C%E5%80%A4%E3%81%AE%E8%A8%BA%E6%96%AD" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li><p>シミュレーションベースのものなど複数存在するが、比較的簡易にできるものを紹介する。</p></li>
-<li><p>級内相関係数やクラスターの数などを指定する必要がある</p>
+<li>分析結果から<code>resid()</code>関数で残差を算出し、その値を<code>scale()</code>関数で標準化</li>
+</ul>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="week7-重回帰分析概要.html#cb255-1" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">resid</span>(output_forced)</span>
+<span id="cb255-2"><a href="week7-重回帰分析概要.html#cb255-2" tabindex="-1"></a></span>
+<span id="cb255-3"><a href="week7-重回帰分析概要.html#cb255-3" tabindex="-1"></a>z.res <span class="ot">&lt;-</span> <span class="fu">scale</span>(res)</span></code></pre></div>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="week7-重回帰分析概要.html#cb256-1" tabindex="-1"></a><span class="fu">boxplot</span>(z.res)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-160-1.png" alt="" width="672" /></p>
 <ul>
-<li>級内相関係数：同じクラスタ（集団、グループ、クラスなど）内の観測値がどの程度似ているかを示す指標。集団間の分散 ÷ （集団間の分散 + 集団内の分散）。</li>
+<li>最大値、最小値の2つが外れ値の可能性あり</li>
+</ul>
+<div class="sourceCode" id="cb257"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb257-1"><a href="week7-重回帰分析概要.html#cb257-1" tabindex="-1"></a><span class="fu">describe</span>(z.res)</span></code></pre></div>
+<pre><code>##    vars   n mean sd median trimmed  mad   min  max range  skew kurtosis   se
+## X1    1 120    0  1   0.03    0.01 0.95 -2.56 3.33   5.9 -0.03     0.45 0.09</code></pre>
+<ul>
+<li><code>olsrr</code>関数を使うと、様々な図を一度に表示可能</li>
+</ul>
+<div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="week7-重回帰分析概要.html#cb259-1" tabindex="-1"></a><span class="co">#install.packages(&quot;olsrr&quot;)</span></span>
+<span id="cb259-2"><a href="week7-重回帰分析概要.html#cb259-2" tabindex="-1"></a><span class="fu">library</span>(olsrr)</span>
+<span id="cb259-3"><a href="week7-重回帰分析概要.html#cb259-3" tabindex="-1"></a><span class="fu">ols_plot_diagnostics</span>(output_forced)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-162-1.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-2.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-3.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-4.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-5.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-6.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-7.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-8.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-9.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-10.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-11.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-12.png" alt="" width="672" /><img src="_main_files/figure-html/unnamed-chunk-162-13.png" alt="" width="672" /></p>
+</div>
+<div id="多重共線性の確認" class="section level3 hasAnchor" number="8.6.7">
+<h3><span class="header-section-number">8.6.7</span> 多重共線性の確認<a href="week7-重回帰分析概要.html#%E5%A4%9A%E9%87%8D%E5%85%B1%E7%B7%9A%E6%80%A7%E3%81%AE%E7%A2%BA%E8%AA%8D" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>多重共線性の問題はなさそう</p>
+<ul>
+<li>VIF: 5以上のものはない</li>
+<li>許容度：0.1以下のものもない</li>
+<li>条件指数（Condirion Index）：全て15以下</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb585"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb585-1"><a href="week-13-効果量と検定力分析.html#cb585-1" tabindex="-1"></a><span class="co">#install.packages(&quot;sjstats&quot;)</span></span>
-<span id="cb585-2"><a href="week-13-効果量と検定力分析.html#cb585-2" tabindex="-1"></a><span class="fu">library</span>(sjstats)</span></code></pre></div>
-<div class="sourceCode" id="cb586"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb586-1"><a href="week-13-効果量と検定力分析.html#cb586-1" tabindex="-1"></a>nofitem <span class="ot">&lt;-</span> <span class="dv">10</span>         <span class="co">#項目数</span></span>
-<span id="cb586-2"><a href="week-13-効果量と検定力分析.html#cb586-2" tabindex="-1"></a></span>
-<span id="cb586-3"><a href="week-13-効果量と検定力分析.html#cb586-3" tabindex="-1"></a>power.sjstats <span class="ot">&lt;-</span> <span class="fu">samplesize_mixed</span>(</span>
-<span id="cb586-4"><a href="week-13-効果量と検定力分析.html#cb586-4" tabindex="-1"></a>  <span class="at">eff.size =</span> <span class="fl">0.02</span>,    <span class="co">#効果量 (f2)</span></span>
-<span id="cb586-5"><a href="week-13-効果量と検定力分析.html#cb586-5" tabindex="-1"></a>  <span class="at">df.n =</span> <span class="dv">2</span>,           <span class="co">#独立変数の数（切片は除く）</span></span>
-<span id="cb586-6"><a href="week-13-効果量と検定力分析.html#cb586-6" tabindex="-1"></a>  <span class="at">icc =</span> <span class="fl">0.1</span>,          <span class="co">#クラスタ内相関 (ICC)</span></span>
-<span id="cb586-7"><a href="week-13-効果量と検定力分析.html#cb586-7" tabindex="-1"></a>  <span class="at">power =</span> <span class="fl">0.8</span>,        <span class="co">#検定力</span></span>
-<span id="cb586-8"><a href="week-13-効果量と検定力分析.html#cb586-8" tabindex="-1"></a>  <span class="at">sig.level =</span> <span class="fl">0.05</span>,   <span class="co">#有意水準</span></span>
-<span id="cb586-9"><a href="week-13-効果量と検定力分析.html#cb586-9" tabindex="-1"></a>  <span class="at">k =</span> <span class="cn">NULL</span>,           <span class="co">#参加者の数を推定するためこちらは指定しない</span></span>
-<span id="cb586-10"><a href="week-13-効果量と検定力分析.html#cb586-10" tabindex="-1"></a>  <span class="at">n =</span> nofitem         <span class="co">#クラスターごとにいくつのデータがあるか（項目数など）</span></span>
-<span id="cb586-11"><a href="week-13-効果量と検定力分析.html#cb586-11" tabindex="-1"></a>)</span>
-<span id="cb586-12"><a href="week-13-効果量と検定力分析.html#cb586-12" tabindex="-1"></a></span>
-<span id="cb586-13"><a href="week-13-効果量と検定力分析.html#cb586-13" tabindex="-1"></a>power.sjstats</span></code></pre></div>
-<pre><code>## $`Subjects per Cluster`
-## numeric(0)
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="week7-重回帰分析概要.html#cb260-1" tabindex="-1"></a><span class="fu">ols_coll_diag</span>(output_forced)</span></code></pre></div>
+<pre><code>## Tolerance and Variance Inflation Factor
+## ---------------------------------------
+##   Variables Tolerance      VIF
+## 1 Placement 0.8502943 1.176063
+## 2    FirstT 0.9170130 1.090497
+## 3      MidT 0.6539385 1.529196
+## 4     LastT 0.8049192 1.242361
 ## 
-## $`Total Sample Size`
-## [1] 921</code></pre>
+## 
+## Eigenvalue and Condition Index
+## ------------------------------
+##   Eigenvalue Condition Index     intercept   Placement          FirstT        MidT       LastT
+## 1 4.40535969        1.000000 0.00298802134 0.007522632 0.0068745860846 0.005788082 0.006945791
+## 2 0.30501018        3.800437 0.00164204177 0.365472991 0.0000002735316 0.123931389 0.044863293
+## 3 0.15650328        5.305532 0.00006369806 0.046463119 0.5262904224956 0.003523541 0.394117664
+## 4 0.08687444        7.121061 0.01599506848 0.103299519 0.3709362786036 0.620787643 0.517410058
+## 5 0.04625240        9.759409 0.97931117036 0.477241738 0.0958984392846 0.245969345 0.036663194</code></pre>
+</div>
+<div id="重回帰分析の実施ステップワイズ法" class="section level3 hasAnchor" number="8.6.8">
+<h3><span class="header-section-number">8.6.8</span> 重回帰分析の実施（ステップワイズ法）<a href="week7-重回帰分析概要.html#%E9%87%8D%E5%9B%9E%E5%B8%B0%E5%88%86%E6%9E%90%E3%81%AE%E5%AE%9F%E6%96%BD%E3%82%B9%E3%83%86%E3%83%83%E3%83%97%E3%83%AF%E3%82%A4%E3%82%BA%E6%B3%95" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ul>
-<li>総サンプルサイズが計算されるため、項目数で割る</li>
-</ul>
-<div class="sourceCode" id="cb588"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb588-1"><a href="week-13-効果量と検定力分析.html#cb588-1" tabindex="-1"></a>power.sjstats<span class="sc">$</span><span class="st">`</span><span class="at">Total Sample Size</span><span class="st">`</span> <span class="sc">/</span> nofitem</span></code></pre></div>
-<pre><code>## [1] 92.1</code></pre>
+<li><p><code>step()</code>関数を用いる。この関数では、AIC（Akaike’s Information Criterion）の値が最も低い（= 最も良いモデル）が選択される。</p>
 <ul>
-<li><p>級内相関係数の値で推定されるサンプル数は変わる</p></li>
-<li><p>一般的にICCの値が大きいほど、必要サンプル数は減るが、このパッケージでは逆になっている</p>
-<ul>
-<li>恐らくこのパッケージでは、ICCが低い＝クラスタ内のばらつきが大きい → クラスタ（例：参加者）間の差異が小さいため、効果を検出しづらいとされ、よりサンプルが必要であるように設計されているから？</li>
+<li><p>AICが最も小さくなる変数をモデルから削除していった結果が出力される</p></li>
+<li><p>-変数名：その変数を抜いたモデルの結果</p></li>
+<li><p>none：すべての変数を含めたモデル</p></li>
 </ul></li>
-<li><p>従って、あまり高すぎるICCを指定しない方が良い</p></li>
 </ul>
-<table class="table table-striped table-hover" style="margin-left: auto; margin-right: auto;">
-<thead>
-<tr>
-<th style="text-align:center;">
-Effect Size
-</th>
-<th style="text-align:center;">
-ICC
-</th>
-<th style="text-align:center;">
-Required Sample Size
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center;">
-0.02
-</td>
-<td style="text-align:center;">
-0.500
-</td>
-<td style="text-align:center;">
-267
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-0.02
-</td>
-<td style="text-align:center;">
-0.275
-</td>
-<td style="text-align:center;">
-169
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-0.02
-</td>
-<td style="text-align:center;">
-0.050
-</td>
-<td style="text-align:center;">
-71
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-0.15
-</td>
-<td style="text-align:center;">
-0.500
-</td>
-<td style="text-align:center;">
-37
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-0.15
-</td>
-<td style="text-align:center;">
-0.275
-</td>
-<td style="text-align:center;">
-24
-</td>
-</tr>
-<tr>
-<td style="text-align:center;">
-0.15
-</td>
-<td style="text-align:center;">
-0.050
-</td>
-<td style="text-align:center;">
-10
-</td>
-</tr>
-</tbody>
-</table>
-<p><img src="_main_files/figure-html/unnamed-chunk-402-1.png" alt="" width="672" /></p>
-</div>
-</div>
-<div id="検定力分析の報告の例" class="section level2 hasAnchor" number="14.5">
-<h2><span class="header-section-number">14.5</span> 検定力分析の報告の例<a href="week-13-効果量と検定力分析.html#%E6%A4%9C%E5%AE%9A%E5%8A%9B%E5%88%86%E6%9E%90%E3%81%AE%E5%A0%B1%E5%91%8A%E3%81%AE%E4%BE%8B" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="week7-重回帰分析概要.html#cb262-1" tabindex="-1"></a>output_step <span class="ot">&lt;-</span> stats<span class="sc">::</span><span class="fu">step</span>(output_forced)</span></code></pre></div>
+<pre><code>## Start:  AIC=599.41
+## EndT ~ Placement + FirstT + MidT + LastT
+## 
+##             Df Sum of Sq   RSS    AIC
+## - Placement  1      79.0 16384 597.99
+## &lt;none&gt;                   16305 599.41
+## - FirstT     1    2109.1 18414 612.00
+## - LastT      1    2672.0 18977 615.62
+## - MidT       1   24332.6 40637 706.99
+## 
+## Step:  AIC=597.99
+## EndT ~ FirstT + MidT + LastT
+## 
+##          Df Sum of Sq   RSS    AIC
+## &lt;none&gt;                16384 597.99
+## - FirstT  1    2038.4 18422 610.06
+## - LastT   1    2613.6 18997 613.75
+## - MidT    1   29590.9 45974 719.80</code></pre>
 <ul>
-<li>言語研究では、基本的に、本研究の参加者セクションに記載する</li>
+<li>Placementを抜いたモデルの結果</li>
 </ul>
-<div style="border: 2px solid skyblue; padding: 10px;">
-<p><strong>階層モデルの例</strong></p>
-<ul>
-<li>参加者数は、<em>sjstats</em> パッケージ（バージョン 0.18.1）の <em>samplesize_mixed</em> 関数（Lüdecke, 2021）を用いた検定力分析に基づいて決定した。効果量（ <em>f²</em> ）は 0.2、有意水準は 0.05、級内相関係数は 0.1、検出力（power）は 80％に設定した。分子の自由度は 2 であった。推定の結果、921 サンプルが必要であり、1 参加者あたりの項目数が 10 のため、93 人以上の参加者が必要と推定された。</li>
-</ul>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="week7-重回帰分析概要.html#cb264-1" tabindex="-1"></a><span class="fu">summary</span>(output_step)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = EndT ~ FirstT + MidT + LastT, data = dat)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -30.995  -6.820   0.491   7.669  38.131 
+## 
+## Coefficients:
+##             Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept) -4.14790    3.48037  -1.192             0.235773    
+## FirstT       0.17853    0.04699   3.799             0.000233 ***
+## MidT         0.71384    0.04932  14.474 &lt; 0.0000000000000002 ***
+## LastT        0.21220    0.04933   4.302            0.0000355 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 11.88 on 116 degrees of freedom
+## Multiple R-squared:  0.7828, Adjusted R-squared:  0.7772 
+## F-statistic: 139.4 on 3 and 116 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+</div>
+<div id="結果の報告の仕方" class="section level3 hasAnchor" number="8.6.9">
+<h3><span class="header-section-number">8.6.9</span> 結果の報告の仕方<a href="week7-重回帰分析概要.html#%E7%B5%90%E6%9E%9C%E3%81%AE%E5%A0%B1%E5%91%8A%E3%81%AE%E4%BB%95%E6%96%B9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>プレイスメントテスト、前期試験、中間模試、および後期試験の得点から年度末試験の得点を予測するために、ステップワイズ法による重回帰分析を行った。その結果、中間模試、後期試験、および前期試験の得点が予測に有意で、この3つの変数のモデルは従属変数の分散の78% ( <span class="math inline">\(R^2\)</span> = .783.調整 <span class="math inline">\(R^2\)</span> = .777)を説明しており、かなり予測率が高いといえる。</p>
 </div>
 </div>
-<div id="次週までの課題-12" class="section level2 hasAnchor" number="14.6">
-<h2><span class="header-section-number">14.6</span> 次週までの課題<a href="week-13-効果量と検定力分析.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="課題内容-11" class="section level3 hasAnchor" number="14.6.1">
-<h3><span class="header-section-number">14.6.1</span> 課題内容<a href="week-13-効果量と検定力分析.html#%E8%AA%B2%E9%A1%8C%E5%86%85%E5%AE%B9-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="次週までの課題-6" class="section level2 hasAnchor" number="8.7">
+<h2><span class="header-section-number">8.7</span> 次週までの課題<a href="week7-重回帰分析概要.html#%E6%AC%A1%E9%80%B1%E3%81%BE%E3%81%A7%E3%81%AE%E8%AA%B2%E9%A1%8C-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="課題内容-6" class="section level3 hasAnchor" number="8.7.1">
+<h3><span class="header-section-number">8.7.1</span> 課題内容<a href="week7-重回帰分析概要.html#%E8%AA%B2%E9%A1%8C%E5%86%85%E5%AE%B9-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <ol style="list-style-type: decimal">
 <li><p>小テストに向けて今回の内容を復習する。必ず手でコードを入力してRを実行する。</p></li>
-<li><p>以下の研究を行いたいと考えています。この研究の検定力分析を行い、必要サンプル数を算出してください。得られた結果をRのコードなど併記してHTMLファイルにまとめてください。</p></li>
+<li><p>（<code>pokemon_data.csv</code>）をもとに、任意のデータに対して重回帰分析を行い、その解釈を本講義内で確認した書き方報告する。ハンズオンセッションで行った流れに従って分析をする。</p></li>
 </ol>
-<div style="border: 2px solid skyblue; padding: 10px;">
-<p>100名の高校生から出生時の体重と現在の摂取カロリーのデータを集め、出生時の体重で18歳時点での摂取カロリーの量を推定できるのか検証したい。以下の効果量と検定力、そして危険率を満たすにはどれくらいの学校からデータを取ればいいのだろう。</p>
 <ul>
-<li><p>効果量: 0.03</p></li>
-<li><p>検定力：90%</p></li>
-<li><p>危険率：5%</p></li>
+<li>注. 従属変数、独立変数ともに<strong>連続値</strong>の変数を選んでください</li>
+</ul>
+</div>
+<div id="提出方法-5" class="section level3 hasAnchor" number="8.7.2">
+<h3><span class="header-section-number">8.7.2</span> 提出方法<a href="week7-重回帰分析概要.html#%E6%8F%90%E5%87%BA%E6%96%B9%E6%B3%95-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>TACT上で提出。</li>
+<li>締め切りは今週の木曜日まで</li>
 </ul>
 </div>
 </div>
-<div id="提出方法-10" class="section level3 hasAnchor" number="14.6.2">
-<h3><span class="header-section-number">14.6.2</span> 提出方法<a href="week-13-効果量と検定力分析.html#%E6%8F%90%E5%87%BA%E6%96%B9%E6%B3%95-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="参考文献-6" class="section level2 hasAnchor" number="8.8">
+<h2><span class="header-section-number">8.8</span> 参考文献<a href="week7-重回帰分析概要.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li>R Markdownファイルで作成し、HTMLファイルに変換しTACTへ提出</li>
-<li>締め切りは今週の木曜日23:59まで</li>
-</ul>
-</div>
-</div>
-<div id="参考文献-12" class="section level2 hasAnchor" number="14.7">
-<h2><span class="header-section-number">14.7</span> 参考文献<a href="week-13-効果量と検定力分析.html#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE-12" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><p>📚清水（2014）『個人と集団のマルチレベル分析』株式会社ナカニシヤ出版</p></li>
 <li><p>📚竹内・水本（編著）（2023）『外国語教育研究ハンドブック【増補版】―研究手法のより良い理解のために』松柏社</p></li>
-<li><p>📚中村（2025）『心理学・教育学研究のための効果量入門―Rを用いた実践的理解』北大路書房</p></li>
 <li><p>📚南風原（2002）『心理統計学の基礎―統合的理解のために』有斐閣アルマ</p></li>
-<li><p>📄<a href="https://www.mizumot.com/method/mizumoto-takeuchi.pdf">水本・ 竹内 (2010). 「効果量と検定力分析入門―統計的検定を正しく使うために―」 『メソドロジー研究部会報告論集』 47-73.</a></p></li>
-<li><p>📄<a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/lang.12079">Plonsky, L., &amp; Oswald, F. L. (2014). How big is “big”? Interpreting effect sizes in L2 research. <em>Language Learning, 64</em>(4), 878-912.</a></p></li>
+<li><p>📚平井・岡・草薙（編著）（2022） 『教育・心理系研究のためのＲによるデータ分析―論文作成への理論と実践集』東京図書</p></li>
+<li><p>📚Gelman, Hill, &amp; Vehtari (2020) <em>Regression and Other Stories</em>, Cambridge University Press</p></li>
+<li><p>📄<a href="https://www.jstage.jst.go.jp/article/jjpsy/advpub/0/advpub_92.19226/_pdf/-char/ja">吉田・村井 (2021) 心理学的研究における重回帰分析の適用に関わる諸問題， 心理学研究, 92(3), 178-187.</a></p></li>
+<li><p>💻<a href="https://bellcurve.jp/statistics/course/24461.html?srsltid=AfmBOoq5YejCPBlcGOIawwi-sCV98ib6WvQKuCNEhshmn1IzwdR7JhyV">回帰の有意性の検定</a></p></li>
 </ul>
 <style>
 .infobox {
@@ -813,8 +869,8 @@ Required Sample Size
           </div>
         </div>
       </div>
-<a href="week12-階層モデル.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-14-ノンパラメトリック検定.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week6-単回帰分析連続型の説明変数.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="week8-重回帰分析質的変数のコーディング.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -845,7 +901,7 @@ gitbook.start({
     "size": 2
   },
   "edit": {
-    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/13-Week13_Eff_pow.Rmd",
+    "link": "https://github.com/USERNAME/REPO/edit/BRANCH/07-multipleregression.Rmd",
     "text": "Edit"
   },
   "history": {

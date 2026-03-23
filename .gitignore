@@ -11,6 +11,8 @@ renv/staging/
 _main_cache/
 _bookdown_files/
 _main_files/
+references-key.txt
+references-key.html
 
 # IDE
 .vscode/
